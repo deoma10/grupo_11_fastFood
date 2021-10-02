@@ -22,6 +22,14 @@
 
             Empresa del sector alimenticio enfocada en hamburguesas con una muy marcada iportancia en el mercado colombiano, su pagina web es sencilla y van al punto.
 
+        - 4. 
+            Frisby
+            URL: https://frisby.com.co/
+
+        - 5. 
+            Frisby
+            URL: https://presto.com.co/
+
 ★ Wireframe de las siguientes páginas:
     ○ Home
     ○ Detalle de producto
