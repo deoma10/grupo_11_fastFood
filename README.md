@@ -27,8 +27,14 @@
             URL: https://frisby.com.co/
 
         - 5. 
-            Frisby
+            Presto
             URL: https://presto.com.co/
+        
+        - 6.
+            Crepes and Waffles
+            URL: https://crepesywaffles.com/
+            Éste restaurante ha tenido una gran acogida en el mercado colombiano, su sitio web es muy práctico permitiendo navegar por él con facilidad a pesar de tener varios apartados como el de "Que hacemos", "Nuestros sabores" permitiendo explorar su diversa cantidad de productos
+
 
 ★ Wireframe de las siguientes páginas:
     ○ Home
