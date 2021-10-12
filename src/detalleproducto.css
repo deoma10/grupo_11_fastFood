@@ -1,0 +1,22 @@
+body{
+    background-color: #fff;
+}
+header{
+    background-color: #Ffc000;
+    height: 140px;
+    margin: 0px;
+    display: flex;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    color: #fff;
+    text-align: left;
+    left: 100px;
+    background-color: red;
+}
+
+section .navegacion{
+   display: inline;
+}
