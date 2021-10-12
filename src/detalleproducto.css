@@ -3,20 +3,27 @@ body{
 }
 header{
     background-color: #Ffc000;
+    display: inline-block;
     height: 140px;
+    width: 100%;
     margin: 0px;
-    display: flex;
 }
 
 .logo {
     font-family: 'Pacifico', cursive;
     font-size: 60px;
     color: #fff;
+    display: inline-block;
     text-align: left;
     left: 100px;
     background-color: red;
 }
 
-section .navegacion{
-   display: inline;
+.navegacion{
+   display: inline-block;
+}
+
+.nav-user{
+    display: inline-block;
+    justify-self: right;
 }
