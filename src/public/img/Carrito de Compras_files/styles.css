@@ -183,12 +183,6 @@ main section .arrow{
     border-top-right-radius: 10px;
 }
 
-.productDetail article div .product-name{
-    font-size: 1.3em;
-    text-align: center;
-    background-color: #fff;
-}
-
 .productDetail article div {
     display: flex;
     flex-direction: column;

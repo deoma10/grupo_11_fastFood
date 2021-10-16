@@ -15,6 +15,10 @@ app.get('/productDetail', (req, res) => {
     res.sendFile(path.resolve(__dirname, './views/productDetail.html') );
 });
 
+app.get('/productCart', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './views/productCart.html') );
+});
+
 app.listen(port, () => {
     console.log('Servidor corriendo en el puerto 4000');
 });
