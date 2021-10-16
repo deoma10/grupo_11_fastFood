@@ -1,14 +1,136 @@
-*{
+*{  padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 /* Header*/
+.header{
+    height: 50px;
+    background-color: #006491;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header__burgermenu{
+    height: 35px;
+    width: 35px;
+    border-radius: 25%;
+    text-align: center;
+}
+.header__burgermenu i{
+  line-height: 35px;
+  font-size: larger;
+}
+.header__logo{
+    height: 35px;
+    width: 35px;
+    outline: 1px solid white;
+}
+   .header__shoppingcart{
+    height: 35px;
+    width: 35px;
+    /* outline: 1px solid white; */
+}
+
+/* Nav */
+
+.nav{
+    height: 30px;
+    background-color: #9D9D9D;
+}
+ .nav__list{
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav__list li{
+    list-style: none;
+    /* outline: 1px solid white; */
+}
+.nav__list li a{
+    text-decoration: none;
+    color: #000000;
+}
 
 
-/* Main */
+/* Main Home */
+.main{
+    /* outline: 1px solid yellow; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
+}
+.main__carousel{
+    margin-top: 1rem;
+    width: 350px;
+    height: 350px;
+    outline: 1px solid red;
+
+}
+.main__featured{
+    margin-top: 2rem;
+}
+.main__featuredarticle{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 350px;
+    height: 350px;
+    outline: 1px solid blue;
+}
 
 /* Footer*/
+.footer{
+    background-color:#FF0000;
+    outline: 3px solid blue;
+    width: 100%;
+    height: 340px;
+}
+.footer__top{
+    width: 100%;
+    height: 20px;
+}
+.footer__logo{
+    height: 35px;
+    width: 35px;
+
+    margin-left: 5%;
+    margin-bottom: 15px;
+
+    background-color: white;
+}
+.footer__connections{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15%;
+}
+.footer__connections li{
+    list-style: none;
+}
+.footer__connections li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.footer__connections--brand{
+    width: 50%;
+}
+.footer__connections--cities{
+    width: 50%;
+    padding-left: 5%;
+}
+.footer__connections--legal{
+    width: 100%;
+}
+
+.footer__social{
+    margin-top: 30px;
+    margin-left: 5%;
+    width: 100%;
+    height: 30px;
+    color: white;
+    font-size: larger;
+}
 
 
 /* Login */
@@ -19,5 +141,5 @@
 
  /* Product Detail */
 
- 
+
  /* Register */
