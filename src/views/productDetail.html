@@ -4,33 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="detalleproducto.css">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://use.fontawesome.com/0e4a87e753.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Pacifico&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Detalle del Producto</title>
 </head>
 <body>
-    <header>
-        <section class="navegacion">
-                <div class="h1-logo" ><h1 class="logo">FastFood</h1></div>
-                <div class="nav-user">
-                    <button><i class="fa fa-user-circle" aria-hidden="true"></i> INICIAR SESION</button>
-                    <button><i class="fa fa-file-text-o" aria-hidden="true"></i> REGISTRARSE</button>
-                    <button>sp</button>
-                    <button><i class="fa fa-facebook-square" aria-hidden="true"> </i></button>
-                    <button><i class="fa fa-instagram" aria-hidden="true"> </i></button>
-                    <button><i class="fa fa-envelope-o" aria-hidden="true"> </i></button>
-                </div>
+     <!-- Header -->
+     <header class="header">
+        <section class="header__burgermenu">
+            <i class="fas fa-bars"></i>
+        </section>
+        <section class="header__logo">Logo
+
+        </section>
+        <section class="header__shoppingcart">carrito compras
+
         </section>
     </header>
 
-    <header>
+    <!-- Barra de navegación -->
+    <nav class="nav">
+        <ul class="nav__list">
+            <li><a href="#">Promociones</a></li>
+            <li><a href="#">Bienvenidos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Tiendas</a></li>
+        </ul>
+    </nav>
 
-    </header>
+    <!-- Main Home -->
+    <main class="productDetail">
+        <section class="scroll-menu">
+            <div class="arrow"><i class="fas fa-chevron-left"></i></div>
+            <h3 class="menu">Hamburguesas</h3>
+            <div class="arrow"><i class="fas fa-chevron-right"></i></div>
+        </section>
+        
+        <article class="products">
+            <div class="product-menu">
+                <img src="./img/Hamburguesa.png" alt="">
+                <div class="product-n">
+                    <p class="product-price">$11.900</p>
+                    <p class="product-add"><i class="fas fa-shopping-cart"></i>Agregar</p>
+                </div>
+            </div>
 
-    <p></p>
+            <div class="product-menu">
+                <img src="./img/hamburguesa2.jpg" alt="">
+                <div class="product-n">
+                    <p class="product-price">$9.900</p>
+                    <p class="product-add"><i class="fas fa-shopping-cart"></i>Agregar</p>
+                </div>
+            </div>
+
+            <div class="product-menu">
+                <img src="./img/hamburguesa3.jpg" alt="">
+                <div class="product-n">
+                    <p class="product-price">$17.900</p>
+                    <p class="product-add"><i class="fas fa-shopping-cart"></i>Agregar</p>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__top">
+        </div>
+        <!-- Logo de la marca -->
+        <section class="footer__logo">Logo
+
+        </section>
+        <!-- Enlaces (Whatsapp, Contactos y legal)-->
+        <section class="footer__connections">
+            <div class="footer__connections--brand">
+                <h3>Fast Food</h3>
+                <ul>
+                    <li><a href="#">Servicio vía Whatsapp</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__connections--cities">
+                <h3>Contactos</h3>
+                <ul>
+                    <li><a href="#">Ciudad 1 número</a></li>
+                    <li><a href="#">Ciudad 2 número</a></li>
+                    <li><a href="#">Ciudad 3 número</a></li>
+                    <li><a href="#">Ciudad 4 número</a></li>
+                    <li><a href="#">Ciudad 5 número</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__connections--legal">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+
+        </section>
+        <!-- Enlaces a redes sociales-->
+        <section class="footer__social">
+                <p>Síguenos en Facebook e Instagram</p>
+        </section>
+
+    </footer>
 </body>
 </html>
