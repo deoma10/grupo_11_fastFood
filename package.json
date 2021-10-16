@@ -1,0 +1,26 @@
+{
+  "name": "fastfood",
+  "version": "1.0.0",
+  "description": "Ecommerce para un sitio de comidas rápidas y el público objetivo serían los restaurantes y pequeños negocios de comida.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app",
+    "dev": "nodemon src/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deoma10/grupo_11_fastFood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deoma10/grupo_11_fastFood/issues"
+  },
+  "homepage": "https://github.com/deoma10/grupo_11_fastFood#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
