@@ -1,12 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Fast Food</title>
 </head>
+
 <body>
+    <!-- Header -->
+    <header class="header">
+        <section class="header__section--burgermenu">
+            <i class="fas fa-bars"></i>
+        </section>
+        <section class="header__section--logo">
+            <a href="/">
+                <img src="./img/logo.png" alt="">
+            </a>
+        </section>
+        <section class="header__section--login">
+            <i class="fas fa-user"></i>
+            <a href="/login">Iniciar Sesión</i></a>
+            <i class="far fa-list-alt"></i>
+            <a href="#">Registrarse</i></a>
+        </section>
+        <section class="header__section--shoppingcart">
+            <a href="/register"><i class="fas fa-shopping-cart"></i></a>
+        </section>
+        <section class="header__section--snetwork">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="far fa-envelope"></i></a>
+        </section>
+    </header>
+    <!-- Barra de navegación -->
+    <nav class="nav">
+        <ul class="nav__list">
+            <li><a href="#">Promociones</a></li>
+            <li><a href="#">Bienvenidos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Tiendas</a></li>
+        </ul>
+    </nav>
+
+    <!--Main-->
+    <main>
+        <h2 class="register__title">Formulario de registro</h2>
+        <form class="register__form" action="/">
+            <div class="register__form">
+                <select name="tdocumento" id="id" required>
+                    <option value="" selected disabled hidden>Tipo Documento</option>
+                    <option value="CC">Cédula de Ciudadanía</option>
+                    <option value="CE">Cédula de Extranjería</option>
+                    <option value="TI">Targeta de Identidad</option>
+                    <option value="NIT">Nit</option>
+                </select>
+            </div>
+            <div class="register__form">
+                <input class="register__form--text" type="text" name="documento" placeholder="Número Documento" required>
+            </div>
+            <div class="register__form">
+                <input class="register__form--text" type="text" name="nombre" placeholder="Nombre" required minlength="5">
+            </div>
+            <div class="register__form">
+                <input class="register__form--text" type="text" name="apellido" placeholder="Apellido" required minlength="5">
+            </div>
+            <div class="register__form">
+                <input class="register__form--text" type="email" name="correo" placeholder="Correo" required>
+            </div>
+            <div class="register__form">
+                <input class="register__form--text" type="password" name="contraseña" placeholder="Contraseña" required minlength="5">
+            </div>
+            <div class="register__form">
+                <input class="register__form--text" type="password" name="contraseña" placeholder="Repetir contraseña" required minlength="5">
+            </div>
+            <div class="register__form">
+                <input class="register__form--radio" type="radio" name="recibeCorreo" required> Deseo recibir correos con promociones de la marca
+            </div>
+            <div class="register__form">
+                <input class="register__form--radio" type="radio" name="politicaPrivacidad" required> Acepto la política de privacidad y uso de éste sitio web
+            </div>
+            <div class="register__form">
+                <input class="register__form--button" type="submit" value="Ingresar">
+            </div>
+        </form>
+    </main>
+
+
+    <!--Footer-->
+
+    <footer class="footer">
+        <div class="footer__top">
+        </div>
+        <!-- Logo de la marca -->
+        <section class="footer__logo">
+            <img src="./img/logo.png" alt="">
+        </section>
+        <!-- Enlaces (Whatsapp, Contactos y legal)-->
+        <section class="footer__connections">
+            <div class="footer__connections--brand">
+                <h3>Fast Food</h3>
+                <ul>
+                    <li><a href="#">Servicio vía Whatsapp</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__connections--cities">
+                <h3>Contactos</h3>
+                <ul>
+                    <li><a href="#">Ciudad 1 número</a></li>
+                    <li><a href="#">Ciudad 2 número</a></li>
+                    <li><a href="#">Ciudad 3 número</a></li>
+                    <li><a href="#">Ciudad 4 número</a></li>
+                    <li><a href="#">Ciudad 5 número</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__connections--legal">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                </ul>
+            </div>
+
+        </section>
+        <!-- Enlaces a redes sociales-->
+        <section class="footer__social">
+            <h4>Síguenos</h4>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </section>
+
 
 </body>
+
 </html>

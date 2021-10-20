@@ -11,25 +11,34 @@
     justify-content: space-around;
     align-items: center;
 }
-.header__burgermenu{
+.header__section--burgermenu{
     height: 35px;
     width: 35px;
     border-radius: 25%;
     text-align: center;
 }
-.header__burgermenu i{
+.header__section--burgermenu i{
   line-height: 35px;
   font-size: larger;
 }
-.header__logo{
+.header__section--logo{
     height: 35px;
     width: 35px;
     outline: 1px solid white;
 }
-   .header__shoppingcart{
+.header__section--login,
+.header__section--snetwork {
+    display: none;
+    margin-left: 50px;
+}
+.header__section--shoppingcart{
     height: 35px;
     width: 35px;
+    margin-top: 15px;
     /* outline: 1px solid white; */
+}
+.header__section--shoppingcart a i {
+    color: #000000;
 }
 
 /* Nav */
@@ -40,10 +49,12 @@
 }
  .nav__list{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .nav__list li{
     list-style: none;
+    width: 20%;
+    font-size: 1em;
     /* outline: 1px solid white; */
 }
 .nav__list li a{
@@ -51,6 +62,28 @@
     color: #000000;
 }
 
+@media (min-width: 630px) {
+    .header__section--burgermenu{
+        display: none;
+    }
+    .header__section--login {
+        display: block;
+        margin-left: 150px;
+        margin-right: 80px;
+    }
+    .header__section--login a {
+        color: #000000;
+        text-decoration: none;
+    }
+    .header__section--snetwork {
+        display: block;
+        color: #000000;
+    }
+    .header__section--snetwork a {
+        color: #000000;
+        text-decoration: none;
+    }
+}
 
 /* Main Home */
 .main{
@@ -63,18 +96,18 @@
 }
 .main__carousel{
     margin-top: 1rem;
-    width: 350px;
+    width: 75%;
     height: 350px;
     outline: 1px solid red;
-
 }
 .main__featured{
     margin-top: 2rem;
+    width: 75%;
 }
 .main__featuredarticle{
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
-    width: 350px;
+    width: 100%;
     height: 350px;
     outline: 1px solid blue;
 }
@@ -130,10 +163,75 @@
     height: 30px;
     color: white;
     font-size: larger;
+    display: flex;
+    position: relative;
+    bottom: 20px;
+}
+.footer__social a {
+    margin-left: 15px;
+    color: #000000;
 }
 
+@media (min-width: 630px) {
+    .footer {
+        position: relative;
+    
+    }
+    .footer__top {
+        display: none;
+    }
+    .footer__logo{
+        height: 25%;
+        width: 25%;
+    }
+    .footer__connections {
+        padding-left: 20%;
+        position: relative;
+        bottom: 50px;
+        flex-wrap: nowrap;
+    }
+    .footer__connections--brand{
+        width: 20%;
+        margin-left: 150px;
+    }
+    .footer__connections--cities{
+        width: 25%;
+        margin-right: 70px;
+    }
+    .footer__connections--legal{
+        width: 20%;
+    }
+}
 
 /* Login */
+.login__title {
+    text-align: center;
+    margin-top: 40px;
+}
+.login__form {
+    text-align: center;
+    margin: 20px;
+}
+
+.login__form--text, .login__form--button {
+    width: 60vw;
+}
+
+/* Register */
+.register__title {
+    text-align: center;
+    margin-top: 40px;
+}
+.register__form {
+    text-align: center;
+    margin: 20px;
+}
+.register__form--text, .register__form--button {
+    width: 60vw;
+}
+.register__form select {
+    width: 60vw;
+}
 
 
  /* Product Cart */
@@ -254,6 +352,3 @@ main section .arrow{
     padding: 15px;
     text-align: center;
 }
-
-
- /* Register */
