@@ -1,13 +1,15 @@
+@import url(//db.onlinewebfonts.com/c/4124a6204d35abaf22db32c19d62d73e?family=Insaniburger);
 *{  padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Insaniburger", sans-serif; 
 }
 /* INDEX.html//////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* Header*/
 .header{
     height: 60px;
-    background-color: #FFCFA5;
+    background-color: #FFE459;
     color: #835D3B;
     display: flex;
     justify-content: space-between;
@@ -44,12 +46,17 @@
     font-size: 14px;
 }
 
+.header__login, .header__snetwork{
+    display: none;
+
+}
+
 
 /* Nav */
 
 .nav{
     height: 30px;
-    background-color: #F2D8C2;
+    background-color: #E04A01;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,6 +77,29 @@
     color: #000000;
 }
 
+@media (min-width: 630px) {
+    .header__burgermenu{
+        display: none;
+    }
+    .header__login {
+        display: block;
+        margin-left: 150px;
+        margin-right: 80px;
+    }
+    .header__login a {
+        color: #000000;
+        text-decoration: none;
+    }
+    .header__snetwork {
+        display: block;
+        color: #000000;
+    }
+    .header__snetwork a {
+        color: #000000;
+        text-decoration: none;
+    }
+}
+
 /* Main Home */
 .main{
     /* outline: 1px solid yellow; */
@@ -77,13 +107,14 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
+    background-color: #949973;
 }
 .main__carousel{
     margin: 0.8rem;
 }
 .main__featured{
     margin-top: 2rem;
+    width: 75%;
 }
 .main__featured-article{
     margin: 0.8rem;
@@ -98,11 +129,10 @@
     background-color: #FFCFA5;
     border: 2px solid #E8B78B;
     border-radius: 6px;
-
 }
 /* Footer*/
 .footer{
-    background-color:#E8B78B;
+    background-color:#B9CC33;
     width: 100%;
     height: 340px;
 }
@@ -153,10 +183,75 @@
     height: 30px;
     color: white;
     font-size: larger;
+    display: flex;
+    position: relative;
+    bottom: 20px;
+}
+.footer__social a {
+    margin-left: 15px;
+    color: #000000;
+}
+
+@media (min-width: 630px) {
+    .footer {
+        position: relative;
+    }
+    .footer__top {
+        display: none;
+    }
+    .footer__logo{
+        height: 25%;
+        width: 25%;
+    }
+    .footer__connections {
+        padding-left: 20%;
+        position: relative;
+        bottom: 50px;
+        flex-wrap: nowrap;
+    }
+    .footer__connections--brand{
+        width: 20%;
+        margin-left: 150px;
+    }
+    .footer__connections--cities{
+        width: 25%;
+        margin-right: 70px;
+    }
+    .footer__connections--legal{
+        width: 20%;
+    }
 }
 
 
-/* Login.html/////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Login ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.login__title {
+    text-align: center;
+    margin-top: 40px;
+}
+.login__form {
+    text-align: center;
+    margin: 20px;
+}
+
+.login__form--text, .login__form--button {
+    width: 60vw;
+}
+
+/* Register */
+.register__title {
+    text-align: center;
+    margin-top: 40px;
+}
+.register__form {
+    text-align: center;
+    margin: 20px;
+}
+.register__form--text, .register__form--button {
+    width: 60vw;
+}
+.register__form select {
+    width: 60vw;
+}
 
 
  /* ProductCart.html/////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -209,7 +304,7 @@
     padding: 10px 0px;
 }
 
- /* ProductDetail.html///////////////////////////////////////////////////////////////////////////////////////////// */
+ /* ProductDetail.html///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .scroll-menu{
     width: 100vw;
@@ -276,6 +371,3 @@ main section .arrow{
     padding: 15px;
     text-align: center;
 }
-
-
- /* Register.html//////////////////////////////////////////////////////////////////////////////////////////////// */
