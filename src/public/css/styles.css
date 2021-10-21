@@ -2,55 +2,73 @@
     margin: 0;
     box-sizing: border-box;
 }
+/* INDEX.html//////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* Header*/
 .header{
-    height: 50px;
-    background-color: #006491;
+    height: 60px;
+    background-color: #FFCFA5;
+    color: #835D3B;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .header__burgermenu{
+    margin-left: 1.5rem;
     height: 35px;
     width: 35px;
+    border: 1px solid #835D3B;
     border-radius: 25%;
     text-align: center;
 }
 .header__burgermenu i{
-  line-height: 35px;
-  font-size: larger;
+    font-size: 23px;
+    line-height: 35px;
 }
 .header__logo{
+    height: 50px;
+    width: 50px;
+}
+.header__shoppingcart{
     height: 35px;
     width: 35px;
-    outline: 1px solid white;
+    margin-right: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-   .header__shoppingcart{
-    height: 35px;
-    width: 35px;
-    /* outline: 1px solid white; */
+.header__shoppingcart p{
+     margin-left: 5px;
 }
+.header__shoppingcart i{
+    font-size: 14px;
+}
+
 
 /* Nav */
 
 .nav{
     height: 30px;
-    background-color: #9D9D9D;
+    background-color: #F2D8C2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
  .nav__list{
-    display: flex;
-    justify-content: space-evenly;
-}
+     display: flex;
+     margin: auto;
+     justify-content: space-evenly;
+     text-align: center;
+     width: 100%;
+ }
 .nav__list li{
+    width: 25%;
     list-style: none;
-    /* outline: 1px solid white; */
 }
 .nav__list li a{
     text-decoration: none;
     color: #000000;
 }
-
 
 /* Main Home */
 .main{
@@ -62,27 +80,29 @@
 
 }
 .main__carousel{
-    margin-top: 1rem;
-    width: 350px;
-    height: 350px;
-    outline: 1px solid red;
-
+    margin: 0.8rem;
 }
 .main__featured{
     margin-top: 2rem;
 }
-.main__featuredarticle{
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    width: 350px;
-    height: 350px;
-    outline: 1px solid blue;
+.main__featured-article{
+    margin: 0.8rem;
 }
+.main-login__form--container{
+    margin-top: 5px;
+}
+.main-login__form--container button{
+    width: 100%;
 
+    color: #403429;
+    background-color: #FFCFA5;
+    border: 2px solid #E8B78B;
+    border-radius: 6px;
+
+}
 /* Footer*/
 .footer{
-    background-color:#FF0000;
-    outline: 3px solid blue;
+    background-color:#E8B78B;
     width: 100%;
     height: 340px;
 }
@@ -91,11 +111,11 @@
     height: 20px;
 }
 .footer__logo{
-    height: 35px;
-    width: 35px;
+    height: 80px;
+    width: 80px;
 
-    margin-left: 5%;
-    margin-bottom: 15px;
+    margin-left: 3%;
+    margin-bottom: 10px;
 
     background-color: white;
 }
@@ -104,6 +124,9 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 15%;
+}
+.footer__connections h3{
+    color: #835D3B;
 }
 .footer__connections li{
     list-style: none;
@@ -133,10 +156,10 @@
 }
 
 
-/* Login */
+/* Login.html/////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 
- /* Product Cart */
+ /* ProductCart.html/////////////////////////////////////////////////////////////////////////////////////////////// */
 .productCart .bar-menu{
     display: flex;
     justify-content: center;
@@ -186,7 +209,8 @@
     padding: 10px 0px;
 }
 
- /* Product Detail */
+ /* ProductDetail.html///////////////////////////////////////////////////////////////////////////////////////////// */
+
 .scroll-menu{
     width: 100vw;
     height: 40px;
@@ -197,8 +221,7 @@
 }
 
 main section .arrow{
-    margin: 0px 10px; 
-    
+    margin: 0px 10px;
 }
 
 .productDetail article {
@@ -230,7 +253,6 @@ main section .arrow{
 .productDetail article div {
     display: flex;
     flex-direction: column;
-    
 }
 
 .productDetail article div .product-n{
@@ -256,4 +278,4 @@ main section .arrow{
 }
 
 
- /* Register */
+ /* Register.html//////////////////////////////////////////////////////////////////////////////////////////////// */
