@@ -14,24 +14,22 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <section class="header__section--burgermenu">
+        <section class="header__burgermenu">
             <i class="fas fa-bars"></i>
         </section>
-        <section class="header__section--logo">
-            <a href="/">
-                <img src="./img/logo.png" alt="">
-            </a>
+        <section class="header__logo">
+            <a href="/"><img src="./img/Logo-Fast-Food.png" alt=""></a>
         </section>
-        <section class="header__section--login">
+        <section class="header__login">
             <i class="fas fa-user"></i>
             <a href="/login">Iniciar Sesión</i></a>
             <i class="far fa-list-alt"></i>
-            <a href="#">Registrarse</i></a>
+            <a href="/register">Registrarse</i></a>
         </section>
-        <section class="header__section--shoppingcart">
-            <a href="/register"><i class="fas fa-shopping-cart"></i></a>
+        <section class="header__shoppingcart">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
         </section>
-        <section class="header__section--snetwork">
+        <section class="header__snetwork">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="far fa-envelope"></i></a>
@@ -41,7 +39,7 @@
     <nav class="nav">
         <ul class="nav__list">
             <li><a href="#">Promociones</a></li>
-            <li><a href="#">Bienvenidos</a></li>
+            <li><a href="#">Inicio</a></li>
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Productos</a></li>
             <li><a href="#">Tiendas</a></li>
@@ -49,11 +47,11 @@
     </nav>
 
     <!--Main-->
-    <main>
-        <h2 class="register__title">Formulario de registro</h2>
-        <form class="register__form" action="/">
+    <main class="register">
+        <form class="register" action="/">
+            <h2 class="register__title">Formulario de registro</h2>
             <div class="register__form">
-                <select name="tdocumento" id="id" required>
+                <select class="register__form--select" name="tdocumento" id="id" required>
                     <option value="" selected disabled hidden>Tipo Documento</option>
                     <option value="CC">Cédula de Ciudadanía</option>
                     <option value="CE">Cédula de Extranjería</option>
@@ -79,14 +77,14 @@
             <div class="register__form">
                 <input class="register__form--text" type="password" name="contraseña" placeholder="Repetir contraseña" required minlength="5">
             </div>
-            <div class="register__form">
-                <input class="register__form--radio" type="radio" name="recibeCorreo" required> Deseo recibir correos con promociones de la marca
+            <div class="register__form--radio">
+                <input class="register--radio" type="radio" name="recibeCorreo" required> <p>Deseo recibir correos con promociones de la marca</p>
+            </div>
+            <div class="register__form--radio">
+                <input class="register--radio" type="radio" name="politicaPrivacidad" required> <p>Acepto la política de privacidad y uso de éste sitio web</p>
             </div>
             <div class="register__form">
-                <input class="register__form--radio" type="radio" name="politicaPrivacidad" required> Acepto la política de privacidad y uso de éste sitio web
-            </div>
-            <div class="register__form">
-                <input class="register__form--button" type="submit" value="Ingresar">
+                <input class="register__form--button" type="submit" value="Registro">
             </div>
         </form>
     </main>
@@ -99,10 +97,11 @@
         </div>
         <!-- Logo de la marca -->
         <section class="footer__logo">
-            <img src="./img/logo.png" alt="">
+            <a href="/"><img src="/img/Logo-Fast-Food-Footer.png" alt="Logo"></a>
         </section>
         <!-- Enlaces (Whatsapp, Contactos y legal)-->
         <section class="footer__connections">
+
             <div class="footer__connections--brand">
                 <h3>Fast Food</h3>
                 <ul>
@@ -132,12 +131,10 @@
         </section>
         <!-- Enlaces a redes sociales-->
         <section class="footer__social">
-            <h4>Síguenos</h4>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+                <p>Síguenos <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
         </section>
 
-
+    </footer>
 </body>
 
 </html>

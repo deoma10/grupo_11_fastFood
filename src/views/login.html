@@ -14,24 +14,22 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <section class="header__section--burgermenu">
+        <section class="header__burgermenu">
             <i class="fas fa-bars"></i>
         </section>
-        <section class="header__section--logo">
-            <a href="/">
-                <img src="./img/logo.png" alt="">
-            </a>
+        <section class="header__logo">
+            <a href="/"><img src="./img/Logo-Fast-Food.png" alt=""></a>
         </section>
-        <section class="header__section--login">
+        <section class="header__login">
             <i class="fas fa-user"></i>
             <a href="/login">Iniciar Sesión</i></a>
             <i class="far fa-list-alt"></i>
             <a href="/register">Registrarse</i></a>
         </section>
-        <section class="header__section--shoppingcart">
+        <section class="header__shoppingcart">
             <a href="#"><i class="fas fa-shopping-cart"></i></a>
         </section>
-        <section class="header__section--snetwork">
+        <section class="header__snetwork">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="far fa-envelope"></i></a>
@@ -41,7 +39,7 @@
     <nav class="nav">
         <ul class="nav__list">
             <li><a href="#">Promociones</a></li>
-            <li><a href="#">Bienvenidos</a></li>
+            <li><a href="/">Inicio</a></li>
             <li><a href="#">Nosotros</a></li>
             <li><a href="#">Productos</a></li>
             <li><a href="#">Tiendas</a></li>
@@ -49,17 +47,25 @@
     </nav>
 
     <!--Main-->
-    <main>
-        <h2 class="login__title">Formulario de login</h2>
+    <main class="login">
         <form class="login__form" action="/">
+            <h2 class="login__title">Formulario de login</h2>
             <div class="login__form">
                 <input class="login__form--text" type="email" name="correo" placeholder="Correo" required>
             </div>
             <div class="login__form">
                 <input class="login__form--text" type="password" name="contraseña" placeholder="Contraseña" required>
             </div>
-            <div class="login__form">
-                <input class="login__form--button" type="submit" value="Ingresar">
+            <h4 class="login--recover">
+                <a href="#">
+                    ¿Olvidaste tu contraseña?
+                </a>
+            </h4>
+            <div class="login__form--button">
+                <input class="login--button" type="submit" value="Ingresar">
+                <a href="/register">
+                    <input class="login--button" type="button" value="Registrarse">
+                </a>
             </div>
         </form>
     </main>
@@ -72,10 +78,11 @@
         </div>
         <!-- Logo de la marca -->
         <section class="footer__logo">
-            <img src="./img/logo.png" alt="">
+            <a href="/"><img src="/img/Logo-Fast-Food-Footer.png" alt="Logo"></a>
         </section>
         <!-- Enlaces (Whatsapp, Contactos y legal)-->
         <section class="footer__connections">
+
             <div class="footer__connections--brand">
                 <h3>Fast Food</h3>
                 <ul>
@@ -105,12 +112,11 @@
         </section>
         <!-- Enlaces a redes sociales-->
         <section class="footer__social">
-            <h4>Síguenos</h4>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <p>Síguenos <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i
+                    class="fab fa-twitter"></i></p>
         </section>
 
-
+    </footer>
 </body>
 
 </html>
