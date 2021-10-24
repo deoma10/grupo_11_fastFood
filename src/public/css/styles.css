@@ -415,24 +415,31 @@ main section .arrow{
 .productDetail article .product-menu{
     margin-top: 15px;
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
 }
 
-.productDetail article div img{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.productDetail article div .product-name{
+.productDetail article .product-name{
     font-size: 1.3em;
     text-align: center;
     background-color: #fff;
 }
 
-.productDetail article div {
+.productDetail article .product-menu .product-description{
     display: flex;
     flex-direction: column;
+    width: 20vw;
+    margin: 10px;
 }
 
+.productDetail article .product-menu .product-description .product-specific{
+    margin-top: auto;
+    text-align: center;
+}
+
+.productDetail article .product-menu img{
+    width: 20vw;
+}
 .productDetail article div .product-n{
     flex-direction: row;
     justify-content: space-around;
