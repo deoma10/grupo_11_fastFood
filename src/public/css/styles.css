@@ -55,7 +55,9 @@
 /* Nav */
 
 .nav{
+    padding-left: 15px;
     height: 30px;
+    font-size: 13px;
     background-color: #E04A01;
     display: flex;
     align-items: center;
@@ -103,7 +105,7 @@
 
 /* Main Home */
 .main{
-    /* outline: 1px solid yellow; */
+    /* outline: 1px solid black;  */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -111,25 +113,29 @@
     background-color: #949973;
 }
 .main__carousel{
-    margin: 0.8rem;
+    margin-top: 20px;
+    width: 92vw;
 }
 .main__featured{
-    margin-top: 2rem;
-    width: 75%;
+    margin-top: 30px;
+    width: 92vw
 }
 .main__featured-article{
-    margin: 0.8rem;
+    margin-bottom: 20px;
 }
 .main-login__form--container{
     margin-top: 5px;
 }
 .main-login__form--container button{
     width: 100%;
-
+    height: 30px;
     color: #403429;
     background-color: #FFCFA5;
     border: 2px solid #E8B78B;
     border-radius: 6px;
+}
+.main-login__form--container button p{
+    font-size: 14px;
 }
 /* Footer*/
 .footer{
