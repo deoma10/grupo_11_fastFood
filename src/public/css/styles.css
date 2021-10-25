@@ -224,6 +224,10 @@
         bottom: 50px;
         flex-wrap: nowrap;
     }
+    .footer__connections ul li {
+        font-weight: 100;
+        font-size: 0.9em;
+    }
     .footer__connections--brand{
         width: 20%;
         margin-left: 150px;
@@ -234,6 +238,9 @@
     }
     .footer__connections--legal{
         width: 20%;
+    }
+    .footer__social p{
+        font-weight: 100;
     }
 }
 
