@@ -10,31 +10,40 @@
     <title>Carrito de Compras</title>
 </head>
 <body>
-     <!-- Header -->
-     <header class="header">
+    <!-- Header -->
+    <header class="header">
         <section class="header__burgermenu">
             <i class="fas fa-bars"></i>
         </section>
-        <section class="header__logo">Logo
-
+        <section class="header__logo">
+            <a href="/"><img src="./img/Logo-Fast-Food.png" alt=""></a>
         </section>
-        <section class="header__shoppingcart" ><a href="/productCart">carrito compras</a>
-
+        <section class="header__login">
+            <i class="fas fa-user"></i>
+            <a href="/login">Iniciar Sesión</i></a>
+            <i class="far fa-list-alt"></i>
+            <a href="/register">Registrarse</i></a>
+        </section>
+        <section class="header__shoppingcart">
+            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+        </section>
+        <section class="header__snetwork">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="far fa-envelope"></i></a>
         </section>
     </header>
-
     <!-- Barra de navegación -->
     <nav class="nav">
         <ul class="nav__list">
             <li><a href="#">Promociones</a></li>
-            <li><a href="/">Bienvenidos</a></li>
+            <li><a href="#">Inicio</a></li>
             <li><a href="#">Nosotros</a></li>
-            <li><a href="/productDetail"">Productos</a></li>
+            <li><a href="/productDetail">Productos</a></li>
             <li><a href="#">Tiendas</a></li>
         </ul>
     </nav>
-
-    <!-- Main Home -->
+    <!-- Main Product Cart -->
     <main class="productCart">
         <section class="bar-menu">
             <h3 class="menu">Resumen Pedido</h3>
@@ -60,19 +69,22 @@
                 <p class="delivery-name">Domicilio</p>
                 <p class="delivery-price">$$$$$$</p>
             </div>
-            
+
         </section>
     </main>
+
+    <!--Footer-->
 
     <footer class="footer">
         <div class="footer__top">
         </div>
         <!-- Logo de la marca -->
-        <section class="footer__logo">Logo
-
+        <section class="footer__logo">
+            <a href="/"><img src="/img/Logo-Fast-Food-Footer.png" alt="Logo"></a>
         </section>
         <!-- Enlaces (Whatsapp, Contactos y legal)-->
         <section class="footer__connections">
+
             <div class="footer__connections--brand">
                 <h3>Fast Food</h3>
                 <ul>
@@ -102,7 +114,7 @@
         </section>
         <!-- Enlaces a redes sociales-->
         <section class="footer__social">
-                <p>Síguenos en Facebook e Instagram</p>
+                <p>Síguenos <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
         </section>
 
     </footer>
