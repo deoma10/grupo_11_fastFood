@@ -446,12 +446,13 @@ aside{
 }
 
  .productCart .bar-menu{
+    padding-top: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 40px;
-    background-color: #E04A01;
+    background-color: #949973;
 }
 
 .productCart .products-resume{
