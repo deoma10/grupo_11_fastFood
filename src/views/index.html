@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/styles.css">
     <title>Fast Food</title>
+    <link rel="shortcut icon" href="./img/Favicon-Fast-Food.png">
 </head>
 
 <body>
@@ -38,7 +39,7 @@
     <!-- Barra de navegación -->
     <nav class="nav">
         <ul class="nav__list">
-            <li><a href="#">Promociones</a></li>
+            <li><a href="/index/#veggie-burger">Promociones</a></li>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Nosotros</a></li>
             <li><a href="/productDetail">Productos</a></li>
@@ -51,124 +52,158 @@
 
         <!-- Carrusel de productos con promoción y/o los más vendios  -->
         <section class="main__carousel">
-            <img src="/img/burger-mosaic-1.png" alt="Hamburguesa-mosaico-1">
+            <img src="/img/burger-mosaic-1.png" alt="Hamburguesa-mosaico-1" class="main__carousel--img1">
+            <img src="/img/burger-mosaic-pc-1.png" alt="Hamburguesa-mosaico-1" class="main__carousel--pcimg1">
         </section>
 
-            <!-- Productos destacados con Scroll vertical -->
+        <!-- Productos destacados con Scroll vertical -->
         <section class="main__featured">
-            <article class="main__featured-article">
-                <img src="/img/burger-featured-1.png" alt="Hamburguesa-destacada-1">
+
+            <div class="main__featured-container">
+                <h3 class="main__featured-container--tittle">Escoge tu hambuguesa</h3>
+                <article class="main__featured-article">
+                    <img src="/img/burger-featured-1.png" alt="Hamburguesa-destacada-1">
 
                     <form action="/productDetail" method="post" class="main-login__form--container">
                         <div class="main-login__form--button">
                             <label for="button"></label>
-                            <button type="submit" name="button"><p>Detalles del producto</p></button>
+                            <button type="submit" name="button">
+                                <p>Detalles del producto</p>
+                            </button>
                         </div>
                     </form>
 
-                    <form action="/" method="post" class="main-login__form--container">
+                    <form action="/productCart" method="post" class="main-login__form--container">
                         <div class="main-login__form--button">
                             <label for="button"></label>
-                            <button type="submit" name="button"><p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p></button>
+                            <button type="submit" name="button">
+                                <p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p>
+                            </button>
                         </div>
                     </form>
 
-            </article>
+                </article>
 
-            <article class="main__featured-article">
-                <img src="/img/burger-featured-2.png" alt="Hamburguesa-destacada-2">
+                <article class="main__featured-article">
+                    <img src="/img/burger-featured-2.png" alt="Hamburguesa-destacada-2">
 
-                <form action="/productDetail" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p>Detalles del producto</p></button>
-                    </div>
-                </form>
+                    <form action="/productDetail" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p>Detalles del producto</p>
+                            </button>
+                        </div>
+                    </form>
 
-                <form action="/" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p></button>
-                    </div>
-                </form>
+                    <form action="/productCart" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p>
+                            </button>
+                        </div>
+                    </form>
 
-            </article>
+                </article>
 
-            <article class="main__featured-article">
-                <img src="/img/burger-featured-3.png" alt="Hamburguesa-destacada-3">
+                <article class="main__featured-article">
+                    <img src="/img/burger-featured-3.png" alt="Hamburguesa-destacada-3">
 
-                <form action="/productDetail" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p>Detalles del producto</p></button>
-                    </div>
-                </form>
+                    <form action="/productDetail" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p>Detalles del producto</p>
+                            </button>
+                        </div>
+                    </form>
 
-                <form action="/" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p></button>
-                    </div>
-                </form>
+                    <form action="/productCart" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p>
+                            </button>
+                        </div>
+                    </form>
 
-            </article>
+                </article>
 
-            <article class="main__featured-article">
-                <img src="/img/burger-featured-4.png" alt="Hamburguesa-destacada-4">
+                <article class="main__featured-article">
+                    <img src="/img/burger-featured-4.png" alt="Hamburguesa-destacada-4">
 
-                <form action="/productDetail" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p>Detalles del producto</p></button>
-                    </div>
-                </form>
+                    <form action="/productDetail" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p>Detalles del producto</p>
+                            </button>
+                        </div>
+                    </form>
 
-                <form action="/" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p></button>
-                    </div>
-                </form>
+                    <form action="/productCart" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p>
+                            </button>
+                        </div>
+                    </form>
 
-            </article>
+                </article>
 
-            <article class="main__featured-article">
-                <img src="/img/burger-featured-5.png" alt="Hamburguesa-destacada-5">
+                <article class="main__featured-article">
+                    <img src="/img/burger-featured-5.png" alt="Hamburguesa-destacada-5">
 
-                <form action="/productDetail" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p>Detalles del producto</p></button>
-                    </div>
-                </form>
+                    <form action="/productDetail" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p>Detalles del producto</p>
+                            </button>
+                        </div>
+                    </form>
 
-                <form action="/" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p></button>
-                    </div>
-                </form>
+                    <form action="/productCart" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p>
+                            </button>
+                        </div>
+                    </form>
 
-            </article>
+                </article>
 
-            <article class="main__featured-article">
-                <img src="/img/burger-featured-6.png" alt="Hamburguesa-destacada-6">
+                <article class="main__featured-article" id="veggie-burger">
+                    <img src="/img/burger-featured-6.png" alt="Hamburguesa-destacada-6">
 
-                <form action="/productDetail" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p>Detalles del producto</p></button>
-                    </div>
-                </form>
+                    <form action="/productDetail" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p>Detalles del producto</p>
+                            </button>
+                        </div>
+                    </form>
 
-                <form action="/" method="post" class="main-login__form--container">
-                    <div class="main-login__form--button">
-                        <label for="button"></label>
-                        <button type="submit" name="button"><p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p></button>
-                    </div>
-                </form>
+                    <form action="/productCart" method="post" class="main-login__form--container">
+                        <div class="main-login__form--button">
+                            <label for="button"></label>
+                            <button type="submit" name="button">
+                                <p><i class="fas fa-shopping-cart"></i> Agregar al carrito</p>
+                            </button>
+                        </div>
+                    </form>
 
-            </article>
+                </article>
+
+            </div>
+
+            <aside>
+                <h3>Tu orden</h3>
+            </aside>
 
         </section>
     </main>
@@ -184,7 +219,6 @@
         </section>
         <!-- Enlaces (Whatsapp, Contactos y legal)-->
         <section class="footer__connections">
-
             <div class="footer__connections--brand">
                 <h3>Fast Food</h3>
                 <ul>
@@ -214,7 +248,8 @@
         </section>
         <!-- Enlaces a redes sociales-->
         <section class="footer__social">
-                <p>Síguenos <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
+            <p>Síguenos <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i
+                    class="fab fa-twitter"></i></p>
         </section>
 
     </footer>
