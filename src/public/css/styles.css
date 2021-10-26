@@ -188,7 +188,7 @@ aside{
           width: 96.5vw;
           display: flex;
       }
-    
+
       .main__featured-container{
             display: flex;
             flex-direction: row;
@@ -286,7 +286,7 @@ aside{
 @media (min-width: 337px) {
     .footer {
         font-size: 1em;
-    }    
+    }
 }
 
 @media (min-width: 630px) {
@@ -309,6 +309,10 @@ aside{
         bottom: 50px;
         flex-wrap: nowrap;
     }
+    .footer__connections ul li {
+        font-weight: 100;
+        font-size: 0.9em;
+    }
     .footer__connections--brand{
         width: 20%;
         margin-left: 150px;
@@ -320,12 +324,15 @@ aside{
     .footer__connections--legal{
         width: 20%;
     }
+    .footer__social p{
+        font-weight: 100;
+    }
 }
 
 @media (min-width: 756px) {
     .footer__social {
         margin-top: 80px;
-    }    
+    }
 }
 
 
