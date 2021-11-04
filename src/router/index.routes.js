@@ -10,28 +10,23 @@ router.get('/', controller.getIndex);
 
 router.post('/', controller.getIndex);
 
-router.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html') );
-});
 
-router.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/register.html') );
-});
+router.get('/productCart', controller.getProductCart);
 
-router.get('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html') );
-});
+router.post('/productCart', controller.getProductCart);
 
-router.post('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html') );
-});
 
-router.get('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html') );
-});
+router.get('/productDetail', controller.getProductDetail);
 
-router.post('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html') );
-});
+router.post('/productDetail', controller.getProductDetail);
+
+
+router.get('/register', controller.getRegister);
+
+router.post('/register', controller.getRegister);
+
+router.get('/login', controller.getLogin);
+
+router.post('/login', controller.getLogin);
 
 module.exports = router;
