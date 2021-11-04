@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 *{  padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -57,7 +58,7 @@
 .nav{
     padding-left: 15px;
     height: 30px;
-    font-size: 13px;
+    font-size: 14px;
     background-color: #E04A01;
     display: flex;
     align-items: center;
@@ -104,6 +105,11 @@
         text-decoration: none;
         color: #835D3B;
     }
+    .nav{
+        font-size: 15px;
+        font-weight: 600;
+
+    }
 }
 
 /* Main Home */
@@ -113,8 +119,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #949973;
+    background-color: #ffffff;
     padding-bottom: 2vh;
+    width: 100%;
 }
 .main__carousel{
     margin-top: 2vh;
@@ -162,8 +169,8 @@ aside{
 
 @media (min-width: 630px){
     .main__carousel{
-        margin-top: 3vh;
-        width: 96.5vw;
+        margin-top: 0;
+        width: 100vw;
         height: 36vw;
         object-fit: scale-down;
     }

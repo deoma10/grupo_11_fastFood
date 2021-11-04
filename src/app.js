@@ -1,43 +1,19 @@
 const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 4000;
-
 const app = express();
+
+// Implementación de EJS
+const rutas = require('./router/index.routes')
+app.set('view engine', 'ejs');
+// app.use(express.static('public'));
+app.set('views', path.resolve(__dirname, './views'));
 
 const publicPath = path.resolve(__dirname, './public');
 app.use(express.static(publicPath));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html') );
-});
+app.use('/', rutas);
 
-app.post('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/index.html') );
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/login.html') );
-});
-
-app.get('/register', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/register.html') );
-});
-
-app.get('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html') );
-});
-
-app.post('/productDetail', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productDetail.html') );
-});
-
-app.get('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html') );
-});
-
-app.post('/productCart', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './views/productCart.html') );
-});
 
 app.listen(port, () => {
     console.log('Servidor corriendo en el puerto 4000');
