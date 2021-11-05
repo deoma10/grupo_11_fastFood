@@ -16,6 +16,14 @@ const controller = {
         res.render(path.resolve(__dirname, '..','views','products','productDetail'));
     },
 
+    getProductCreation: (req, res) => {
+        res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCreation'));
+    },
+
+    getProductMod: (req, res) => {
+        res.render(path.resolve(__dirname, '..', 'views', 'products', 'productMod'));
+    },
+
     getRegister: (req, res) => {
         res.render(path.resolve(__dirname, '..','views','users','register'))
     },

@@ -1,50 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <%- include('../partials/head')  %>
-<body>
-    <!-- Header -->
-    <%- include('../partials/header')  %>
-    <!-- Barra de navegación -->
-    <%- include('../partials/nav')  %>
-    <!-- Main Product Cart -->
-    <main class="productCart">
-        <section class="bar-menu">
-            <h3 class="menu">Resumen Pedido</h3>
-        </section>
+<html lang="es">
+<%- include('../partials/head') %>
 
-        <section class="products-resume">
-            <div class="product-only">
-                <img src="./img/burger-featured-2.png" alt="">
-                <div class="product-only-n">
-                    <p class="only-name">Red Pepper</p>
-                    <p class="only-price">$11.900</p>
-                    <p class="only-delete">Eliminar</p>
-                </div>
-            </div>
-        </section>
+    <body>
+        <!-- Header -->
+        <%- include('../partials/header') %>
+            <!-- Barra de navegación -->
+            <%- include('../partials/nav') %>
+                <!-- Main Product Cart -->
+                <main class="productCart">
+                    <section class="bar-menu">
+                        <h3 class="menu">Resumen Pedido</h3>
+                    </section>
 
-        <section class="total">
-            <div class="subtotal">
-                <p class="title">Subtotal</p>
-                <p class="same">11.900</p>
-            </div>
-            <div class="delivery">
-                <p class="title">Domicilio</p>
-                <p class="same">4.000</p>
-            </div>
-            <div class="total-include">
-                <p class="title">TOTAL</p>
-                <p class="same">15.900</p>
-            </div>
-            <div class="continue">
-                <p>realizar pedido</p>
-            </div>
+                    <section class="products-resume">
+                        <div class="product-only">
+                            <img src="./img/burger-featured-2.png" alt="">
+                            <div class="product-only-n">
+                                <p class="only-name">Red Pepper</p>
+                                <p class="only-price">$11.900</p>
+                                <p class="only-delete">Eliminar</p>
+                            </div>
+                        </div>
+                    </section>
 
-        </section>
-    </main>
+                    <section class="total">
+                        <div class="subtotal">
+                            <p class="title">Subtotal</p>
+                            <p class="same">11.900</p>
+                        </div>
+                        <div class="delivery">
+                            <p class="title">Domicilio</p>
+                            <p class="same">4.000</p>
+                        </div>
+                        <div class="total-include">
+                            <p class="title">TOTAL</p>
+                            <p class="same">15.900</p>
+                        </div>
+                        <div class="continue">
+                            <p>realizar pedido</p>
+                        </div>
 
-    <!--Footer-->
-    <%- include('../partials/footer')  %>
-</body>
+                    </section>
+                </main>
+
+                <!--Footer-->
+                <%- include('../partials/footer') %>
+    </body>
+
 </html>

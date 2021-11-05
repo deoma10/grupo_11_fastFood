@@ -20,6 +20,16 @@ router.get('/productDetail', controller.getProductDetail);
 router.post('/productDetail', controller.getProductDetail);
 
 
+router.get('/productCreation', controller.getProductCreation);
+
+router.post('/productCreation', controller.getProductCreation);
+
+
+router.get('/productMod', controller.getProductMod);
+
+router.post('/productMod', controller.getProductMod);
+
+
 router.get('/register', controller.getRegister);
 
 router.post('/register', controller.getRegister);

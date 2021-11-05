@@ -1,41 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<%- include('../partials/head') %>
 
-<head>
-    <%- include('../partials/head')  %>
-<body>
-    <!-- Header -->
-    <%- include('../partials/header')  %>
-    <!-- Barra de navegación -->
-    <%- include('../partials/nav')  %>
+    <body>
+        <!-- Header -->
+        <%- include('../partials/header') %>
+            <!-- Barra de navegación -->
+            <%- include('../partials/nav') %>
 
-    <!--Main-->
-    <main class="login">
-        <form class="login__form" action="/">
-            <h2 class="login__title">Formulario de login</h2>
-            <div class="login__form">
-                <input class="login__form--text" type="email" name="correo" placeholder="Correo" required>
-            </div>
-            <div class="login__form">
-                <input class="login__form--text" type="password" name="contraseña" placeholder="Contraseña" required>
-            </div>
-            <h4 class="login--recover">
-                <a href="#">
-                    ¿Olvidaste tu contraseña?
-                </a>
-            </h4>
-            <div class="login__form--button">
-                <input class="login--button" type="submit" value="Ingresar">
-                <a href="/register">
-                    <input class="login--button" type="button" value="Registrarse">
-                </a>
-            </div>
-        </form>
-    </main>
+                <!--Main-->
+                <main class="login">
+                    <article>
+                        <form class="login__form" action="/">
+                            <h2 class="login__title">Formulario de login</h2>
+                            <div class="login__form">
+                                <input class="login__form--text" type="email" name="correo" placeholder="Correo"
+                                    required>
+                            </div>
+                            <div class="login__form">
+                                <input class="login__form--text" type="password" name="contraseña"
+                                    placeholder="Contraseña" required>
+                            </div>
+                            <h4 class="login--recover">
+                                <a href="#">
+                                    ¿Olvidaste tu contraseña?
+                                </a>
+                            </h4>
+                            <div class="login__form--button">
+                                <input class="login--button" type="submit" value="Ingresar">
+                                <a href="/register">
+                                    <input class="login--button" type="button" value="Registrarse">
+                                </a>
+                            </div>
+                        </form>
+                    </article>
+                </main>
 
 
-     <!--Footer-->
-     <%- include('../partials/footer')  %>
-</body>
+                <!--Footer-->
+                <%- include('../partials/footer') %>
+    </body>
 
 </html>
