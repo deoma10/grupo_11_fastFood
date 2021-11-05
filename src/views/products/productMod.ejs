@@ -8,9 +8,35 @@
         <%- include('../partials/header') %>
             <!-- Barra de navegación -->
             <%- include('../partials/nav') %>
-            <main class="productMod">
+            <main class="productCreation">
                 <article class="form">
-                    
+                    <form action="productCreation" action="/productDetail">
+                        <h2 class="creation--title">Formulario de modificación de productos</h2>
+                        <div class="creation__form">
+                            <input class="creation__form--text" type="text" name="nombreProducto"
+                            placeholder="Nombre del producto" required minlength="4">
+                        </div>
+                        <div class="creation__form">
+                            <input class="creation__form--text" type="text" name="descripcion"
+                            placeholder="Descripción" required minlength="10">
+                        </div>
+                        <label class="creation--title">Imagen del producto</label>
+                        <div class="creation__form--img">
+                            <input class="creation__--img" type="file" name="img"
+                            accept=".jpg .png">
+                        </div>
+                        <div class="creation__form">
+                            <input class="creation__form--text" type="text" name="categoria"
+                            placeholder="Categoría" required minlength="5">
+                        </div>
+                        <div class="creation__form">
+                            <input class="creation__form--text" type="text" name="precio"
+                            placeholder="Precio" required minlength="4">
+                        </div>
+                        <div class="creation__form">
+                            <input class="creation__form--button" type="submit" value="Guardar Cambios">
+                        </div>
+                    </form>
                 </article>
             </main>
         <!--Footer-->

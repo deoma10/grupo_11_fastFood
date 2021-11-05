@@ -445,7 +445,10 @@ aside{
     padding: 20px;
 }
 
-.register__form--button,
+.register__form--button {
+    width: 20vw;
+}
+
 .register__form select,
 .register__form--text {
     width: 30vw;
@@ -723,5 +726,71 @@ aside{
 
 /*Product creation //////////////////////////////////////////////////////////////////////////////////////////////////// */
 .productCreation {
+    text-align: center;
     background-color: #949973;
+    padding: 4% 0;
+    font-size: 0.7em;
+}
+.productCreation .form {
+    width: 45%;
+    margin: auto;
+    background-color: #a8a69c;
+    border-radius: 3%;    
+    box-shadow: 3px 3px 13px 2px rgba(0,0,0,0.81);  
+    padding: 2%;
+}
+
+.creation--title {
+    padding-top: 20px;
+    font-size: 0.8em;
+}
+.creation__form {
+    padding: 20px;
+}
+
+.creation__form--img {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.5em;
+}
+
+.creation__form--button{
+    width: 60%;
+}
+
+.creation__form--text {
+    width: 90%;
+}
+
+@media (min-width: 400px) {
+    .productCreation {
+        font-size: 0.9em;
+    }
+    .creation--title {
+        font-size: 1em;
+    }
+    .creation__form--img {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 400px) {
+    .productCreation {
+        font-size: 1em;
+    }
+    .productCreation .form {
+        max-width: 500px;
+    }
+    .creation--title {
+        font-size: 1.1em;
+    }
+    .creation__form--img {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 1.1em;
+    }
 }
