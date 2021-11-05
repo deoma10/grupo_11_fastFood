@@ -58,7 +58,7 @@
 .nav{
     padding-left: 15px;
     height: 30px;
-    font-size: 14px;
+    font-size: 0.5em;
     background-color: #E04A01;
     display: flex;
     align-items: center;
@@ -78,6 +78,13 @@
 .nav__list li a{
     text-decoration: none;
     color: #000000;
+}
+
+@media (min-width: 320px) {
+    .nav{
+        font-size: 0.8em;
+        font-weight: 600;
+    }
 }
 
 @media (min-width: 630px) {
@@ -277,7 +284,7 @@ aside{
 .footer__social{
     margin-top: 45px;
     margin-left: 5%;
-    width: 100%;
+    width: 80%;
     height: 30px;
     color: white;
     font-size: larger;
@@ -347,6 +354,15 @@ aside{
 .login {
     text-align: center;
     background-color: #949973;
+    padding: 5% 0;
+}
+.login article {
+    width: 50%;
+    margin: auto;
+    padding: 0;
+    background-color: #a8a69c;
+    border-radius: 3%;
+    box-shadow: 3px 3px 13px 2px rgba(0,0,0,0.81);    
 }
 .login__title {
     text-align: center;
@@ -355,11 +371,16 @@ aside{
 }
 .login__form {
     text-align: center;
+    margin: auto;
     padding: 20px;
+}
+.login__form h2 {
+    font-size: 0.9em;
 }
 
 .login__form--text {
-    width: 60vw;
+    width: 30vw;
+    margin: auto;
 }
 .login--recover {
     margin-right: 30%;
@@ -380,6 +401,13 @@ aside{
     }
 }
 @media (min-width: 700px) {
+    .login article {
+        max-width: 500px;
+        
+    }
+    .login__form h2 {
+        font-size: 1.1em;
+    }
     .login__form--text {
         max-width: 500px;
     }
@@ -399,20 +427,30 @@ aside{
 .register {
     text-align: center;
     background-color: #949973;
+    padding: 3% 0;
+}
+.register .form{
+    width: 50%;
+    margin: auto;
+    background-color: #a8a69c;
+    border-radius: 3%;
+    box-shadow: 3px 3px 13px 2px rgba(0,0,0,0.81);  
 }
 
 .register__title {
     padding-top: 20px;
+    font-size: 0.8em;
 }
 .register__form {
     padding: 20px;
 }
-.register__form--text, .register__form--button {
-    width: 60vw;
+
+.register__form--button,
+.register__form select,
+.register__form--text {
+    width: 30vw;
 }
-.register__form select {
-    width: 60vw;
-}
+
 .register__form--radio {
     display: flex;
     flex-wrap: wrap;
@@ -429,6 +467,12 @@ aside{
     }
 }
 @media (min-width: 700px) {
+    .register .form{
+        max-width: 500px; 
+    }
+    .register__title {
+        font-size: 1.1em;
+    }
     .register__form--select, .register__form--text,
     .register__form--button {
         max-width: 500px;
@@ -457,7 +501,7 @@ aside{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 40px;
     background-color: #949973;
 }
@@ -675,4 +719,9 @@ aside{
         margin: auto;
         background-color: red;
     }
+}
+
+/*Product creation //////////////////////////////////////////////////////////////////////////////////////////////////// */
+.productCreation {
+    background-color: #949973;
 }
