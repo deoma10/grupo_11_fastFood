@@ -6,8 +6,11 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 /* INDEX.html//////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
+img{
+    width: 100%;
+}
 /* Header*/
+
 .header{
     height: 60px;
     background-color: #FFE459;
