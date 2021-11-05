@@ -2,50 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Fast Food</title>
-    <link rel="shortcut icon" href="./img/Favicon-Fast-Food.png">
-</head>
-
+    <%- include('../partials/head')  %>
 <body>
     <!-- Header -->
-    <header class="header">
-        <section class="header__burgermenu">
-            <i class="fas fa-bars"></i>
-        </section>
-        <section class="header__logo">
-            <a href="/"><img src="./img/Logo-Fast-Food.png" alt=""></a>
-        </section>
-        <section class="header__login">
-            <i class="fas fa-user"></i>
-            <a href="/login">Iniciar Sesión</i></a>
-            <i class="far fa-list-alt"></i>
-            <a href="/register">Registrarse</i></a>
-        </section>
-        <section class="header__shoppingcart">
-            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-        </section>
-        <section class="header__snetwork">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="far fa-envelope"></i></a>
-        </section>
-    </header>
+    <%- include('../partials/header')  %>
     <!-- Barra de navegación -->
-    <nav class="nav">
-        <ul class="nav__list">
-            <li><a href="#">Promociones</a></li>
-            <li><a href="/">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="/productDetail">Productos</a></li>
-            <li><a href="#">Tiendas</a></li>
-        </ul>
-    </nav>
+    <%- include('../partials/nav')  %>
 
     <!--Main-->
     <main class="register">
@@ -92,50 +54,7 @@
 
 
     <!--Footer-->
-
-    <footer class="footer">
-        <div class="footer__top">
-        </div>
-        <!-- Logo de la marca -->
-        <section class="footer__logo">
-            <a href="/"><img src="/img/Logo-Fast-Food-Footer.png" alt="Logo"></a>
-        </section>
-        <!-- Enlaces (Whatsapp, Contactos y legal)-->
-        <section class="footer__connections">
-
-            <div class="footer__connections--brand">
-                <h3>Fast Food</h3>
-                <ul>
-                    <li><a href="#">Servicio vía Whatsapp</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__connections--cities">
-                <h3>Contactos</h3>
-                <ul>
-                    <li><a href="#">Ciudad 1 número</a></li>
-                    <li><a href="#">Ciudad 2 número</a></li>
-                    <li><a href="#">Ciudad 3 número</a></li>
-                    <li><a href="#">Ciudad 4 número</a></li>
-                    <li><a href="#">Ciudad 5 número</a></li>
-                </ul>
-            </div>
-
-            <div class="footer__connections--legal">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#">Términos y condiciones</a></li>
-                    <li><a href="#">Política de privacidad</a></li>
-                </ul>
-            </div>
-
-        </section>
-        <!-- Enlaces a redes sociales-->
-        <section class="footer__social">
-                <p>Síguenos <i class="fab fa-facebook-square"></i> <i class="fab fa-instagram"></i> <i class="fab fa-twitter"></i></p>
-        </section>
-
-    </footer>
+    <%- include('../partials/footer')  %>
 </body>
 
 </html>
