@@ -6,7 +6,7 @@ const app = express();
 // Implementación de EJS
 const rutas = require('./router/index.routes')
 app.set('view engine', 'ejs');
-app.use(express.static(path.resolve(__dirname,  '../public')));
+app.use(express.static(path.resolve(__dirname,  '..', 'public')));
 
 app.set('views', path.resolve(__dirname, './views'));
 
