@@ -11,7 +11,7 @@ const controller = {
     getProductCart: (req, res) => {
         res.render(path.resolve(__dirname, '../views/products/productCart') );
     },
-    
+
     getProductDetail: (req, res) => {
         res.render(path.resolve(__dirname, '../views/products/productDetail'));
     },
