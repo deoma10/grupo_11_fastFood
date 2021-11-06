@@ -6,11 +6,11 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 /* INDEX.html//////////////////////////////////////////////////////////////////////////////////////////////////////// */
-img{
-    width: 100%;
-}
-/* Header*/
 
+/* Header*/
+body{
+    background-color: #f5f5f5;
+}
 .header{
     height: 60px;
     background-color: #FFE459;
@@ -92,7 +92,15 @@ img{
 
 @media (min-width: 630px) {
     .header{
+        height: 80px;
+        margin: 1.75vh 1vw;
+        border-radius: 6px;
+        text-align: center;
         justify-content: space-evenly;
+    }
+    .header__logo{
+        height: 73px;
+        width: 73px;
     }
     .header__burgermenu{
         display: none;
@@ -116,9 +124,10 @@ img{
         color: #835D3B;
     }
     .nav{
+        margin: 1.75vh 1vw;
+        border-radius: 6px;
         font-size: 15px;
         font-weight: 600;
-
     }
 }
 
@@ -129,12 +138,12 @@ img{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
     padding-bottom: 2vh;
     width: 100%;
 }
 .main__carousel{
-    margin-top: 2vh;
+    margin-top: 3vw;
     width: 94vw;
 }
 .main__carousel .main__carousel--pcimg1{
@@ -180,9 +189,10 @@ aside{
 @media (min-width: 630px){
     .main__carousel{
         margin-top: 0;
-        width: 100vw;
-        height: 36vw;
+        border-radius: 6px;
+        height: 34vw;
         object-fit: scale-down;
+        width: 96.5vw;
     }
     .main__carousel .main__carousel--pcimg1{
         display: block;
@@ -192,6 +202,7 @@ aside{
     }
     .main__carousel .main__carousel--pcimg1{
         width: 100%;
+        border-radius: 6px;
         height: auto;
       }
       @supports(object-fit: cover){
@@ -231,12 +242,12 @@ aside{
 
       aside h3{
         width: 100%;
-        margin: 2vw;
-        
+        padding: 2vw;
     }
 
 
 }
+
 /* Footer*/
 .footer{
     background-color:#B9CC33;
@@ -356,7 +367,7 @@ aside{
 /* Login ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .login {
     text-align: center;
-    background-color: #949973;
+    background-color: #f5f5f5;
     padding: 5% 0;
 }
 .login article {
@@ -365,12 +376,11 @@ aside{
     padding: 0;
     background-color: #a8a69c;
     border-radius: 3%;
-    box-shadow: 3px 3px 13px 2px rgba(0,0,0,0.81);    
+    box-shadow: 3px 3px 13px 2px rgba(0,0,0,0.81);
 }
 .login__title {
     text-align: center;
     padding-top: 20px;
-    
 }
 .login__form {
     text-align: center;
@@ -406,7 +416,6 @@ aside{
 @media (min-width: 700px) {
     .login article {
         max-width: 500px;
-        
     }
     .login__form h2 {
         font-size: 1.1em;
@@ -429,7 +438,7 @@ aside{
 /* Register */
 .register {
     text-align: center;
-    background-color: #949973;
+    background-color: #f5f5f5;
     padding: 3% 0;
 }
 .register .form{
@@ -494,7 +503,7 @@ aside{
 
  /* ProductCart.html/////////////////////////////////////////////////////////////////////////////////////////////// */
 .productCart{
-    background-color: #949973;
+    background-color: #f5f5f5;
     padding-bottom: 30px;
 }
 
@@ -509,7 +518,7 @@ aside{
     align-items: center;
     width: 100%;
     height: 40px;
-    background-color: #949973;
+    background-color: #f5f5f5;
 }
 
 .productCart .products-resume{
@@ -567,7 +576,6 @@ aside{
 }
 
 .productCart .total .continue p{
-    
     text-align: center;
     background-color: #FFCFA5;
     align-items: center;
@@ -601,7 +609,7 @@ aside{
   }
 
   .productDetail{
-      background-color: #949973;
+      background-color: #f5f5f5;
       padding-top: 10px;
   }
   .productDetail .products{
@@ -648,9 +656,9 @@ aside{
 
   @media screen and (min-width: 481px){
     .productDetail{
-        background-color: #949973;
+        background-color: #f5f5f5;
     }
-      
+
     .productDetail article {
         display: flex;
         width: 75vw;
@@ -660,13 +668,13 @@ aside{
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
-    
+
     .productDetail article .product-menu{
         margin: 20px auto;
         display: flex;
         flex-direction: row;
     }
-    
+
     .productDetail article .product-menu div .product-name{
         font-size: 1.3em;
         text-align: center;
@@ -674,7 +682,7 @@ aside{
         align-content: center;
         height: 50%;
     }
-    
+
     .productDetail article .product-menu div .product-description{
         display: flex;
         flex-direction: column;
@@ -730,7 +738,7 @@ aside{
 /*Product creation //////////////////////////////////////////////////////////////////////////////////////////////////// */
 .productCreation {
     text-align: center;
-    background-color: #949973;
+    background-color: #f5f5f5;
     padding: 4% 0;
     font-size: 0.7em;
 }
