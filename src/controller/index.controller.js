@@ -1,5 +1,8 @@
 // const model = require("../model/modelo");
 const path = require("path");
+const fs = require('fs')
+const productsFilePath = path.resolve(__dirname, '../data/products.json');
+const dataBase = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 
 // controlador
@@ -13,7 +16,16 @@ const controller = {
     },
 
     getProductDetail: (req, res) => {
-        res.render(path.resolve(__dirname, '..','views','products','productDetail'));
+        let productId = req.params.id;
+        let pId = parseInt(productId)
+        pId += 1;
+        console.log(dataBase[0].price)
+        if(pId == dataBase[pId]){
+            res.render(path.resolve(__dirname, '..','views','products','productDetail'), {dataBase: dataBase});
+        }else {
+            res.render(path.resolve(__dirname, '..','views','products','index'))
+        }
+        
     },
 
     getProductCreation: (req, res) => {

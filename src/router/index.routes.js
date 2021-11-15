@@ -15,9 +15,9 @@ router.get('/productCart', controller.getProductCart);
 router.post('/productCart', controller.getProductCart);
 
 
-router.get('/productDetail', controller.getProductDetail);
+router.get('/productDetail/:id', controller.getProductDetail);
 
-router.post('/productDetail', controller.getProductDetail);
+router.post('/productDetail/:id', controller.getProductDetail);
 
 
 router.get('/productCreation', controller.getProductCreation);
