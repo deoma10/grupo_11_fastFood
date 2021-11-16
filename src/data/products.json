@@ -1,9 +1,45 @@
 [
     {
-        "id": 3,
-        "name": "Red Peper",
-        "description": "Pan brioche, cebolla caramelizada, queso chedar, lechuga romana, trozos de tocineta, tomate, trozos de pimenton finamente picado",
-        "price": 11900,
+        "id": 1,
+        "name": "Crispy Onion",
+        "description": "Pan artesanal, salsa de la casa y bbq, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano, tocineta y cebolla crispy",
+        "price": 25900,
+        "image": "/public/img/burger-featured-1.png"
+    },
+    {
+        "id": 2,
+        "name": "Red Pepper",
+        "description": "Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano y pimentones rojos caramelizados",
+        "price": 25900,
         "image": "/public/img/burger-featured-2.png"
+    },
+    {
+        "id": 3,
+        "name": "Choriburger",
+        "description": "Pan artesanal, salsa de la casa y chipotle, lechuga, tomate, 150gr. de carne de hamburguesa seleccionada, queso americano y chorizo argentino, bañado en chimichurri",
+        "price": 25900,
+        "image": "/public/img/burger-featured-3.png"
+    },
+    {
+        "id": 4,
+        "name": "DR Pepper Jacks",
+        "description": "Pan artesanal, lechuga, 150 gramos de certified angus beef, cubiertos de queso pepper jack, cebolla puerro crocante y nuestra salsa exclusiva DR PEPPER, incluye papas fritas",
+        "price": 27500,
+        "image": "/public/img/burger-featured-4.png"
+    },
+    {
+        "id": 5,
+        "name": "La Nativa",
+        "description": "Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso costeño asado y cebolla caramelizada",
+        "price": 24900,
+        "image": "/public/img/burger-featured-5.png"
+    },
+    {
+        "id": 6,
+        "name": "Veggie Burger",
+        "description": "Pan artesanal, aderezo de la casa, lechuga, tomate, cebolla y 150gr. de nuestra deliciosa croqueta de garbanzos",
+        "price": 18900,
+        "image": "/public/img/burger-featured-6.png"
     }
+
 ]
