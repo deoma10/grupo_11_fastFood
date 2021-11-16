@@ -705,7 +705,7 @@ aside{
         font-size: 1.3em;
         text-align: center;
         padding-top: 10%;
-        padding-bottom: 40px;
+        /* padding-bottom: 40px; */
         align-content: center;
         height: 50%;
     }
