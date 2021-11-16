@@ -371,7 +371,7 @@ aside{
     padding: 5% 0;
 }
 .login article {
-    width: 50%;
+    width: 85%;
     margin: auto;
     padding: 0;
     background-color: #a8a69c;
@@ -384,16 +384,19 @@ aside{
 }
 .login__form {
     text-align: center;
-    margin: auto;
     padding: 20px;
+    width: 100%;
 }
 .login__form h2 {
     font-size: 0.9em;
 }
 
 .login__form--text {
-    width: 30vw;
+    width: 100%;
     margin: auto;
+}
+.login__form--button {
+    width: 100%;
 }
 .login--recover {
     margin-right: 30%;
@@ -408,9 +411,16 @@ aside{
     margin-bottom: 50px;
 }
 
+.login__form--text::placeholder {
+    font-size: 0.7em;
+}
+
 @media (min-width: 346px) {
     .login--recover {
         margin-left: 10%;
+    }
+    .login__form--text::placeholder {
+        font-size: 0.9em;
     }
 }
 @media (min-width: 700px) {
@@ -433,6 +443,9 @@ aside{
     .login__form--button a {
         margin-left: 10%
     }
+    .login__form--text::placeholder {
+        font-size: 1.1em;
+    }
 }
 
 /* Register */
@@ -442,7 +455,7 @@ aside{
     padding: 3% 0;
 }
 .register .form{
-    width: 50%;
+    width: 85%;
     margin: auto;
     background-color: #a8a69c;
     border-radius: 3%;
@@ -463,7 +476,7 @@ aside{
 
 .register__form select,
 .register__form--text {
-    width: 30vw;
+    width: 100%;
 }
 
 .register__form--radio {
@@ -476,9 +489,19 @@ aside{
 .register__form--radio p {
     font-size: 0.5em;
 }
+
+.register__form--text::placeholder {
+    font-size: 0.7em;
+}
 @media (min-width: 420px) {
+    .register .form{
+        max-width: 500px; 
+    }
     .register__form--radio p {
         font-size: 0.6em;
+    }
+    .register__form--text::placeholder {
+        font-size: 0.9em;
     }
 }
 @media (min-width: 700px) {
@@ -497,6 +520,9 @@ aside{
     }
     .register__form--radio p {
         font-size: 0.9em;
+    }
+    .register__form--text::placeholder {
+        font-size: 1.1em;
     }
 }
 
@@ -743,7 +769,7 @@ aside{
     font-size: 0.7em;
 }
 .productCreation .form {
-    width: 45%;
+    width: 85%;
     margin: auto;
     background-color: #a8a69c;
     border-radius: 3%;    
@@ -757,6 +783,7 @@ aside{
 }
 .creation__form {
     padding: 20px;
+    width: 100%;
 }
 
 .creation__form--img {
@@ -764,7 +791,7 @@ aside{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    font-size: 0.5em;
+    font-size: 0.7em;
 }
 
 .creation__form--button{
@@ -775,7 +802,14 @@ aside{
     width: 90%;
 }
 
-@media (min-width: 400px) {
+.creation__form::placeholder {
+    font-size: 0.6em;
+}
+
+@media (min-width: 340px) {
+    .productCreation .form {
+        max-width: 500px;
+    }
     .productCreation {
         font-size: 0.9em;
     }
@@ -783,13 +817,16 @@ aside{
         font-size: 1em;
     }
     .creation__form--img {
-        font-size: 0.7em;
+        font-size: 0.8em;
+    }
+    .creation__form::placeholder {
+        font-size: 0.9em;
     }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 700px) {
     .productCreation {
-        font-size: 1em;
+        font-size: 1.1em;
     }
     .productCreation .form {
         max-width: 500px;
@@ -802,6 +839,9 @@ aside{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        font-size: 1.1em;
+        font-size: 1em;
     }
+    .creation__form::placeholder {
+    font-size: 1.1em;
+}
 }
