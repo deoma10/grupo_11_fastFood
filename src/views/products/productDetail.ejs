@@ -11,20 +11,15 @@
                 <main class="productDetail">
                     <article class="products">
                         <div class="product-menu">
-                            <img src=".\img\burger-featured-2.png" alt="">
+                            <img src="../img/<%= dataBase.image %>" alt="">
                             <div>
-                                <div class="product-description">
-                                    <% if(dataBase.id != null){%>
-
-                                    <h4 class="product-name">Burguer Red Pepper</h4>
-                                    <p class="product-specific">Pan brioche, cebolla caramelizada, queso chedar, lechuga
-                                        romana, trozos de tocineta, tomate,
-                                        trozos de pimenton finamente picado</p>
+                                <div class="product-description">                                  
+                                    <h4 class="product-name">Burguer <%= dataBase.name %></h4>
+                                    <p class="product-specific"><%= dataBase.description %></p>
                                 </div>
                                 <div class="product-n">
-                                    <p class="product-price">$11.900</p>
-                                    <p class="product-add"> <a href="/productCart"><i
-                                                class="fas fa-shopping-cart"></i>Agregar</a></p>
+                                    <p class="product-price"><%= dataBase.price %> </p>
+                                    <p class="product-add"> <a href="/productCart"><i class="fas fa-shopping-cart"></i>Agregar</a></p>
                                 </div>
                             </div>
                         </div>

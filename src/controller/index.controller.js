@@ -17,12 +17,11 @@ const controller = {
     getProductDetail: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
-        pId += 1;
-        console.log(dataBase[0].price)
-        if(pId == dataBase[pId]){
-            res.render(path.resolve(__dirname, '..','views','products','productDetail'), {dataBase: dataBase});
+        if(dataBase[pId-1] != null){
+            num = pId -1;
+            res.render(path.resolve(__dirname, '..','views','products','productDetail'), {dataBase: dataBase[num]});
         }else {
-            res.render(path.resolve(__dirname, '..','views','products','index'))
+            res.render(path.resolve(__dirname, '..','views','products','error'))
         }
         
     },

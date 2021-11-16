@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+<<<<<<< HEAD
         "name": "Crispy Onion",
         "description": "Pan artesanal, salsa de la casa y bbq, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano, tocineta y cebolla crispy",
         "price": 25900,
@@ -40,6 +41,33 @@
         "description": "Pan artesanal, aderezo de la casa, lechuga, tomate, cebolla y 150gr. de nuestra deliciosa croqueta de garbanzos",
         "price": 18900,
         "image": "/public/img/burger-featured-6.png"
+=======
+        "name": "Red Peper",
+        "description": "Pan brioche, cebolla caramelizada, queso chedar, lechuga romana, trozos de tocineta, tomate, trozos de pimenton finamente picado",
+        "price": 11900,
+        "image": "burger-featured-2.png"
+    },
+    {
+        "id": 2,
+        "name": "Choriburger",
+        "description": "Puede que ponga una descripcion detallada de lo que ahi estan viendo, pero no necesita explicacion",
+        "price": 15000,
+        "image": "burger-featured-3.png"
+    },
+    {
+        "id": 3,
+        "name": "Peper Jacky",
+        "description": "Creo que se llama peper jacky pero para todo lo demas existe master card xd",
+        "price": 13500,
+        "image": "burger-featured-4.png"
+    },
+    {
+        "id": 4,
+        "name": "Red Peper",
+        "description": "se me acabo la parla .jpg",
+        "price": 14000,
+        "image": "burger-featured-5.png"
+>>>>>>> 082bd778706b1cde3eb750ccbf2574e8663e01da
     }
 
 ]
