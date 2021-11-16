@@ -4,6 +4,6 @@
         "name": "Red Peper",
         "description": "Pan brioche, cebolla caramelizada, queso chedar, lechuga romana, trozos de tocineta, tomate, trozos de pimenton finamente picado",
         "price": 11900,
-        "image": "/public/img/burger-featured-2.png"
+        "image": "burger-featured-2.png"
     }
 ]
