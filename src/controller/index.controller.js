@@ -6,7 +6,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const newID = () => {
     let last = 0;
-    dataBase.forEach(product => {
+    products.forEach(product => {
         if(product.id > last) {
             last = product.id;
         };
