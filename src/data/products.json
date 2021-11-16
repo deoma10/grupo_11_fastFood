@@ -1,73 +1,45 @@
 [
     {
         "id": 1,
-<<<<<<< HEAD
         "name": "Crispy Onion",
         "description": "Pan artesanal, salsa de la casa y bbq, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano, tocineta y cebolla crispy",
         "price": 25900,
-        "image": "/public/img/burger-featured-1.png"
+        "image": "burger-featured-1.png"
     },
     {
         "id": 2,
         "name": "Red Pepper",
         "description": "Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano y pimentones rojos caramelizados",
         "price": 25900,
-        "image": "/public/img/burger-featured-2.png"
+        "image": "burger-featured-2.png"
     },
     {
         "id": 3,
         "name": "Choriburger",
         "description": "Pan artesanal, salsa de la casa y chipotle, lechuga, tomate, 150gr. de carne de hamburguesa seleccionada, queso americano y chorizo argentino, bañado en chimichurri",
         "price": 25900,
-        "image": "/public/img/burger-featured-3.png"
+        "image": "burger-featured-3.png"
     },
     {
         "id": 4,
         "name": "DR Pepper Jacks",
         "description": "Pan artesanal, lechuga, 150 gramos de certified angus beef, cubiertos de queso pepper jack, cebolla puerro crocante y nuestra salsa exclusiva DR PEPPER, incluye papas fritas",
         "price": 27500,
-        "image": "/public/img/burger-featured-4.png"
+        "image": "burger-featured-4.png"
     },
     {
         "id": 5,
         "name": "La Nativa",
         "description": "Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso costeño asado y cebolla caramelizada",
         "price": 24900,
-        "image": "/public/img/burger-featured-5.png"
+        "image": "burger-featured-5.png"
     },
     {
         "id": 6,
         "name": "Veggie Burger",
         "description": "Pan artesanal, aderezo de la casa, lechuga, tomate, cebolla y 150gr. de nuestra deliciosa croqueta de garbanzos",
         "price": 18900,
-        "image": "/public/img/burger-featured-6.png"
-=======
-        "name": "Red Peper",
-        "description": "Pan brioche, cebolla caramelizada, queso chedar, lechuga romana, trozos de tocineta, tomate, trozos de pimenton finamente picado",
-        "price": 11900,
-        "image": "burger-featured-2.png"
-    },
-    {
-        "id": 2,
-        "name": "Choriburger",
-        "description": "Puede que ponga una descripcion detallada de lo que ahi estan viendo, pero no necesita explicacion",
-        "price": 15000,
-        "image": "burger-featured-3.png"
-    },
-    {
-        "id": 3,
-        "name": "Peper Jacky",
-        "description": "Creo que se llama peper jacky pero para todo lo demas existe master card xd",
-        "price": 13500,
-        "image": "burger-featured-4.png"
-    },
-    {
-        "id": 4,
-        "name": "Red Peper",
-        "description": "se me acabo la parla .jpg",
-        "price": 14000,
-        "image": "burger-featured-5.png"
->>>>>>> 082bd778706b1cde3eb750ccbf2574e8663e01da
+        "image": "burger-featured-6.png"
     }
 
 ]
