@@ -1,7 +1,6 @@
 // const model = require("../model/modelo");
 const path = require("path");
 
-
 // controlador
 const controller = {
     getIndex: (req,res) => {
