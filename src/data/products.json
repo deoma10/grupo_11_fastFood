@@ -1,9 +1,16 @@
 [
     {
-        "id": 3,
+        "id": 1,
         "name": "Red Peper",
         "description": "Pan brioche, cebolla caramelizada, queso chedar, lechuga romana, trozos de tocineta, tomate, trozos de pimenton finamente picado",
         "price": 11900,
-        "image": "burger-featured-2.png"
+        "productImage": "burger-featured-2.png"
+    },
+    {
+        "id": 2,
+        "name": "hamburger",
+        "description": "Pan brioche, aros de cebolla apanada, queso chedar, queso mozzarella, lechuga romana, trozos de tocineta, tomate.",
+        "price": "12000",
+        "productImage": "productImage-1637079442716.png"
     }
 ]
