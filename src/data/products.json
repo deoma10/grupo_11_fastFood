@@ -1,9 +1,31 @@
 [
     {
-        "id": 3,
+        "id": 1,
         "name": "Red Peper",
         "description": "Pan brioche, cebolla caramelizada, queso chedar, lechuga romana, trozos de tocineta, tomate, trozos de pimenton finamente picado",
         "price": 11900,
         "image": "burger-featured-2.png"
+    },
+    {
+        "id": 2,
+        "name": "Choriburger",
+        "description": "Puede que ponga una descripcion detallada de lo que ahi estan viendo, pero no necesita explicacion",
+        "price": 15000,
+        "image": "burger-featured-3.png"
+    },
+    {
+        "id": 3,
+        "name": "Peper Jacky",
+        "description": "Creo que se llama peper jacky pero para todo lo demas existe master card xd",
+        "price": 13500,
+        "image": "burger-featured-4.png"
+    },
+    {
+        "id": 4,
+        "name": "Red Peper",
+        "description": "se me acabo la parla .jpg",
+        "price": 14000,
+        "image": "burger-featured-5.png"
     }
+
 ]
