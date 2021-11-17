@@ -27,13 +27,13 @@ const controller = {
     getProductDetail: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
-        if(products[pId-1] != null){
+        
+         if(products[pId-1] != null){
             num = pId -1;
             res.render(path.resolve(__dirname, '..','views','products','productDetail'), {products: products[num]});
         }else {
             res.render(path.resolve(__dirname, '..','views','products','error'))
         }
-        
     },
 
     getProductCreation: (req, res) => {
