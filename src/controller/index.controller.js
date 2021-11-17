@@ -1,6 +1,7 @@
 // const model = require("../model/modelo");
 const path = require("path");
 const fs = require('fs');
+const { parse } = require("path");
 const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -27,11 +28,12 @@ const controller = {
     getProductDetail: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
-        if (products[pId - 1] != null) {
-            num = pId - 1;
-            res.render(path.resolve(__dirname, '..', 'views', 'products', 'productDetail'), { products: products[num] });
-        } else {
-            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'))
+        
+         if(products[pId-1] != null){
+            num = pId -1;
+            res.render(path.resolve(__dirname, '..','views','products','productDetail'), {products: products[num]});
+        }else {
+            res.render(path.resolve(__dirname, '..','views','products','error'))
         }
     },
 
@@ -66,30 +68,39 @@ const controller = {
     },
 
     getProductMod: (req, res) => {
-        res.render(path.resolve(__dirname, '..', 'views', 'products', 'productMod'));
+        let productId = req.params.id;
+        let pId = parseInt(productId)
+        
+         if(products[pId-1] != null){
+            num = pId -1;
+            res.render(path.resolve(__dirname, '..','views','products','productMod'), {product: products[num]});
+        }else {
+            res.render(path.resolve(__dirname, '..','views','products','error'))
+        }
     },
 
     editProduct: (req, res) => {
         const file = req.file;
-        let product = {};
-        const productoEditado = product.filter(item => item.id != req.params.id);
+        let asignaId = parseInt(req.params.id);
+        let productos = products.filter(item => item.id != req.params.id);
+        let productoEditado = products.filter(item => item.id == parseInt(req.params.id));
         if (!file) {
-            product = {
-                id: newID(),
+            productoEditado = {
+                id: asignaId,
                 ...req.body,
-                productImage: 'default-image.png'
+                productImage: productoEditado.productImage
             }
         } else {
-            product = {
-                id: newID(),
+            productoEditado = {
+                id: asignaId,
                 ...req.body,
                 productImage: req.file.filename
             }
         };
         //Guardar producto en el array de productos
-        productoEditado.push(product);
+        productos.push(productoEditado);
 
-        let jsonProducts = JSON.stringify(productoEditado, null, 4);
+        let jsonProducts = JSON.stringify(productos, null, 4);
         fs.writeFileSync(productsFilePath, jsonProducts);
 
         res.redirect('/')

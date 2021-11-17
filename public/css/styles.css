@@ -662,7 +662,13 @@ aside{
         background-color: #FFCFA5;
         border-right: 1px solid #949973;
         text-align: center;
+        
   }
+
+  .productDetail article div .product-n .product-price a{
+    text-decoration: none;
+    color: #000000;
+}
 
   .productDetail .products .product-menu div .product-n .product-add{
         width: 50%;
@@ -748,7 +754,13 @@ aside{
         width: 100%;
         height: 100%;
         padding: 15px;
-        text-align: center;
+        text-align: center;    
+    }
+
+    .productDetail article div .product-n .product-price a{
+        text-decoration: none;
+        color: #000000;
+        
     }
     
     .productDetail article div .product-n .product-add{
@@ -758,7 +770,6 @@ aside{
         height: 100%;
         text-align: center;
         margin: auto;
-        background-color: red;
     }
 }
 

@@ -10,27 +10,27 @@
             <%- include('../partials/nav') %>
             <main class="productCreation">
                 <article class="form">
-                    <form action="/" method="POST" enctype="multipart/form-data">
-                        <h2 class="creation--title">Formulario de creación de productos</h2>
+                    <form action="/productMod/<%= product.id %> ?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <h2 class="creation--title">Formulario de modificación de productos</h2>
                         <div class="creation__form">
                             <input class="creation__form--text" type="text" name="name"
-                                placeholder="Nombre producto" required minlength="4">
+                                placeholder="Nombre producto" required minlength="4" value="<%= product.name %> ">
                         </div>                                             
                         <label class="creation--title">Descripción</label>
                         <div class="creation__form">
                             <textarea class="creation__form--text" name="description" cols="30" rows="10"
-                            minlength="10" required></textarea>
+                            minlength="10" required><%= product.description %> </textarea>
                         </div>
                         <div class="creation__form">
                             <input class="creation__form--text" type="text" name="price" placeholder="Precio"
-                                required minlength="4">
-                        </div>                            
+                                required minlength="4" value="<%= product.price %> ">
+                        </div>
                         <div class="creation__form--img">
                             <label class="creation--title">Imagen del producto</label>
                             <input class="creation__--img" type="file" name="productImage" accept=".jpg .png">
                         </div>
                         <div class="creation__form">
-                            <input class="creation__form--button" type="submit" value="Crear producto">
+                            <input class="creation__form--button" type="submit" value="Modificar producto">
                         </div>
                     </form>
                 </article>
