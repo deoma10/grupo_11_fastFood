@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+    <!-- Header -->
+    <%- include('../partials/header') %>
+    <!-- Barra de navegación -->
+    <%- include('../partials/nav') %>
+    <main class="users">
+        <table class="users__table">
+            <tr class="users--title">
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            <% users.forEach(user => { %>
+                <tr class="users--item">
+                    <td><%= user.nombre %> </td>
+                    <td><%= user.apellido %> </td>
+                    <td><%= user.correo %> </td>
+                    <td><button>Editar</button></td>
+                    <td><button>Eliminar</button></td>
+                </tr>
+            <% }) %>            
+        </table>
+    </main>
+    <!--Footer-->
+    <%- include('../partials/footer') %>
+    </body>
+
+</html>
