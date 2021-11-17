@@ -11,7 +11,7 @@
         "name": "Red Pepper",
         "description": "Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano y pimentones rojos caramelizados",
         "price": 25900,
-        "pproductImage": "burger-featured-2.png"
+        "productImage": "burger-featured-2.png"
     },
     {
         "id": 3,
@@ -39,7 +39,7 @@
         "name": "Veggie Burger",
         "description": "Pan artesanal, aderezo de la casa, lechuga, tomate, cebolla y 150gr. de nuestra deliciosa croqueta de garbanzos",
         "price": 18900,
-        "pproductImage": "burger-featured-6.png"
+        "productImage": "burger-featured-6.png"
     },
     {
         "id": 7,
