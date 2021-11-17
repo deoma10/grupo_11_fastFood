@@ -33,7 +33,6 @@ const controller = {
         }else {
             res.render(path.resolve(__dirname, '..','views','products','error'))
         }
-        
     },
 
     getProductCreation: (req, res) => {
