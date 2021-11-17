@@ -38,9 +38,9 @@ router.get('/productCreation', controller.getProductCreation);
 router.post('/', upload.single('productImage'), controller.createProduct);
 
 
-router.get('/productMod', controller.getProductMod);
+router.get('/productMod/:id', controller.getProductMod);
 
-// router.post('/productMod', controller.getProductMod);
+router.put('/productMod/:id', upload.single('productImage'), controller.editProduct);
 
 
 router.get('/register', controller.getRegister);

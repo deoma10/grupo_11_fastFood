@@ -47,5 +47,12 @@
         "description": "Deliciosa hamburguesa con pan artesanal, queso mozzarella, 1/2 libra de carne a la parrilla, tomate y lechuga",
         "price": "8000",
         "productImage": "productImage-1637083523718.jpg"
+    },
+    {
+        "id": 8,
+        "name": "perro caliente",
+        "description": "djfhsoghsñovasfbd",
+        "price": "1000",
+        "productImage": "productImage-1637123645452.jpeg"
     }
 ]

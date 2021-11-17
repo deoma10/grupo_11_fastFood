@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 4000;
 const app = express();
+const methodOverride = require('method-override');
 
 // Implementación de EJS
 const rutas = require('./router/index.routes')
@@ -10,9 +11,8 @@ app.use(express.static(path.resolve(__dirname,  '..', 'public')));
 
 app.set('views', path.resolve(__dirname, './views'));
 
-// Lineas 13 y 14 se pueden borrar, hay que probar que todo funcione , SE REEMPLAZO POR LA LINEA 9
-// const publicPath = path.resolve(__dirname, './public');
-// app.use(express.static(publicPath));
+//Metodo para Edit y delete
+app.use(methodOverride('_method'));
 
 app.use('/', rutas);
 

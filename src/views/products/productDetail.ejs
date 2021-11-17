@@ -13,13 +13,15 @@
                         <div class="product-menu">
                             <img src="../img/Products/<%= products.productImage %>" alt="">
                             <div>
-                                <div class="product-description">
-                                    <h4 class="product-name">Burguer <%= products.name %></h4>
+                                <div class="product-description">                                  
+                                    <h4 class="product-name"><%= products.name %></h4>
                                     <p class="product-specific"><%= products.description %></p>
                                 </div>
                                 <div class="product-n">
                                     <p class="product-price"><%= products.price %> </p>
                                     <p class="product-add"> <a href="/productCart"><i class="fas fa-shopping-cart"></i>Agregar</a></p>
+                                    <p class="product-price"> <a href="/productMod/<%= products.id %>" > Modificar </a></p>
+                                    <p class="product-price"> <a href="/productMod/<%= products.id %>" > Eliminar </a></p>
                                 </div>
                             </div>
                         </div>
