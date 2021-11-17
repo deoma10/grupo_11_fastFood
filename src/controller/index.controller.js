@@ -7,7 +7,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const newID = () => {
     let last = 0;
     products.forEach(product => {
-        if(product.id > last) {
+        if (product.id > last) {
             last = product.id;
         };
     });
@@ -16,22 +16,22 @@ const newID = () => {
 
 // controlador
 const controller = {
-    getIndex: (req,res) => {
-        res.render(path.resolve(__dirname, '..','views','products','index'), {products});
+    getIndex: (req, res) => {
+        res.render(path.resolve(__dirname, '..', 'views', 'products', 'index'), { products });
     },
 
     getProductCart: (req, res) => {
-        res.render(path.resolve(__dirname, '..','views','products','productCart'));
+        res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCart'));
     },
 
     getProductDetail: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
-        if(products[pId-1] != null){
-            num = pId -1;
-            res.render(path.resolve(__dirname, '..','views','products','productDetail'), {products: products[num]});
-        }else {
-            res.render(path.resolve(__dirname, '..','views','products','error'))
+        if (products[pId - 1] != null) {
+            num = pId - 1;
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'productDetail'), { products: products[num] });
+        } else {
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'))
         }
     },
 
@@ -42,12 +42,12 @@ const controller = {
     createProduct: (req, res) => {
         const file = req.file;
         let product = {};
-        if(!file) {
+        if (!file) {
             product = {
                 id: newID(),
                 ...req.body,
                 productImage: 'default-image.png'
-            }            
+            }
         } else {
             product = {
                 id: newID(),
@@ -69,12 +69,38 @@ const controller = {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'productMod'));
     },
 
-    getRegister: (req, res) => {
-        res.render(path.resolve(__dirname, '..','views','users','register'))
+    editProduct: (req, res) => {
+        const file = req.file;
+        let product = {};
+        const productoEditado = product.filter(item => item.id != req.params.id);
+        if (!file) {
+            product = {
+                id: newID(),
+                ...req.body,
+                productImage: 'default-image.png'
+            }
+        } else {
+            product = {
+                id: newID(),
+                ...req.body,
+                productImage: req.file.filename
+            }
+        };
+        //Guardar producto en el array de productos
+        productoEditado.push(product);
+
+        let jsonProducts = JSON.stringify(productoEditado, null, 4);
+        fs.writeFileSync(productsFilePath, jsonProducts);
+
+        res.redirect('/')
     },
 
-    getLogin:(req, res) => {
-        res.render(path.resolve(__dirname, '..','views','users','login'));
+    getRegister: (req, res) => {
+        res.render(path.resolve(__dirname, '..', 'views', 'users', 'register'))
+    },
+
+    getLogin: (req, res) => {
+        res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'));
     }
 }
 

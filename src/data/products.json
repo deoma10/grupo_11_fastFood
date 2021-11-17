@@ -47,5 +47,12 @@
         "description": "Deliciosa hamburguesa con pan artesanal, queso mozzarella, 1/2 libra de carne a la parrilla, tomate y lechuga",
         "price": "8000",
         "productImage": "productImage-1637083523718.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Bacon Burger",
+        "description": "Hamburguesa con rodajas de tocino, queso cheddar, lechuga, tomate en rodajas y salsa al gusto.",
+        "price": "13500",
+        "productImage": "productImage-1637119776945.jpeg"
     }
 ]

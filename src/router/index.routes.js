@@ -40,7 +40,7 @@ router.post('/', upload.single('productImage'), controller.createProduct);
 
 router.get('/productMod', controller.getProductMod);
 
-// router.post('/productMod', controller.getProductMod);
+router.post('/productMod', upload.single(), controller.getProductMod);
 
 
 router.get('/register', controller.getRegister);
