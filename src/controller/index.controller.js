@@ -29,12 +29,12 @@ const controller = {
         let productId = req.params.id;
         let pId = parseInt(productId)
         
-         if(products[pId-1] != null){
-            num = pId -1;
-            res.render(path.resolve(__dirname, '..','views','products','productDetail'), {products: products[num]});
+        products.filter(k => {
+            if(k.id == pId){
+            return    res.render(path.resolve(__dirname, '..','views','products','productDetail'), {products: k.id});
         }else {
-            res.render(path.resolve(__dirname, '..','views','products','error'))
-        }
+            return res.render(path.resolve(__dirname, '..','views','products','error'))
+        }            
     },
 
     getProductCreation: (req, res) => {
