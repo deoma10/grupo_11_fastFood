@@ -1,0 +1,19 @@
+[
+    {
+        "tDoc": "CC",
+        "numDoc": 12345,
+        "nombre": "Sergio",
+        "apellido": "Arboleda",
+        "correo": "sergio@gmail.com",
+        "pass": "sergio123"
+    },
+    {
+        "tDoc": "CE",
+        "numDoc": 519534,
+        "nombre": "Matt",
+        "apellido": "Simpson",
+        "correo": "matt12@outlook.com",
+        "pass": "simpsonM"
+    }
+
+]

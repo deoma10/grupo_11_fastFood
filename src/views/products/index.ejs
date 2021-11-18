@@ -23,12 +23,11 @@
 
                         <div class="main__featured-container">
                             <h3 class="main__featured-container--tittle">Escoge tu hambuguesa</h3>
-                            <% products.forEach(item => { %>
-
+                            <% products.forEach(item=> { %>
                                 <article class="main__featured-article">
                                     <img src="/img/Products/<%= item.productImage %> " alt="Hamburguesa-destacada-1">
-
-                                    <form action="/productDetail/<%= item.id %>" method="get" class="main-login__form--container">
+                                    <form action="/productDetail/<%= item.id %>" method="get"
+                                        class="main-login__form--container">
                                         <div class="main-login__form--button">
                                             <label for="button"></label>
                                             <button type="submit" name="button">
@@ -36,7 +35,6 @@
                                             </button>
                                         </div>
                                     </form>
-
                                     <form action="/productCart" method="get" class="main-login__form--container">
                                         <div class="main-login__form--button">
                                             <label for="button"></label>
@@ -51,6 +49,7 @@
 
                         </div>
 
+                        <!-- Aside costado derecho -->
                         <aside>
                             <h3>Tu orden</h3>
                         </aside>

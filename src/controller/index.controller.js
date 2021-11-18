@@ -4,6 +4,8 @@ const fs = require('fs');
 const { parse } = require("path");
 const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const usersFilePath = path.resolve(__dirname, '../data/users.json');
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const newID = () => {
     let last = 0;
@@ -115,7 +117,11 @@ const controller = {
 
     getLogin: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'));
-    }
+    },
+
+     getUsers: (req, res) => {
+         res.render(path.resolve(__dirname, '..', 'views', 'users', 'users'), { users });
+     }
 }
 
 
