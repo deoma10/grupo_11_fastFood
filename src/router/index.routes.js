@@ -42,6 +42,8 @@ router.get('/productMod/:id', controller.getProductMod);
 
 router.put('/productMod/:id', upload.single('productImage'), controller.editProduct);
 
+router.get('/productDelete/:id', controller.deleteProducts);
+
 
 router.get('/register', controller.getRegister);
 

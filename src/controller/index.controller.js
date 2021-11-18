@@ -44,6 +44,7 @@ const controller = {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCreation'));
     },
 
+    //Crear productos
     createProduct: (req, res) => {
         const file = req.file;
         let product = {};
@@ -83,6 +84,7 @@ const controller = {
         }
     },
 
+    // Modificar productos
     editProduct: (req, res) => {
         const file = req.file;
         let asignaId = parseInt(req.params.id);
@@ -109,6 +111,18 @@ const controller = {
 
         res.redirect('/')
     },
+
+    //Eliminar productos
+    deleteProducts: (req,res) => {
+        let idProduct = parseInt(req.params.id);
+        let newProducts = products.filter(item => item.id != idProduct)
+
+        let jsonProducts = JSON.stringify(newProducts, null, 4);
+        fs.writeFileSync(productsFilePath, jsonProducts);
+
+        res.redirect('/')
+    },
+
 
     getRegister: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'register'))

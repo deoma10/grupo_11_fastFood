@@ -42,17 +42,17 @@
         "productImage": "burger-featured-6.png"
     },
     {
-        "id": 7,
-        "name": "Fucking Delicious Burger",
-        "description": "Deliciosa hamburguesa con pan artesanal, queso mozzarella, 1/2 libra de carne a la parrilla, tomate y lechuga",
-        "price": "8000",
-        "productImage": "productImage-1637083523718.jpg"
+        "id": 21,
+        "name": "Onion Bacon",
+        "description": "Hamburguesa rica",
+        "price": "19500",
+        "productImage": "productImage-1637205205429.PNG"
     },
     {
-        "id": 8,
-        "name": "perro caliente",
-        "description": "djfhsoghsñovasfbd",
-        "price": "1000",
-        "productImage": "productImage-1637123645452.jpeg"
+        "id": 22,
+        "name": "Bacon Fries",
+        "description": "Papitas ricas con tocineta",
+        "price": "15000",
+        "productImage": "productImage-1637205672750.PNG"
     }
 ]

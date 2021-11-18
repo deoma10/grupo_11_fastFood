@@ -44,7 +44,7 @@ body{
     padding-left: 15px;
     height: 30px;
     font-size: 0.5em;
-    background-color: #FFE459;
+    background-color: #DDDDDD;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +103,7 @@ body{
     .header-pc__content{
         width: 94%;
         height: 80px;
-        background-color: #DDDDDD;
+        background-color: #FFE459;
         display: flex;
         justify-content: space-around;
         margin: 1.75vh 1vw;
