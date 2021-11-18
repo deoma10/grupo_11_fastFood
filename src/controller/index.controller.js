@@ -30,12 +30,10 @@ const controller = {
     getProductDetail: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
-        let num = 0;
         let result = products.filter(function (k) {
             return k.id == pId;
         })
         if (result != []) {
-            console.log(result)
             res.render(path.resolve(__dirname, '..', 'views', 'products', 'productDetail'), { products: result[0] });
         } else {
             res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'))
@@ -75,10 +73,11 @@ const controller = {
     getProductMod: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
-
-        if (products[pId - 1] != null) {
-            num = pId - 1;
-            res.render(path.resolve(__dirname, '..', 'views', 'products', 'productMod'), { product: products[num] });
+        let result = products.filter(function (k) {
+            return k.id == pId;
+        })
+        if (result != []) {
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'productMod'), { product: result[0] });
         } else {
             res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'))
         }
