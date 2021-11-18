@@ -848,5 +848,31 @@ aside{
     }
     .creation__form::placeholder {
     font-size: 1.1em;
+    }
 }
+
+/* Users ////////////////////////////////////////////////////////////////////////////////////////*/
+.users {
+    padding: 30px 0;
+    font-size: 0.7em;
+}
+.users__table{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
+
+.users__table th {
+    border-bottom: 1px solid black;
+    padding: 2%;
+}
+
+.users__table td {
+    padding: 1%;
+}
+
+@media (min-width: 700px) {
+    .users {
+        font-size: 1em;
+    }    
 }

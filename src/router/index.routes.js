@@ -52,5 +52,7 @@ router.get('/login', controller.getLogin);
 
 // router.post('/login', controller.getLogin);
 
+router.get('/users', controller.getUsers);
+
 
 module.exports = router;
