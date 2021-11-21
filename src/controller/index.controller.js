@@ -7,13 +7,24 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const usersFilePath = path.resolve(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const newID = () => {
+const newID = (tipoID) => {
     let last = 0;
-    products.forEach(product => {
-        if (product.id > last) {
-            last = product.id;
-        };
-    });
+    switch (tipoID){
+        case 'product':
+            products.forEach(product => {
+                if (product.id > last) {
+                    last = product.id;
+                };
+            });
+        case 'user':
+            users.forEach(user => {
+                if (users.id > last) {
+                    last = users.id;
+                };
+            });
+        }
+
+
     return last + 1;
 };
 
@@ -50,13 +61,13 @@ const controller = {
         let product = {};
         if (!file) {
             product = {
-                id: newID(),
+                id: newID('product'),
                 ...req.body,
                 productImage: 'default-image.png'
             }
         } else {
             product = {
-                id: newID(),
+                id: newID('product'),
                 ...req.body,
                 productImage: req.file.filename
             }

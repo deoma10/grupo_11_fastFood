@@ -54,5 +54,12 @@
         "description": "Papitas ricas con tocineta",
         "price": "15000",
         "productImage": "productImage-1637205672750.PNG"
+    },
+    {
+        "id": 23,
+        "name": "Producto prueba",
+        "description": "Hamburguesa con papas",
+        "price": "23000",
+        "productImage": "productImage-1637453812578.PNG"
     }
 ]
