@@ -210,6 +210,16 @@ const controller = {
         fs.writeFileSync(usersFilePath, jsonUser);
 
         res.redirect('/')
+    },
+    deleteUser: (req, res) => {
+        let eliminaId = parseInt(req.params.id)
+
+        let updatedFile = users.filter(user => user.id != eliminaId);
+
+        let jsonUser = JSON.stringify(updatedFile, null, 4);
+        fs.writeFileSync(usersFilePath, jsonUser);
+
+        res.redirect('/')
     }
 }
 

@@ -58,7 +58,8 @@ router.get('/editUser/:id', controller.updateUser);
 
 router.put('/editUser/:id', controller.editUser);
 
-//
+//Eliminar usuario
+router.delete('/deleteUser/:id', controller.deleteUser);
 
 router.get('/login', controller.getLogin);
 

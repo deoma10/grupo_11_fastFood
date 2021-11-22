@@ -29,15 +29,6 @@
         "password": "12345678"
     },
     {
-        "id": 4,
-        "typeDocument": "TI",
-        "numDoc": "1435332222999999999999999",
-        "name": "Felix222sssssssssssssssssssssss",
-        "lastname": "DE alaajakjxxxxxxx",
-        "email": "ajsfjsas@correo.com",
-        "password": "12345"
-    },
-    {
         "id": 5,
         "typeDocument": "NIT",
         "numDoc": "aaaaa",
