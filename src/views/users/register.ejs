@@ -11,10 +11,10 @@
                 <!--Main-->
                 <main class="register">
                     <article class="form">
-                        <form action="register" action="/">
+                        <form action="/register" method="POST" enctype="multipart/form-data">
                             <h2 class="register__title">Formulario de registro</h2>
                             <div class="register__form">
-                                <select class="register__form--select" name="tdocumento" id="id" required>
+                                <select class="register__form--select" name="typeDocument" id="typeDocument" required>
                                     <option value="" selected disabled hidden>Tipo Documento</option>
                                     <option value="CC">Cédula de Ciudadanía</option>
                                     <option value="CE">Cédula de Extranjería</option>
@@ -23,31 +23,31 @@
                                 </select>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="text" name="documento"
+                                <input class="register__form--text" type="text" name="numDoc"
                                     placeholder="Número Documento" required>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="text" name="nombre" placeholder="Nombre"
+                                <input class="register__form--text" type="text" name="name" placeholder="Nombre"
                                     required minlength="5">
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="text" name="apellido" placeholder="Apellido"
+                                <input class="register__form--text" type="text" name="lastname" placeholder="Apellido"
                                     required minlength="5">
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="email" name="correo" placeholder="Correo"
+                                <input class="register__form--text" type="email" name="email" placeholder="Correo"
                                     required>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="email" name="correo" placeholder="Confirmar Correo"
+                                <input class="register__form--text" type="email" name="email" placeholder="Confirmar Correo"
                                     required>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="password" name="contraseña"
+                                <input class="register__form--text" type="password" name="password"
                                     placeholder="Contraseña" required minlength="5">
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="password" name="contraseña"
+                                <input class="register__form--text" type="password" name="passwordConfirmation"
                                     placeholder="Repetir contraseña" required minlength="5">
                             </div>
                             <div class="register__form--radio">

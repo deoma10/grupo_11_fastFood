@@ -18,13 +18,11 @@ const newID = (tipoID) => {
             });
         case 'user':
             users.forEach(user => {
-                if (users.id > last) {
-                    last = users.id;
+                if (user.id > last) {
+                    last = user.id;
                 };
             });
         }
-
-
     return last + 1;
 };
 
@@ -145,7 +143,30 @@ const controller = {
 
      getUsers: (req, res) => {
          res.render(path.resolve(__dirname, '..', 'views', 'users', 'users'), { users });
-     }
+     },
+
+     //Crear Usuarios
+    createUser: (req, res) => {
+        const file = req.file; //Esto que es??
+        let user = {};
+            user = {
+                id: newID('user'),
+                numDoc: req.params.numDoc,
+                name: req.params.name,
+                lastname: req.params.lastname,
+                email: req.params.email,
+                password: req.params.password,
+                // ...req.body,
+            }
+            console.log(req.params.numDoc);
+        //Guardar usuario en el array de usuarios
+        users.push(user);
+
+        let jsonUsers = JSON.stringify(users, null, 4);
+        fs.writeFileSync(usersFilePath, jsonUsers);
+
+        res.redirect('/')
+    },
 }
 
 

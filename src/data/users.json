@@ -1,19 +1,20 @@
 [
     {
-        "tDoc": "CC",
+        "id": 1,
+        "typeDocument": "CC",
         "numDoc": 12345,
-        "nombre": "Sergio",
-        "apellido": "Arboleda",
-        "correo": "sergio@gmail.com",
-        "pass": "sergio123"
+        "name": "Sergio",
+        "lastname": "Arboleda",
+        "email": "sergio@gmail.com",
+        "password": "sergio123"
     },
     {
-        "tDoc": "CE",
+        "id": 2,
+        "typeDocument": "CE",
         "numDoc": 519534,
-        "nombre": "Matt",
-        "apellido": "Simpson",
-        "correo": "matt12@outlook.com",
-        "pass": "simpsonM"
+        "name": "Matt",
+        "lastname": "Simpson",
+        "email": "matt12@outlook.com",
+        "password": "simpsonM"
     }
-
 ]
