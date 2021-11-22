@@ -192,15 +192,15 @@ const controller = {
 
         user = {
                         
-            id: id,
+            id: user[0].id,
             typeDocument: req.body.typeDocument,
             numDoc: req.body.numDoc,
             name: req.body.name,
             lastname: req.body.lastname,
             email: req.body.email,
             password: req.body.password,
-            recibeCorreo: user.recibeCorreo,
-            politicaPrivacidad: user.politicaPrivacidad
+            recibeCorreo: user[0].recibeCorreo,
+            politicaPrivacidad: user[0].politicaPrivacidad
         }
 
         //Guardar usuario en el array de usuarios

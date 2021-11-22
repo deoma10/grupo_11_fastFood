@@ -45,5 +45,16 @@
         "lastname": "ccccc",
         "email": "dddd@444.com",
         "password": "123456789"
+    },
+    {
+        "id": 6,
+        "typeDocument": "CE",
+        "numDoc": "1234098",
+        "name": "comoasi",
+        "lastname": "noleentiendo",
+        "email": "expliqueme@por.favor",
+        "password": "987654",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
     }
 ]
