@@ -11,7 +11,7 @@
                 <!--Main-->
                 <main class="register">
                     <article class="form">
-                        <form action="/register" method="POST" enctype="multipart/form-data">
+                        <form action="/register" method="POST">
                             <h2 class="register__title">Formulario de registro</h2>
                             <div class="register__form">
                                 <select class="register__form--select" name="typeDocument" id="typeDocument" required>
@@ -28,11 +28,11 @@
                             </div>
                             <div class="register__form">
                                 <input class="register__form--text" type="text" name="name" placeholder="Nombre"
-                                    required minlength="5">
+                                    required>
                             </div>
                             <div class="register__form">
                                 <input class="register__form--text" type="text" name="lastname" placeholder="Apellido"
-                                    required minlength="5">
+                                    required>
                             </div>
                             <div class="register__form">
                                 <input class="register__form--text" type="email" name="email" placeholder="Correo"
@@ -47,7 +47,7 @@
                                     placeholder="Contraseña" required minlength="5">
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="password" name="passwordConfirmation"
+                                <input class="register__form--text" type="password" name="password"
                                     placeholder="Repetir contraseña" required minlength="5">
                             </div>
                             <div class="register__form--radio">

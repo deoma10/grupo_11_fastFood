@@ -16,5 +16,32 @@
         "lastname": "Simpson",
         "email": "matt12@outlook.com",
         "password": "simpsonM"
+    },
+    {
+        "id": 3,
+        "numDoc": "2342323",
+        "name": "Daniel",
+        "lastname": "Ospina",
+        "email": [
+            "danielospinam@hotmail.com",
+            "danielospinam@hotmail.com"
+        ],
+        "password": "12345678"
+    },
+    {
+        "id": 4,
+        "numDoc": "143533",
+        "name": "Felix",
+        "lastname": "DE alaajakj",
+        "email": "ajsfjsas@correo.com",
+        "password": "1234556789"
+    },
+    {
+        "id": 5,
+        "numDoc": "9872623636",
+        "name": "Luisa",
+        "lastname": "Martinez",
+        "email": "luis@gmail.com",
+        "password": "1234321"
     }
 ]

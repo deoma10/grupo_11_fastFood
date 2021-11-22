@@ -147,18 +147,16 @@ const controller = {
 
      //Crear Usuarios
     createUser: (req, res) => {
-        const file = req.file; //Esto que es??
         let user = {};
             user = {
                 id: newID('user'),
-                numDoc: req.params.numDoc,
-                name: req.params.name,
-                lastname: req.params.lastname,
-                email: req.params.email,
-                password: req.params.password,
-                // ...req.body,
+                numDoc: req.body.numDoc,
+                name: req.body.name,
+                lastname: req.body.lastname,
+                email: req.body.email[0],
+                password: req.body.password[0],
+                // ...req.body
             }
-            console.log(req.params.numDoc);
         //Guardar usuario en el array de usuarios
         users.push(user);
 
