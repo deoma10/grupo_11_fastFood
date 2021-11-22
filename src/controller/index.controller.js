@@ -27,6 +27,7 @@ const controller = {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCart'));
     },
 
+////// Visualizacion individual de cada producto del Index
     getProductDetail: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
