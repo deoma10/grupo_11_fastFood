@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- Header -->
+        <%- include('../partials/header') %>
+            <!-- Barra de navegación -->
+            <%- include('../partials/nav') %>
+
+                <!--Main-->
+                <main class="register">
+                    <article class="form">
+                        <form action="/editUser/<%= user.id %>?_method=PUT" method="POST" >
+                            <h2 class="register__title">Formulario Editar Usuario</h2>
+                            <div class="register__form">
+                                <select class="register__form--select" name="typeDocument" id="typeDocument" >
+                                    <option value="CC" <%= user.typeDocument == 'CC' ? 'selected' : null %>>Cédula de Ciudadanía</option>
+                                    <option value="CE" <%= user.typeDocument == 'CE' ? 'selected' : null %>>Cédula de Extranjería</option>
+                                    <option value="TI" <%= user.typeDocument == 'TI' ? 'selected' : null %>>Tarjeta de Identidad</option>
+                                    <option value="NIT" <%= user.typeDocument == 'NIT' ? 'selected' : null %>>Nit</option>
+                                </select>
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--text" type="text" name="numDoc"
+                                    placeholder="Número Documento" required value="<%= user.numDoc %>"> 
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--text" type="text" name="name" placeholder="Nombre"
+                                    required value="<%= user.name %>">
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--text" type="text" name="lastname" placeholder="Apellido"
+                                    required value="<%= user.lastname %>">
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--text" type="email" name="email" placeholder="Correo"
+                                    required value="<%= user.email %>">
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--text" type="email"  placeholder="Confirmar Correo"
+                                    required value="<%= user.email %>">
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--text" type="password" name="password"
+                                    placeholder="Contraseña" required minlength="5" >
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--text" type="password"
+                                    placeholder="Repetir contraseña" required minlength="5" >
+                            </div>
+                            <div class="register__form">
+                                <input class="register__form--button" type="submit" value="Editar">
+                            </div>
+                        </form>
+                    </article>
+                </main>
+
+
+                <!--Footer-->
+                <%- include('../partials/footer') %>
+    </body>
+
+</html>

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "typeDocument": "CC",
+        "typeDocument": "NIT",
         "numDoc": 12345,
         "name": "Sergio",
         "lastname": "Arboleda",
@@ -30,18 +30,20 @@
     },
     {
         "id": 4,
-        "numDoc": "143533",
-        "name": "Felix",
-        "lastname": "DE alaajakj",
+        "typeDocument": "TI",
+        "numDoc": "1435332222999999999999999",
+        "name": "Felix222sssssssssssssssssssssss",
+        "lastname": "DE alaajakjxxxxxxx",
         "email": "ajsfjsas@correo.com",
-        "password": "1234556789"
+        "password": "12345"
     },
     {
         "id": 5,
-        "numDoc": "9872623636",
-        "name": "Luisa",
-        "lastname": "Martinez",
-        "email": "luis@gmail.com",
-        "password": "1234321"
+        "typeDocument": "NIT",
+        "numDoc": "aaaaa",
+        "name": "bbbbb",
+        "lastname": "ccccc",
+        "email": "dddd@444.com",
+        "password": "123456789"
     }
 ]

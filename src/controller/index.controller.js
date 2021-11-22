@@ -151,12 +151,13 @@ const controller = {
         let user = {};
             user = {
                 id: newID('user'),
-                numDoc: req.body.numDoc,
-                name: req.body.name,
-                lastname: req.body.lastname,
-                email: req.body.email[0],
-                password: req.body.password[0],
-                // ...req.body
+                // typeDocument: req.body.typeDocument,
+                // numDoc: req.body.numDoc,
+                // name: req.body.name,
+                // lastname: req.body.lastname,
+                // email: req.body.email[0],
+                // password: req.body.password[0],
+                ...req.body
             }
         //Guardar usuario en el array de usuarios
         users.push(user);
@@ -166,6 +167,50 @@ const controller = {
 
         res.redirect('/')
     },
+    updateUser:(req, res) =>{
+        let id = parseInt(req.params.id);
+
+        let user = users.filter(function (k){
+            return k.id == id;
+        })
+            res.render(path.resolve(__dirname, '..', 'views', 'users', 'editUser'), { user: user[0] });
+
+       
+ 
+    },
+    //editar usuarios
+    editUser:(req, res) => {
+        let id = parseInt(req.params.id);
+
+        let user = users.filter(function (k){
+            return k.id == id;
+        })
+
+        let allUser = users.filter(function (k){
+            return k.id != id;
+        })
+
+        user = {
+                        
+            id: id,
+            typeDocument: req.body.typeDocument,
+            numDoc: req.body.numDoc,
+            name: req.body.name,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            password: req.body.password,
+            recibeCorreo: user.recibeCorreo,
+            politicaPrivacidad: user.politicaPrivacidad
+        }
+
+        //Guardar usuario en el array de usuarios
+        allUser.push(user);
+
+        let jsonUser = JSON.stringify(allUser, null, 4);
+        fs.writeFileSync(usersFilePath, jsonUser);
+
+        res.redirect('/')
+    }
 }
 
 

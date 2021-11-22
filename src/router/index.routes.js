@@ -44,6 +44,7 @@ router.get('/productMod/:id', controller.getProductMod);
 
 router.put('/productMod/:id', upload.single('productImage'), controller.editProduct);
 
+//Eliminar producto
 router.get('/productDelete/:id', controller.deleteProducts);
 
 
@@ -51,6 +52,13 @@ router.get('/register', controller.getRegister);
 //Crear Usuario
 router.post('/register', controller.createUser);
 
+
+//Editar usuario
+router.get('/editUser/:id', controller.updateUser);
+
+router.put('/editUser/:id', controller.editUser);
+
+//
 
 router.get('/login', controller.getLogin);
 
