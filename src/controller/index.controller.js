@@ -7,13 +7,22 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const usersFilePath = path.resolve(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const newID = () => {
+const newID = (tipoID) => {
     let last = 0;
-    products.forEach(product => {
-        if (product.id > last) {
-            last = product.id;
-        };
-    });
+    switch (tipoID){
+        case 'product':
+            products.forEach(product => {
+                if (product.id > last) {
+                    last = product.id;
+                };
+            });
+        case 'user':
+            users.forEach(user => {
+                if (user.id > last) {
+                    last = user.id;
+                };
+            });
+        }
     return last + 1;
 };
 
@@ -45,18 +54,19 @@ const controller = {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCreation'));
     },
 
+    //Crear productos
     createProduct: (req, res) => {
         const file = req.file;
         let product = {};
         if (!file) {
             product = {
-                id: newID(),
+                id: newID('product'),
                 ...req.body,
                 productImage: 'default-image.png'
             }
         } else {
             product = {
-                id: newID(),
+                id: newID('product'),
                 ...req.body,
                 productImage: req.file.filename
             }
@@ -84,6 +94,7 @@ const controller = {
         }
     },
 
+    // Modificar productos
     editProduct: (req, res) => {
         const file = req.file;
         let asignaId = parseInt(req.params.id);
@@ -111,6 +122,18 @@ const controller = {
         res.redirect('/')
     },
 
+    //Eliminar productos
+    deleteProducts: (req,res) => {
+        let idProduct = parseInt(req.params.id);
+        let newProducts = products.filter(item => item.id != idProduct)
+
+        let jsonProducts = JSON.stringify(newProducts, null, 4);
+        fs.writeFileSync(productsFilePath, jsonProducts);
+
+        res.redirect('/')
+    },
+
+
     getRegister: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'register'))
     },
@@ -121,7 +144,28 @@ const controller = {
 
      getUsers: (req, res) => {
          res.render(path.resolve(__dirname, '..', 'views', 'users', 'users'), { users });
-     }
+     },
+
+     //Crear Usuarios
+    createUser: (req, res) => {
+        let user = {};
+            user = {
+                id: newID('user'),
+                numDoc: req.body.numDoc,
+                name: req.body.name,
+                lastname: req.body.lastname,
+                email: req.body.email[0],
+                password: req.body.password[0],
+                // ...req.body
+            }
+        //Guardar usuario en el array de usuarios
+        users.push(user);
+
+        let jsonUsers = JSON.stringify(users, null, 4);
+        fs.writeFileSync(usersFilePath, jsonUsers);
+
+        res.redirect('/')
+    },
 }
 
 

@@ -35,17 +35,21 @@ router.get('/productDetail/:id', controller.getProductDetail);
 
 router.get('/productCreation', controller.getProductCreation);
 
+//Crear producto
 router.post('/', upload.single('productImage'), controller.createProduct);
+
 
 
 router.get('/productMod/:id', controller.getProductMod);
 
 router.put('/productMod/:id', upload.single('productImage'), controller.editProduct);
 
+router.get('/productDelete/:id', controller.deleteProducts);
+
 
 router.get('/register', controller.getRegister);
-
-// router.post('/register', controller.getRegister);
+//Crear Usuario
+router.post('/register', controller.createUser);
 
 
 router.get('/login', controller.getLogin);

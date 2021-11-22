@@ -1,19 +1,47 @@
 [
     {
-        "tDoc": "CC",
+        "id": 1,
+        "typeDocument": "CC",
         "numDoc": 12345,
-        "nombre": "Sergio",
-        "apellido": "Arboleda",
-        "correo": "sergio@gmail.com",
-        "pass": "sergio123"
+        "name": "Sergio",
+        "lastname": "Arboleda",
+        "email": "sergio@gmail.com",
+        "password": "sergio123"
     },
     {
-        "tDoc": "CE",
+        "id": 2,
+        "typeDocument": "CE",
         "numDoc": 519534,
-        "nombre": "Matt",
-        "apellido": "Simpson",
-        "correo": "matt12@outlook.com",
-        "pass": "simpsonM"
+        "name": "Matt",
+        "lastname": "Simpson",
+        "email": "matt12@outlook.com",
+        "password": "simpsonM"
+    },
+    {
+        "id": 3,
+        "numDoc": "2342323",
+        "name": "Daniel",
+        "lastname": "Ospina",
+        "email": [
+            "danielospinam@hotmail.com",
+            "danielospinam@hotmail.com"
+        ],
+        "password": "12345678"
+    },
+    {
+        "id": 4,
+        "numDoc": "143533",
+        "name": "Felix",
+        "lastname": "DE alaajakj",
+        "email": "ajsfjsas@correo.com",
+        "password": "1234556789"
+    },
+    {
+        "id": 5,
+        "numDoc": "9872623636",
+        "name": "Luisa",
+        "lastname": "Martinez",
+        "email": "luis@gmail.com",
+        "password": "1234321"
     }
-
 ]
