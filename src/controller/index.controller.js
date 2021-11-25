@@ -165,7 +165,7 @@ const controller = {
         let jsonUsers = JSON.stringify(users, null, 4);
         fs.writeFileSync(usersFilePath, jsonUsers);
 
-        res.redirect('/')
+        res.redirect('/login')
     },
     updateUser:(req, res) =>{
         let id = parseInt(req.params.id);
