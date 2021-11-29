@@ -1,23 +1,26 @@
-const path = require("path");
 const fs = require('fs');
+const path = require('path');
 
 const usersModel = {
-    getUsers: function () {
+    getProducts: function () {
         return JSON.parse(
             fs.readFileSync(
-                path.join(__dirname, './users.json'),
+                path.join(__dirname, './products.json'),
                 { encoding: 'utf-8' }
                 )
                 );
     },
-    createUser: function (product) {
+    writeFile: function (file) {
+        return fs.writeFileSync(
+            path.resolve(__dirname, './products.json'),
+            JSON.stringify(file, null, 4),
+            { encoding: 'utf-8' }
+        );
+    },
+    createProduct: function (product) {
         const products = this.getProducts();
             products.push(product);
-            fs.writeFileSync(
-                path.resolve(__dirname, './products.json'),
-                JSON.stringify(products, null, 4),
-                { encoding: 'utf-8' }
-            );
+            this.writeFile(products);
             return 'Product created'
     },
     updateProduct: function (id, product) {
@@ -33,21 +36,19 @@ const usersModel = {
                 productImage: fileName
             }
         };
+        fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
+        
         newProductsFile[indiceBuscado] = product        
-        fs.writeFileSync(
-            path.resolve(__dirname, './products.json'),
-            JSON.stringify(newProductsFile, null, 4),
-            { encoding: 'utf-8' }
-        );
+        this.writeFile(newProductsFile);
         return 'Product succesfully updated'
     },
-    // deleteUser: function (cedula) {
-    //     const newDb = this.getUsers().filter(item => item.cedula != cedula);
-    //     fs.writeFileSync(
-    //         path.resolve(__dirname, './users.json'),
-    //         JSON.stringify(newDb, null, 4),
-    //         { encoding: 'utf-8' }
-    //     );
-    // }
+    deleteProduct: function (id) {
+        const newProductsFile = this.getProducts().filter(product => product.id != id);
+        const oldproduct = this.getProducts().filter(product => product.id == id);
+        const fileName = oldproduct[0].productImage;
+        fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
+        this.writeFile(newProductsFile);
+    }
 };
 
+module.exports = usersModel;
