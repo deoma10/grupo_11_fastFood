@@ -1,10 +1,12 @@
 Empezar a hacer:
 - Utilizar metodologías ágiles para ordenar y parametrizar nuesto código, para no confundirnos con el código que escriben los compañeros
+-Organizar el proyecto en carpetas con un index
+-Comentar el codigo para saber que hace cada porción
 
 Hacer más:
 - Dedicarle más tiempo a la modificación del proyecto
 - Comunicar siempre que haya dudas para resolverlas en equipo
-
+- Hacer reuniones para complementar el proyecto entre todos
 
 Hacer menos:
 - Generar demasiados cambios sin hacer push. Así evitamos que los problemas al unificar el código sean menores y más fáciles de resolver
