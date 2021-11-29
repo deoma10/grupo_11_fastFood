@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Controller
-const controller = require("../controller/index.controller");
+const controller = require("../controller");
 
 router.get('/', controller.getIndex);
 

@@ -2,14 +2,15 @@
 const path = require("path");
 const fs = require('fs');
 const { parse } = require("path");
-const productsFilePath = path.resolve(__dirname, '../data/products.json');
+const model = require('../model');
+const productsFilePath = path.resolve(__dirname, '../model/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const usersFilePath = path.resolve(__dirname, '../data/users.json');
+const usersFilePath = path.resolve(__dirname, '../model/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const newID = (tipoID) => {
     let last = 0;
-    switch (tipoID){
+    switch (tipoID) {
         case 'product':
             products.forEach(product => {
                 if (product.id > last) {
@@ -22,7 +23,7 @@ const newID = (tipoID) => {
                     last = user.id;
                 };
             });
-        }
+    }
     return last + 1;
 };
 
@@ -36,7 +37,7 @@ const controller = {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCart'));
     },
 
-////// Visualizacion individual de cada producto del Index
+    ////// Visualizacion individual de cada producto del Index
     getProductDetail: (req, res) => {
         let productId = req.params.id;
         let pId = parseInt(productId)
@@ -60,23 +61,21 @@ const controller = {
         let product = {};
         if (!file) {
             product = {
-                id: newID('product'),
+                id: model.newID('product'),
                 ...req.body,
                 productImage: 'default-image.png'
             }
         } else {
             product = {
-                id: newID('product'),
+                id: model.newID('product'),
                 ...req.body,
                 productImage: req.file.filename
             }
         };
 
         //Guardar producto en el array de productos
-        products.push(product);
+        model.productsModel.createProduct(product);
 
-        let jsonProducts = JSON.stringify(products, null, 4);
-        fs.writeFileSync(productsFilePath, jsonProducts);
 
         res.redirect('/')
     },
@@ -98,37 +97,30 @@ const controller = {
     editProduct: (req, res) => {
         const file = req.file;
         let asignaId = parseInt(req.params.id);
-        let productos = products.filter(item => item.id != req.params.id);
-        let productoEditado = products.filter(item => item.id == parseInt(req.params.id));
+        product = {};
         if (!file) {
-            productoEditado = {
+            product = {
                 id: asignaId,
-                ...req.body,
-                productImage: productoEditado.productImage
+                ...req.body
             }
         } else {
-            productoEditado = {
+            product = {
                 id: asignaId,
                 ...req.body,
                 productImage: req.file.filename
             }
         };
-        //Guardar producto en el array de productos
-        productos.push(productoEditado);
 
-        let jsonProducts = JSON.stringify(productos, null, 4);
-        fs.writeFileSync(productsFilePath, jsonProducts);
+        model.productsModel.updateProduct(asignaId, product);
 
         res.redirect('/')
     },
 
     //Eliminar productos
-    deleteProducts: (req,res) => {
+    deleteProducts: (req, res) => {
         let idProduct = parseInt(req.params.id);
-        let newProducts = products.filter(item => item.id != idProduct)
 
-        let jsonProducts = JSON.stringify(newProducts, null, 4);
-        fs.writeFileSync(productsFilePath, jsonProducts);
+        model.productsModel.deleteProduct(idProduct);
 
         res.redirect('/')
     },
@@ -142,23 +134,23 @@ const controller = {
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'));
     },
 
-     getUsers: (req, res) => {
-         res.render(path.resolve(__dirname, '..', 'views', 'users', 'users'), { users });
-     },
+    getUsers: (req, res) => {
+        res.render(path.resolve(__dirname, '..', 'views', 'users', 'users'), { users });
+    },
 
-     //Crear Usuarios
+    //Crear Usuarios
     createUser: (req, res) => {
         let user = {};
-            user = {
-                id: newID('user'),
-                // typeDocument: req.body.typeDocument,
-                // numDoc: req.body.numDoc,
-                // name: req.body.name,
-                // lastname: req.body.lastname,
-                // email: req.body.email[0],
-                // password: req.body.password[0],
-                ...req.body
-            }
+        user = {
+            id: newID('user'),
+            // typeDocument: req.body.typeDocument,
+            // numDoc: req.body.numDoc,
+            // name: req.body.name,
+            // lastname: req.body.lastname,
+            // email: req.body.email[0],
+            // password: req.body.password[0],
+            ...req.body
+        }
         //Guardar usuario en el array de usuarios
         users.push(user);
 
@@ -167,31 +159,31 @@ const controller = {
 
         res.redirect('login')
     },
-    updateUser:(req, res) =>{
+    updateUser: (req, res) => {
         let id = parseInt(req.params.id);
 
-        let user = users.filter(function (k){
+        let user = users.filter(function (k) {
             return k.id == id;
         })
-            res.render(path.resolve(__dirname, '..', 'views', 'users', 'editUser'), { user: user[0] });
+        res.render(path.resolve(__dirname, '..', 'views', 'users', 'editUser'), { user: user[0] });
 
-       
- 
+
+
     },
     //editar usuarios
-    editUser:(req, res) => {
+    editUser: (req, res) => {
         let id = parseInt(req.params.id);
 
-        let user = users.filter(function (k){
+        let user = users.filter(function (k) {
             return k.id == id;
         })
 
-        let allUser = users.filter(function (k){
+        let allUser = users.filter(function (k) {
             return k.id != id;
         })
 
         user = {
-                        
+
             id: user[0].id,
             typeDocument: req.body.typeDocument,
             numDoc: req.body.numDoc,
