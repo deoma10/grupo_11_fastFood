@@ -10,14 +10,17 @@ const productsModel = {
                 )
                 );
     },
+    writeFile: function (file) {
+        return fs.writeFileSync(
+            path.resolve(__dirname, './products.json'),
+            JSON.stringify(file, null, 4),
+            { encoding: 'utf-8' }
+        );
+    },
     createProduct: function (product) {
         const products = this.getProducts();
             products.push(product);
-            fs.writeFileSync(
-                path.resolve(__dirname, './products.json'),
-                JSON.stringify(products, null, 4),
-                { encoding: 'utf-8' }
-            );
+            this.writeFile(products);
             return 'Product created'
     },
     updateProduct: function (id, product) {
@@ -36,11 +39,7 @@ const productsModel = {
         fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
         
         newProductsFile[indiceBuscado] = product        
-        fs.writeFileSync(
-            path.resolve(__dirname, './products.json'),
-            JSON.stringify(newProductsFile, null, 4),
-            { encoding: 'utf-8' }
-        );
+        this.writeFile(newProductsFile);
         return 'Product succesfully updated'
     },
     deleteProduct: function (id) {
@@ -48,11 +47,7 @@ const productsModel = {
         const oldproduct = this.getProducts().filter(product => product.id == id);
         const fileName = oldproduct[0].productImage;
         fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
-        fs.writeFileSync(
-            path.resolve(__dirname, './products.json'),
-            JSON.stringify(newProductsFile, null, 4),
-            { encoding: 'utf-8' }
-        );
+        this.writeFile(newProductsFile);
     }
 };
 
