@@ -37,8 +37,7 @@ const productsModel = {
             }
         };
         fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
-        
-        newProductsFile[indiceBuscado] = product        
+        newProductsFile[indiceBuscado] = product
         this.writeFile(newProductsFile);
         return 'Product succesfully updated'
     },
