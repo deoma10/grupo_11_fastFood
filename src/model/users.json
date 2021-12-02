@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "typeDocument": "CC",
+        "numDoc": "12314215",
+        "name": "Andrés",
+        "lastname": "Salinas",
+        "email": "andres@hotmail.com",
+        "password": "andres123",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 2,
+        "typeDocument": "NIT",
+        "numDoc": "900123657",
+        "name": "Cigarrería",
+        "lastname": "Doña Julia",
+        "email": "donajulia@cigarreria.com",
+        "password": "donajuliacigarreria",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 3,
+        "typeDocument": "CE",
+        "numDoc": "865743",
+        "name": "Matt",
+        "lastname": "Smith",
+        "email": "math@mail.com",
+        "password": "newyork555",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 4,
+        "typeDocument": "CC",
+        "numDoc": "1021341876",
+        "name": "Maria",
+        "lastname": "Gonzalez",
+        "email": "maria12@gmail.com",
+        "password": "1021341876",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 5,
+        "typeDocument": "CE",
+        "numDoc": "231990",
+        "name": "Osmar",
+        "lastname": "Gómez",
+        "email": "osmar_perez@outlook.com",
+        "password": "vivacolombia",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 6,
+        "typeDocument": "NIT",
+        "numDoc": "901100879",
+        "name": "Papelería",
+        "lastname": "del Sur",
+        "email": "nueva@papeleria.com",
+        "password": "papeleria110233",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 7,
+        "typeDocument": "CC",
+        "numDoc": "76371221",
+        "name": "Laura",
+        "lastname": "Manrique",
+        "email": "laurita@yahoo.com",
+        "password": "lacasa0219",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 8,
+        "typeDocument": "CC",
+        "numDoc": "10110293665",
+        "name": "Martín",
+        "lastname": "Rueda",
+        "email": "martin.rueda@gmail.com",
+        "password": "martin10110293665",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 9,
+        "typeDocument": "CC",
+        "numDoc": "87600987",
+        "name": "Johana",
+        "lastname": "Bermudez",
+        "email": "johanitalabonita@outlook.com",
+        "password": "johanita2019",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    }
+]

@@ -22,7 +22,12 @@
                     <td><%= user.lastname %> </td>
                     <td><%= user.email %> </td>
                     <td><a href="/editUser/<%= user.id%>"><button >Editar</button></a> </td>
-                    <td><button>Eliminar</button></td>
+                    <td>
+                    <form action="/deleteUser/<%= user.id %>?_method=DELETE" method="post">
+                        <input type="submit" value="Eliminar">                    
+                    </form>
+                    <!-- <td><a href="/deleteUser/<%= user.id %> "><button>Eliminar</button></a> -->
+                    </td>
                 </tr>
             <% }) %>            
         </table>
