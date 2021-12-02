@@ -45,5 +45,14 @@
         "lastname": "ccccc",
         "email": "dddd@444.com",
         "password": "123456789"
+    },
+    {
+        "id": 6,
+        "typeDocument": "NIT",
+        "numDoc": "99999999999999999",
+        "name": "55555555555555555",
+        "lastname": "22222222222222222",
+        "email": "correito@gmail.com",
+        "password": "12345"
     }
 ]
