@@ -38,8 +38,7 @@ const usersModel = {
         // };
         //Borrar imagen de Usuario
         // fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
-        
-        newUsersFile[indiceBuscado] = user        
+        newUsersFile[indiceBuscado] = user
         this.writeFile(newUsersFile);
         return 'Users succesfully updated'
     },

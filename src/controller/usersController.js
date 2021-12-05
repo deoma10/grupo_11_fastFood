@@ -1,5 +1,6 @@
 const { usersModel, newID } = require('../model');
 const path = require('path');
+const bcrypt = require('bcryptjs'); // Paquete bcryptjs para almacenar datos encriptados.
 
 
 
@@ -24,7 +25,8 @@ const userController = {
         let user = {};
         user = {
             id: newID('user'),
-            ...req.body
+            ...req.body,
+            password: bcrypt.hashSync(req.body.password,10)
         }
         //Guardar usuario en el array de usuarios
        usersModel.createUsers(user)
@@ -50,7 +52,7 @@ const userController = {
             name: req.body.name,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password,10),
             recibeCorreo: userGet[0].recibeCorreo,
             politicaPrivacidad: userGet[0].politicaPrivacidad
         }
