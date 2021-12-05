@@ -1,35 +1,35 @@
 // const model = require("../model/modelo");
 const path = require("path");
-const fs = require('fs');
-const { parse } = require("path");
+// const fs = require('fs');
 const model = require('../model');
-const productsFilePath = path.resolve(__dirname, '../model/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const usersFilePath = path.resolve(__dirname, '../model/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+// const productsFilePath = path.resolve(__dirname, '../model/products.json');
+// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+// const usersFilePath = path.resolve(__dirname, '../model/users.json');
+// const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-const newID = (tipoID) => {
-    let last = 0;
-    switch (tipoID) {
-        case 'product':
-            products.forEach(product => {
-                if (product.id > last) {
-                    last = product.id;
-                };
-            });
-        case 'user':
-            users.forEach(user => {
-                if (user.id > last) {
-                    last = user.id;
-                };
-            });
-    }
-    return last + 1;
-};
+// const newID = (tipoID) => {
+//     let last = 0;
+//     switch (tipoID) {
+//         case 'product':
+//             products.forEach(product => {
+//                 if (product.id > last) {
+//                     last = product.id;
+//                 };
+//             });
+//         case 'user':
+//             users.forEach(user => {
+//                 if (user.id > last) {
+//                     last = user.id;
+//                 };
+//             });
+//     }
+//     return last + 1;
+// };
 
 // controlador
 const controller = {
     getIndex: (req, res) => {
+        const products = model.productsModel.getProducts();
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'index'), { products });
     },
 
