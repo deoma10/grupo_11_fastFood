@@ -21,5 +21,5 @@ app.use('/', rutas);
 
 
 app.listen(port, () => {
-    console.log('Servidor corriendo en el puerto 4000');
+console.log(`Server running in port: ${port}`);
 });

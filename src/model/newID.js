@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-const productsFilePath = path.resolve(__dirname, './products.json');
+const productsFilePath = path.resolve(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const usersFilePath = path.resolve(__dirname, './users.json');
+const usersFilePath = path.resolve(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const newID = (tipoID) => {
