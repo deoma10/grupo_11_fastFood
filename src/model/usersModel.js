@@ -5,14 +5,14 @@ const usersModel = {
     getUsers: function () {
         return JSON.parse(
             fs.readFileSync(
-                path.join(__dirname, './users.json'),
+                path.join(__dirname, '../data/users.json'),
                 { encoding: 'utf-8' }
                 )
                 );
     },
     writeFile: function (file) {
         return fs.writeFileSync(
-            path.resolve(__dirname, './users.json'),
+            path.resolve(__dirname, '../data/users.json'),
             JSON.stringify(file, null, 4),
             { encoding: 'utf-8' }
         );

@@ -5,14 +5,14 @@ const productsModel = {
     getProducts: function () {
         return JSON.parse(
             fs.readFileSync(
-                path.join(__dirname, './products.json'),
+                path.resolve(__dirname, '../data/products.json'),
                 { encoding: 'utf-8' }
                 )
                 );
     },
     writeFile: function (file) {
         return fs.writeFileSync(
-            path.resolve(__dirname, './products.json'),
+            path.resolve(__dirname, '../data/products.json'),
             JSON.stringify(file, null, 4),
             { encoding: 'utf-8' }
         );
