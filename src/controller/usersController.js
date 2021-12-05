@@ -2,9 +2,6 @@ const { usersModel, newID } = require('../model');
 const path = require('path');
 const bcrypt = require('bcryptjs'); // Paquete bcryptjs para almacenar datos encriptados.
 
-
-
-
 const userController = {
 
     getRegister: (req, res) => {
@@ -13,6 +10,17 @@ const userController = {
 
     getLogin: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'));
+    },
+
+    loginProcess: (req, res) => {
+        let userToLogin = usersModel.findUserByField('email', req.body.email);
+        if(userToLogin){
+            let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+            if(correctPassword) {
+                res.redirect('/users');
+            }
+        }
+        return res.send("Datos incorrectos");
     },
 
     getUsers: (req, res) => {

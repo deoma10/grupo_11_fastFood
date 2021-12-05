@@ -10,6 +10,11 @@ const usersModel = {
                 )
                 );
     },
+    findUserByField: function(field, value) {
+         let allUsers = this.getUsers();
+         let user = allUsers.find(item => item[field] == value);
+         return user;
+    },
     writeFile: function (file) {
         return fs.writeFileSync(
             path.resolve(__dirname, '../data/users.json'),
