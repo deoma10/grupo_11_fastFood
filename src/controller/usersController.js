@@ -1,8 +1,6 @@
 const { usersModel, newID } = require('../model');
 const path = require('path');
-const fs = require('fs');
-const usersFilePath = path.resolve(__dirname, '../model/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 
 
 
@@ -17,7 +15,7 @@ const userController = {
     },
 
     getUsers: (req, res) => {
-        // const users =
+        let users = usersModel.getUsers();
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'users'), { users });
     },
 
@@ -26,74 +24,43 @@ const userController = {
         let user = {};
         user = {
             id: newID('user'),
-            // typeDocument: req.body.typeDocument,
-            // numDoc: req.body.numDoc,
-            // name: req.body.name,
-            // lastname: req.body.lastname,
-            // email: req.body.email[0],
-            // password: req.body.password[0],
             ...req.body
         }
         //Guardar usuario en el array de usuarios
-        users.push(user);
-
-        let jsonUsers = JSON.stringify(users, null, 4);
-        fs.writeFileSync(usersFilePath, jsonUsers);
-
+       usersModel.createUsers(user)
         res.redirect('login')
     },
+    // Vista para Modificar Usuario
     updateUser: (req, res) => {
         let id = parseInt(req.params.id);
-
+        let users = usersModel.getUsers();
         let user = users.filter(function (k) {
             return k.id == id;
         })
-        res.render(path.resolve(__dirname, '..', 'views', 'users', 'editUser'), { user: user[0] });
-
-
-
+        res.render(path.resolve(__dirname, '..', 'views', 'users', 'editUser'), { user: user[0]});
     },
-    //editar usuarios
+    //Editar Usuario
     editUser: (req, res) => {
         let id = parseInt(req.params.id);
-
-        let user = users.filter(function (k) {
-            return k.id == id;
-        })
-
-        let allUser = users.filter(function (k) {
-            return k.id != id;
-        })
-
+        let userGet = usersModel.getUsers().filter(function (k){return k.id == id;})
         user = {
-
-            id: user[0].id,
+            id: id,
             typeDocument: req.body.typeDocument,
             numDoc: req.body.numDoc,
             name: req.body.name,
             lastname: req.body.lastname,
             email: req.body.email,
             password: req.body.password,
-            recibeCorreo: user[0].recibeCorreo,
-            politicaPrivacidad: user[0].politicaPrivacidad
+            recibeCorreo: userGet[0].recibeCorreo,
+            politicaPrivacidad: userGet[0].politicaPrivacidad
         }
-
         //Guardar usuario en el array de usuarios
-        allUser.push(user);
-
-        let jsonUser = JSON.stringify(allUser, null, 4);
-        fs.writeFileSync(usersFilePath, jsonUser);
-
+        usersModel.updateUsers(id, user)
         res.redirect('/')
     },
     deleteUser: (req, res) => {
-        let eliminaId = parseInt(req.params.id)
-
-        let updatedFile = users.filter(user => user.id != eliminaId);
-
-        let jsonUser = JSON.stringify(updatedFile, null, 4);
-        fs.writeFileSync(usersFilePath, jsonUser);
-
+        let id = parseInt(req.params.id)
+        usersModel.deleteUser(id)
         res.redirect('/')
     }
 }
