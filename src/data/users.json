@@ -108,5 +108,16 @@
         "password": "$2a$10$ouKQxM80mQ10sGoe/wMtVeegaQUziOI2fIxqBzqqN0x3Ao9ySWVFG",
         "recibeCorreo": "on",
         "politicaPrivacidad": "on"
+    },
+    {
+        "id": 11,
+        "typeDocument": "CC",
+        "numDoc": "10104381998",
+        "name": "Fabián",
+        "lastname": "Atehortúa",
+        "email": "fabian@gmail.com",
+        "password": "$2a$10$cpmMfVO1PgF7f57jxbsrVe9ldjRUElS14Vw35FfOl2QB6ycvvnz0i",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
     }
 ]
