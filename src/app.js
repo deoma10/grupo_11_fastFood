@@ -3,7 +3,13 @@ const path = require('path'); // Requerir el módulo Path
 const port = process.env.PORT || 4000;
 const app = express();
 const methodOverride = require('method-override');
+const session = require('express-session');
+const {userSession} = require('./middlewares')
+const cookie = require('cookie-parser');
 
+app.use(session({secret: 'la clave que no van a decifrar'}))
+app.use(cookie())//usamos la cookie de manera general
+app.use(userSession) //llamamos la funcion donde se procesa la cookie y se envia a la vista de EJS
 
 // Implementación de EJS
 const rutas = require('./router/index.routes')

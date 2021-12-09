@@ -6,7 +6,7 @@
         "name": "Andrés",
         "lastname": "Salinas",
         "email": "andres@hotmail.com",
-        "password": "andres123",
+        "password": "$2a$10$7mh0gc2obrs4X1mMFcxYqeIIhwxcM8jaSHh56s.MpipRBJy/bL0Gm",
         "recibeCorreo": "on",
         "politicaPrivacidad": "on"
     },

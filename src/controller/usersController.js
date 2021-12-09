@@ -26,6 +26,11 @@ const userController = {
             if (userToLogin) {
                 let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
                 if (correctPassword) {
+                    if(req.body.remember!=undefined){  //verificar que el checkbox este activado
+                        delete req.body.password //borramos el password de la cookie del usuario localmente para no ser leida en la cookie
+                        res.cookie('remember', req.body.email, {maxAge: 60000}) // creamos la cookie llamada remember y le asignamos el usuario
+                        //por medio del req.body.email maxAge = tiempo de 1minuto
+                }
                     res.redirect('/users');
                 } else {
                     res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'), {
@@ -106,6 +111,11 @@ const userController = {
     deleteUser: (req, res) => {
         let id = parseInt(req.params.id)
         usersModel.deleteUser(id)
+        res.redirect('/')
+    },
+    logOut: (req,res) =>{ // borramos la sesion
+        res.clearCookie('remember') // borramos la cookie
+        req.session.destroy() // destruimos la sesion (eliminamos el usuario logeado)
         res.redirect('/')
     }
 }
