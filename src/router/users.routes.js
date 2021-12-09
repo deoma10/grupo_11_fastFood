@@ -7,7 +7,7 @@ const {registerValidation, loginValidation} = require('../middlewares');
 userRouter.get('/register', userController.getRegister);
 
 //Crear Usuario
-userRouter.post('/register', registerValidation, userMulterUpload.single('userImage'), userController.createUser);
+userRouter.post('/register', userMulterUpload.single('userImage'), registerValidation, userController.createUser);
 
 //Editar usuario
 userRouter.get('/editUser/:id', userController.updateUser);
