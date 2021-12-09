@@ -408,6 +408,15 @@ aside{
     font-size: 0.7em;
 }
 
+.danger {
+    text-align: left;
+    color: red;
+}
+
+.is-invalid {
+    border: 1px solid red;
+}
+
 @media (min-width: 346px) {
     .login--recover {
         margin-left: 10%;
