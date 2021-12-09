@@ -885,3 +885,29 @@ aside{
         font-size: 1em;
     }    
 }
+
+/* Products ////////////////////////////////////////////////////////////////////////////////////////*/
+.products {
+    padding: 30px 0;
+    font-size: 0.7em;
+}
+.products__table{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
+
+.products__table th {
+    border-bottom: 1px solid black;
+    padding: 2%;
+}
+
+.products__table td {
+    padding: 1%;
+}
+
+@media (min-width: 700px) {
+    .products {
+        font-size: 1em;
+    }    
+}

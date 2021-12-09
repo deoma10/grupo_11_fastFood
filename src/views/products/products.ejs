@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+    <!-- Header -->
+    <%- include('../partials/header') %>
+    <!-- Barra de navegación -->
+    <%- include('../partials/nav') %>
+    <main class="products">
+        <table class="products__table">
+            <tr class="products--title">
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            <% products.forEach(product => { %>
+                <tr class="products--item">
+                    <td><%= product.name %> </td>
+                    <td><%= product.description %> </td>
+                    <td>$<%= product.price %> </td>
+                    <td><a href="/productMod/<%= product.id%>"><button >Editar</button></a> </td>
+                    <td>
+                    <form action="/deleteProduct/<%= product.id %>?_method=DELETE" method="post">
+                        <input type="submit" value="Eliminar">
+                    </form>
+                    <!-- <td><a href="/deleteUser/<%= product.id %> "><button>Eliminar</button></a> -->
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </main>
+    <!--Footer-->
+    <%- include('../partials/footer') %>
+    </body>
+
+</html>

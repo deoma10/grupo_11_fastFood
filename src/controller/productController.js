@@ -9,6 +9,11 @@ const productController = {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'index'), {products} );
     },
 
+    getProducts: (req, res) => {
+        const products = productsModel.getProducts();
+        res.render(path.resolve(__dirname, '..', 'views', 'products', 'products'), { products });
+    },
+
     getProductCart: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCart'));
     },

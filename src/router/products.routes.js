@@ -21,4 +21,7 @@ productRouter.put('/productMod/:id', multerUpload.single('productImage'), produc
 // Eliminar producto
 productRouter.get('/productDelete/:id', productController.deleteProducts);
 
+//Tabla de productos
+productRouter.get('/products', productController.getProducts);
+
 module.exports = productRouter;
