@@ -108,5 +108,16 @@
         "password": "$2a$10$cpmMfVO1PgF7f57jxbsrVe9ldjRUElS14Vw35FfOl2QB6ycvvnz0i",
         "recibeCorreo": "on",
         "politicaPrivacidad": "on"
+    },
+    {
+        "id": 12,
+        "typeDocument": "TI",
+        "numDoc": "1078693",
+        "name": "Eric",
+        "lastname": "Cartman",
+        "email": "cartman@southpark.org",
+        "password": "$2a$10$5UrBIS42Bh6REvXVYeyJ2u.p5J8KqVIkRisc0ZfEhXD.3mi.nCjq.",
+        "politicaPrivacidad": "on",
+        "userImage": "userImage-1639015128214.jpg"
     }
 ]
