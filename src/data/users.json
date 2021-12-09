@@ -97,5 +97,29 @@
         "password": "johanita2019",
         "recibeCorreo": "on",
         "politicaPrivacidad": "on"
+    },
+    {
+        "id": 10,
+        "typeDocument": "CC",
+        "numDoc": "1088029524",
+        "name": "Aquiles",
+        "lastname": "Vaesa",
+        "email": "aquilesvaesa@outlook.com",
+        "password": "12345",
+        "userImage": "default-image.png",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on"
+    },
+    {
+        "id": 11,
+        "typeDocument": "CC",
+        "numDoc": "1245678",
+        "name": "avenida",
+        "lastname": "siempreviva",
+        "email": "elvisp@gmail.com",
+        "password": "12345",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on",
+        "userImage": "userImage-1639012503720.jpg"
     }
 ]

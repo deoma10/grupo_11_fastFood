@@ -1,12 +1,12 @@
 const express = require('express');
 const userRouter = express.Router();
 const {userController} = require("../controller");
-const {multerUpload} = require('../middlewares'); // Middleware de Multer pendiente de usar para el Sprint 5
+const {userMulterUpload} = require('../middlewares'); // Middleware de Multer pendiente de usar para el Sprint 5
 
 userRouter.get('/register', userController.getRegister);
 
 //Crear Usuario
-userRouter.post('/register', userController.createUser);
+userRouter.post('/register', userMulterUpload.single('userImage'), userController.createUser);
 
 //Editar usuario
 userRouter.get('/editUser/:id', userController.updateUser);

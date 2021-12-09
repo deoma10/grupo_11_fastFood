@@ -1,5 +1,9 @@
 const multerUpload = require('./multerUpload');
+const userMulterUpload = require('./userMulterUpload');
 
 
 
-module.exports = {multerUpload};
+module.exports = {
+    multerUpload, 
+    userMulterUpload
+};

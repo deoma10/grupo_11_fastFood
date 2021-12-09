@@ -21,11 +21,22 @@ const userController = {
 
     //Crear Usuarios
     createUser: (req, res) => {
+        let file = req.file
         let user = {};
-        user = {
-            id: newID('user'),
-            ...req.body
-        }
+        if (!file) {
+            user = {
+                id: newID('user'),
+                ...req.body,
+                userImage: 'default-image.png'
+            }
+        } else {
+            user = {
+                id: newID('user'),
+                ...req.body,
+                userImage: req.file.filename
+            }
+        };
+        
         //Guardar usuario en el array de usuarios
        usersModel.createUsers(user)
         res.redirect('login')
