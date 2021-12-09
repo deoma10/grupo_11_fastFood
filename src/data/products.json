@@ -56,10 +56,10 @@
         "productImage": "productImage-1637205672750.PNG"
     },
     {
-        "id": 10,
-        "name": "Hamburguejas al vapor del profesor Seimour Skinner  ",
-        "description": "Hamburguejas de la cocina de Skinner compradas en Krusty Burguer antes de que saliera una aurora boreal  en la cocina de Seiumour mientras lo veia el superintendente Schalmerz ",
-        "price": "4000",
-        "productImage": "productImage-1638419316932.PNG"
+        "id": 12,
+        "name": "Hamburguesa Criolla",
+        "description": "Hamburguesa del campo, con ingredientes orgánicos, papas campesinas en cascos",
+        "price": "12500",
+        "productImage": "productImage-1639010290284.jpg"
     }
 ]

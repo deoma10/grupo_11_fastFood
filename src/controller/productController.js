@@ -1,5 +1,6 @@
 const { productsModel,newID } = require('../model');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 
 const productController = {
@@ -33,6 +34,14 @@ const productController = {
 
     //Crear productos
     createProduct: (req, res) => {
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCreation'), {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })
+        }
         const file = req.file;
         let product = {};
         if (!file) {

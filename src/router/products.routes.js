@@ -1,7 +1,7 @@
 const express = require('express');
 const productRouter = express.Router();
 const {productController} = require("../controller");
-const {multerUpload} = require('../middlewares');
+const {multerUpload, productValidation} = require('../middlewares');
 
 productRouter.get('/', productController.getIndex);
 
@@ -12,7 +12,7 @@ productRouter.get('/productDetail/:id', productController.getProductDetail);
 productRouter.get('/productCreation', productController.getProductCreation);
 
 // Crear producto
-productRouter.post('/', multerUpload.single('productImage'), productController.createProduct);
+productRouter.post('/', multerUpload.single('productImage'), productValidation, productController.createProduct);
 
 productRouter.get('/productMod/:id', productController.getProductMod);
 
