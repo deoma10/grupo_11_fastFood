@@ -54,12 +54,5 @@
         "description": "Papitas ricas con tocineta",
         "price": "15000",
         "productImage": "productImage-1637205672750.PNG"
-    },
-    {
-        "id": 12,
-        "name": "Hamburguesa Criolla",
-        "description": "Hamburguesa del campo, con ingredientes orgánicos, papas campesinas en cascos",
-        "price": "12500",
-        "productImage": "productImage-1639010290284.jpg"
     }
 ]

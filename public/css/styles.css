@@ -883,7 +883,7 @@ aside{
 @media (min-width: 700px) {
     .users {
         font-size: 1em;
-    }    
+    }
 }
 
 /* Products ////////////////////////////////////////////////////////////////////////////////////////*/
@@ -909,5 +909,5 @@ aside{
 @media (min-width: 700px) {
     .products {
         font-size: 1em;
-    }    
+    }
 }

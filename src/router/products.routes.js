@@ -19,7 +19,7 @@ productRouter.get('/productMod/:id', productController.getProductMod);
 productRouter.put('/productMod/:id', multerUpload.single('productImage'), productController.editProduct);
 
 // Eliminar producto
-productRouter.get('/productDelete/:id', productController.deleteProducts);
+productRouter.delete('/productDelete/:id', productController.deleteProducts);
 
 //Tabla de productos
 productRouter.get('/products', productController.getProducts);
