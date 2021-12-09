@@ -11,7 +11,7 @@
                 <!--Main-->
                 <main class="register">
                     <article class="form">
-                        <form action="/register" method="POST">
+                        <form action="/register" method="POST" enctype="multipart/form-data">
                             <h2 class="register__title">Formulario de registro</h2>
                             <div class="register__form">
                                 <select
@@ -106,6 +106,10 @@
                                 class="register__form--text <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                                 type="password"
                                 placeholder="Repetir contraseña">
+                            </div>
+                            <div class="creation__form--img">
+                                <label class="userCreation--title">Foto de Usuario</label>
+                                <input class="userCreation__--img" type="file" name="userImage" accept=".jpg .png">
                             </div>
                             <div class="register__form--radio">
                                 <input

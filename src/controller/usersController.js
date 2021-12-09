@@ -47,21 +47,30 @@ const userController = {
 
     //Crear Usuarios
     createUser: (req, res) => {
+        let file = req.file
         const resultValidation = validationResult(req);
-
         if (resultValidation.errors.length > 0) {
             return res.render(path.resolve(__dirname, '..', 'views', 'users', 'register'), {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
         }
-
         let user = {};
-        user = {
-            id: newID('user'),
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10)
-        }
+        if (!file) {
+            user = {
+                id: newID('user'),
+                ...req.body,
+                userImage: 'default-image.png'
+            }
+        } else {
+            user = {
+                id: newID('user'),
+                ...req.body,
+                password: bcrypt.hashSync(req.body.password, 10),
+                userImage: req.file.filename
+            }
+        };
+
         //Guardar usuario en el array de usuarios
         usersModel.createUsers(user)
         res.redirect('login')
