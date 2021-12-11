@@ -6,6 +6,8 @@ const {registerValidation, loginValidation} = require('../middlewares');
 
 userRouter.get('/register', userController.getRegister);
 
+userRouter.get('/profile', userController.getProfile);
+
 //Crear Usuario
 userRouter.post('/register', userMulterUpload.single('userImage'), registerValidation, userController.createUser);
 

@@ -8,6 +8,17 @@ const userController = {
     getRegister: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'register'))
     },
+    //Modulo para mostrar la opcion de perfil solo a los usuarios logeados
+    getProfile: (req, res) => {
+        let users = usersModel.getUsers();
+        // Se crea un if donde si el usuario esta logueado lo deje entrar a la vista profile o sino lo redireccione a la pagina de inicio de sesión
+        if(req.session.userLogged){
+            res.render(path.resolve(__dirname, '..', 'views', 'users', 'profile'), {users})
+        }
+        else{
+            res.redirect('login')
+        }
+    },
 
     getLogin: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'));
@@ -26,12 +37,14 @@ const userController = {
             if (userToLogin) {
                 let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
                 if (correctPassword) {
+                    req.session.userLogged = usersModel.findUserByField('email', req.body.email);
+                    delete req.session.userLogged.password;
                     if(req.body.remember!=undefined){  //verificar que el checkbox este activado
                         delete req.body.password //borramos el password de la cookie del usuario localmente para no ser leida en la cookie
-                        res.cookie('remember', req.body.email, {maxAge: 60000}) // creamos la cookie llamada remember y le asignamos el usuario
-                        //por medio del req.body.email maxAge = tiempo de 1minuto
+                        res.cookie('remember', req.body.email, {maxAge: 1000 * 60 * 60 * 24 * 30 * 12}) // creamos la cookie llamada remember y le asignamos el usuario
+                        //por medio del req.body.email maxAge = tiempo de 1 año
                 }
-                    res.redirect('/users');
+                    res.redirect('/profile');
                 } else {
                     res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'), {
                         errors: {
@@ -41,7 +54,7 @@ const userController = {
                         }
                     })
                 }
-            }         
+            }
         }
     },
 
@@ -65,6 +78,7 @@ const userController = {
             user = {
                 id: newID('user'),
                 ...req.body,
+                password: bcrypt.hashSync(req.body.password, 10),
                 userImage: 'default-image.png'
             }
         } else {

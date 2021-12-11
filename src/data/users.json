@@ -8,7 +8,8 @@
         "email": "andres@hotmail.com",
         "password": "$2a$10$7mh0gc2obrs4X1mMFcxYqeIIhwxcM8jaSHh56s.MpipRBJy/bL0Gm",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
         "email": "donajulia@cigarreria.com",
         "password": "donajuliacigarreria",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
         "email": "math@mail.com",
         "password": "newyork555",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 4,
@@ -41,7 +44,8 @@
         "email": "maria12@gmail.com",
         "password": "1021341876",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 5,
@@ -52,7 +56,8 @@
         "email": "osmar_perez@outlook.com",
         "password": "vivacolombia",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 6,
@@ -63,7 +68,8 @@
         "email": "nueva@papeleria.com",
         "password": "papeleria110233",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 7,
@@ -74,7 +80,8 @@
         "email": "laurita@yahoo.com",
         "password": "lacasa0219",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 8,
@@ -85,7 +92,8 @@
         "email": "martin.rueda@gmail.com",
         "password": "martin10110293665",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 9,
@@ -96,7 +104,8 @@
         "email": "johanitalabonita@outlook.com",
         "password": "johanita2019",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 11,
@@ -107,7 +116,8 @@
         "email": "fabian@gmail.com",
         "password": "$2a$10$cpmMfVO1PgF7f57jxbsrVe9ldjRUElS14Vw35FfOl2QB6ycvvnz0i",
         "recibeCorreo": "on",
-        "politicaPrivacidad": "on"
+        "politicaPrivacidad": "on",
+        "role": 1
     },
     {
         "id": 12,
@@ -118,6 +128,32 @@
         "email": "cartman@southpark.org",
         "password": "$2a$10$5UrBIS42Bh6REvXVYeyJ2u.p5J8KqVIkRisc0ZfEhXD.3mi.nCjq.",
         "politicaPrivacidad": "on",
-        "userImage": "userImage-1639015128214.jpg"
+        "userImage": "userImage-1639015128214.jpg",
+        "role": 1
+    },
+    {
+        "id": 13,
+        "typeDocument": "CC",
+        "numDoc": "2342323",
+        "name": "Daniel",
+        "lastname": "Ospina",
+        "email": "danielospinam@hotmail.com",
+        "password": "$2a$10$S.SKV1.ndGx8nKRKHyNX5udcNh9bykZnkPRmfebUL1rQXubqd4a9q",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on",
+        "userImage": "userImage-1639179502107.PNG",
+        "role": 9
+    },
+    {
+        "id": 14,
+        "typeDocument": "CC",
+        "numDoc": "123456789",
+        "name": "Pedro",
+        "lastname": "Infante",
+        "email": "pedrito@gmail.com",
+        "password": "$2a$10$S.SKV1.ndGx8nKRKHyNX5udcNh9bykZnkPRmfebUL1rQXubqd4a9q",
+        "politicaPrivacidad": "on",
+        "userImage": "default-image.png",
+        "role": 9
     }
 ]
