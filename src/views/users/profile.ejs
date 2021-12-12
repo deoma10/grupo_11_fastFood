@@ -8,21 +8,27 @@
             <!-- Barra de navegación -->
             <%- include('../partials/nav') %>
                 <!--Main-->
-                <main class="profile">
+                <main class="main-profile">
 
-                    <div>
+                    <section class="profile__image">
                         <figure>
                             <img src="/img/users/<%= locals.userInSession.userImage%> " alt="Avatar de usuario">
                         </figure>
 
-                    </div>
+                    </section>
 
-                    <div>
-                        <hr>
-                        <p>Nombre: <%= locals.userInSession.name%> </p>
-                        <p>Apellido: <%= locals.userInSession.lastname%> </p>
-                        <p>email: <%= locals.userInSession.email%> </p>
-                   </div>
+                    <section class="profile__information">
+                       
+                        <div class="profile__information--content">
+                            <h2>Perfil</h2>
+                            <hr>
+                            <br>
+                            <p>Nombre: <%= locals.userInSession.name%> </p>
+                            <p>Apellido: <%= locals.userInSession.lastname%> </p>
+                            <p>email: <%= locals.userInSession.email%> </p>
+                        </div>
+
+                   </section>
 
                 </main>
 
