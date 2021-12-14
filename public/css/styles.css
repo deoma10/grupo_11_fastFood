@@ -36,8 +36,6 @@ body{
 .header-pc{
     display: none;
 }
-
-
 /* Nav */
 
 .nav{
@@ -113,6 +111,22 @@ body{
     .header-pc__content--users a  {
         text-decoration: none;
         color: #000000;
+    }
+    .profile__img {
+        width: 5vw;
+        height: 4vw;
+        position: relative;
+        left: 30%;
+        margin-bottom: -8%;        
+    }
+    .user__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+    .logout{
+        position: relative;
+        left: 35%;
     }
     .header-pc__content--users a:hover  {
         text-decoration: underline;
@@ -241,7 +255,18 @@ aside{
 
 }
 
-/* Footer*/
+/*Administrar/////////////////////////////////////////////////////////////////////////*/
+.admin__select{
+    text-align: center;
+}
+.admin__select a{
+    text-decoration: none;
+}
+.admin__select a button{    
+    margin: 1% 0 2% 0;
+}
+
+/* Footer//////////////////////////////////////////////////////////////////////*/
 .footer{
     background-color:#B9CC33;
     width: 100%;
@@ -878,6 +903,14 @@ aside{
 
 .users__table td {
     padding: 1%;
+}
+
+.edit--button {
+    background-color: #3EACED;
+}
+
+.delete--button {
+    background-color: #ED620E;
 }
 
 @media (min-width: 700px) {

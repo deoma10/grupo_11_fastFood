@@ -19,14 +19,21 @@
         <article class="header-pc__content">
             <div class="header-pc__content--users">
                 <% if(!locals.isLogged){ %>
-                <a href="/login"><i class="fas fa-user"></i> Iniciar Sesión</i></a>
-                <a href="/register"><i class="far fa-list-alt"></i> Registrarse</i></a>
-                <%} else{ %>
-                <!--locals.userInSession.userImage-->
-                <a href="/logOut"><i class="fas fa-user"></i> Cerrar Sesión</i></a>
-                <a href="/profile"><i class="fas fa-user"></i> Perfil</i></a>
-                <!--<a href="#"><i class="fas fa-user"></i> Administrar</i></a>-->
-                <%  } %>
+                    <a href="/login"><i class="fas fa-user"></i> Iniciar Sesión</a>
+                    <a href="/register"><i class="far fa-list-alt"></i> Registrarse</a>
+                    <%} else{ %>
+                        <!--locals.userInSession.userImage-->
+                        <div class="profile__img">
+                            <a href="/profile">
+                            <img class="user__img" src="../img/users/<%= locals.userInSession.userImage %> ">
+                            </a>
+                        </div>
+                        <a href="/profile">
+                            <i class="fas fa-user"></i>Perfil
+                        </a>
+                        <a class="logout" href="/logOut"><i class="fas fa-user"></i> Cerrar Sesión</i></a>
+                        <!--<a href="#"><i class="fas fa-user"></i> Administrar</i></a>-->
+                        <% } %>
             </div>
             <div class="header-pc__content--shoppingcart">
                 <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
