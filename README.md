@@ -1,3 +1,8 @@
+
+★ URL del repositorio en Heroku.
+
+    ○ http://fast-food-dh.herokuapp.com/
+    
 ★ URL del repositorio con todos los colaboradores agregados.
 
     ○ https://github.com/deoma10/grupo_11_fastFood.git
