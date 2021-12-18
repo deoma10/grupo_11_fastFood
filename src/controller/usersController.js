@@ -3,32 +3,36 @@ const path = require('path');
 const bcrypt = require('bcryptjs'); // Paquete bcryptjs para almacenar datos encriptados.
 const { validationResult } = require('express-validator');
 
+const routePath = (route) => {
+    return path.resolve(__dirname, '..', 'views', 'users', route);
+};
+
 const userController = {
 
     getRegister: (req, res) => {
-        res.render(path.resolve(__dirname, '..', 'views', 'users', 'register'))
+        res.render(routePath('register'))
     },
     //Modulo para mostrar la opcion de perfil solo a los usuarios logeados
     getProfile: (req, res) => {
         let users = usersModel.getUsers();
         // Se crea un if donde si el usuario esta logueado lo deje entrar a la vista profile o sino lo redireccione a la pagina de inicio de sesión
-        if(req.session.userLogged){
-            res.render(path.resolve(__dirname, '..', 'views', 'users', 'profile'), {users})
+        if(req.session.userLogged){            
+            res.render(routePath('profile'), {users})
         }
         else{
             res.redirect('login')
         }
     },
 
-    getLogin: (req, res) => {
-        res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'));
+    getLogin: (req, res) => {        
+        res.render(routePath('login'));
     },
 
     loginProcess: (req, res) => {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-            return res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'), {
+            return res.render(routePath('login'), {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
@@ -46,7 +50,7 @@ const userController = {
                 }
                     res.redirect('/profile');
                 } else {
-                    res.render(path.resolve(__dirname, '..', 'views', 'users', 'login'), {
+                    res.render(routePath('login'), {
                         errors: {
                             auth: {
                                 msg: 'Error en autenticación'
@@ -59,8 +63,8 @@ const userController = {
     },
 
     getUsers: (req, res) => {
-        let users = usersModel.getUsers();
-        res.render(path.resolve(__dirname, '..', 'views', 'users', 'users'), { users });
+        let users = usersModel.getUsers();        
+        res.render(routePath('users'), { users });
     },
 
     //Crear Usuarios
@@ -68,7 +72,10 @@ const userController = {
         let file = req.file
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-            return res.render(path.resolve(__dirname, '..', 'views', 'users', 'register'), {
+            if(file){
+                usersModel.deleteImage(req.file.filename)
+            }                     
+            return res.render(routePath('register'), {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
@@ -100,8 +107,8 @@ const userController = {
         let users = usersModel.getUsers();
         let user = users.filter(function (k) {
             return k.id == id;
-        })
-        res.render(path.resolve(__dirname, '..', 'views', 'users', 'editUser'), { user: user[0] });
+        })        
+        res.render(routePath('editUser'), { user: user[0] });
     },
     //Editar Usuario
     editUser: (req, res) => {

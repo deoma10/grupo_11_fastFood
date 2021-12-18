@@ -24,6 +24,10 @@ const usersModel = {
     },
     createUsers: function (user) {
         const users = this.getUsers();
+        user = {
+            ...user,
+            role: 1
+        }
             users.push(user);
             this.writeFile(users);
             return 'User created'
@@ -34,24 +38,23 @@ const usersModel = {
             return 'User does not exist in database';
         }
         let newUsersFile = this.getUsers()
-        // const fileName = newProductsFile[indiceBuscado].productImage;
-        //if(!product.productImage){
-        //  user = {
-        //     ...user
-        //         productImage: fileName
-        //    }
-        // };
-        //Borrar imagen de Usuario
-        // fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
+        user = {
+            ...user,
+            role: 1
+        };
         newUsersFile[indiceBuscado] = user
         this.writeFile(newUsersFile);
         return 'Users succesfully updated'
     },
+    deleteImage: function(fileName) {        
+        fs.unlinkSync(path.resolve(__dirname, '../../public/img/users/' + fileName));
+    },
+    
     deleteUser: function (id) {
         const newUsersFile = this.getUsers().filter(users => users.id != id);
-        // const oldUsers = this.getUsers().filter(users => users.id == id);
-        // const fileName = oldproduct[0].productImage;
-        // fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
+        const oldUser = this.getUsers().filter(user => user.id == id);
+        const fileName = oldUser[0].userImage;
+        this.deleteImage(fileName);
         this.writeFile(newUsersFile);
     }
 };

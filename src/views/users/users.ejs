@@ -8,6 +8,7 @@
     <!-- Barra de navegación -->
     <%- include('../partials/nav') %>
     <main class="users">
+        <%- include('../partials/adminButton') %>
         <table class="users__table">
             <tr class="users--title">
                 <th>Nombre</th>
@@ -21,10 +22,10 @@
                     <td><%= user.name %> </td>
                     <td><%= user.lastname %> </td>
                     <td><%= user.email %> </td>
-                    <td><a href="/editUser/<%= user.id%>"><button >Editar</button></a> </td>
+                    <td><a href="/editUser/<%= user.id%>"><button class="edit--button">Editar</button></a> </td>
                     <td>
                     <form action="/deleteUser/<%= user.id %>?_method=DELETE" method="post">
-                        <input type="submit" value="Eliminar">                    
+                        <input class="delete--button" type="submit" value="Eliminar">                    
                     </form>
                     </td>
                 </tr>

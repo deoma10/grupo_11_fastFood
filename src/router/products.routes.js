@@ -28,4 +28,7 @@ productRouter.delete('/productDelete/:id', productController.deleteProducts);
 //Tabla de productos
 productRouter.get('/products', productController.getProducts);
 
+//Administador
+productRouter.get('/admin', productController.getAdmin);
+
 module.exports = productRouter;

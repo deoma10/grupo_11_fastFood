@@ -155,5 +155,18 @@
         "politicaPrivacidad": "on",
         "userImage": "default-image.png",
         "role": 1
+    },
+    {
+        "id": 15,
+        "typeDocument": "CE",
+        "numDoc": "173997",
+        "name": "Matt",
+        "lastname": "Groening",
+        "email": "matt@springfield.com",
+        "password": "$2a$10$CyHSZs3uQnWMigQWUWB3DOTFUcj4Ytd98BQgu.HaihDYb2PdVecwW",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on",
+        "userImage": "userImage-1639505810456.jpg",
+        "role": 1
     }
 ]

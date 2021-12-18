@@ -41,11 +41,14 @@ const productsModel = {
         this.writeFile(newProductsFile);
         return 'Product succesfully updated'
     },
+    deleteImage: function(fileName) {
+        fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
+    },
     deleteProduct: function (id) {
         const newProductsFile = this.getProducts().filter(product => product.id != id);
         const oldproduct = this.getProducts().filter(product => product.id == id);
         const fileName = oldproduct[0].productImage;
-        fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
+        this.deleteImage(fileName);        
         this.writeFile(newProductsFile);
     }
 };
