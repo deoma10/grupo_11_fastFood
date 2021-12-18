@@ -4,14 +4,14 @@
         <li><a href="#">Promociones</a></li>
         <li><a href="/">Inicio</a></li>
         <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Productos</a></li><!--Productos-->
+        <li><a href="/productList">Productos</a></li><!--Productos-->
         <li><a href="#">Tiendas</a></li><!--Tiendas-->
          <%}%>
 
         <% if(locals.isLogged == true && locals.userInSession.role == 9) {%>
             <li><a href="#">Promociones</a></li>
             <li><a href="/">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
+            <li><a href="/productList">Productos</a></li>
             <li><a href="/productCreation">Crear Productos</a></li><!--Productos-->
             <li><a href="/admin">Administrar</a></li><!--Tiendas-->
 
