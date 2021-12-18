@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- Header -->
+        <%- include('../partials/header') %>
+            <!-- Barra de navegación -->
+            <%- include('../partials/nav') %>
+                <!-- Main Home -->
+                <main class="productDetail">
+                        <% for(products of products) {%>
+                    <article class="products">
+                        <div class="product-menu">
+                            <img src="../img/Products/<%= products.productImage %>" alt="">
+                        </div>
+                                <div class="product-description">
+                                    <h4 class="product-name"><%= products.name %></h4>
+                                    <p class="product-specific"><%= products.description %></p>
+                                </div>
+                                <div class="product-n">
+                                    <p class="product-price"><%= products.price %> </p>
+                                    <p class="product-add"> <a href="/productCart"><i class="fas fa-shopping-cart"></i>Agregar</a></p>
+                                    <% if(locals.isLogged==true && locals.userInSession.role==9) {%>
+                                    <p class="product-price"> <a href="/productMod/<%= products.id %>" > Modificar </a></p>
+                                    <p class="product-price"> <a href="/productDelete/<%= products.id %>"> Eliminar </a></p>
+                                    <%}%>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <% } %>
+                </main>
+                <!--Footer-->
+                <%- include('../partials/footer') %>
+    </body>
+
+</html>

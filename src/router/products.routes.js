@@ -7,7 +7,11 @@ productRouter.get('/', productController.getIndex);
 
 productRouter.get('/productCart', productController.getProductCart);
 
+//Detalle de producto
 productRouter.get('/productDetail/:id', productController.getProductDetail);
+
+//listado de detalle de todos los producto
+productRouter.get('/productList', productController.getProductList);
 
 productRouter.get('/productCreation', productController.getProductCreation);
 

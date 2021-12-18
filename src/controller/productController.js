@@ -32,6 +32,10 @@ const productController = {
             res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'))
         }
     },
+    getProductList: (req, res) => {
+        const products = productsModel.getProducts();
+        res.render(path.resolve(__dirname, '..', 'views', 'products', 'productList'), { products: products });
+    },
 
     getProductCreation: (req, res) => {
         res.render(path.resolve(__dirname, '..', 'views', 'products', 'productCreation'));

@@ -698,7 +698,7 @@ aside{
         width: 75vw;
         align-items: center;
         margin: auto;
-        flex-direction: column;
+        flex-direction: row;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
@@ -707,6 +707,7 @@ aside{
         margin: 20px auto;
         display: flex;
         flex-direction: row;
+        width: 30%;
     }
 
     .productDetail article .product-menu div .product-name{
@@ -716,6 +717,13 @@ aside{
         padding-bottom: 40px;
         align-content: center;
         height: 50%;
+    }
+
+    .productDetail article .product-menu div .product-menu_atributes{
+        display: flex;
+        
+        width: 70%;
+
     }
 
     .productDetail article .product-menu div .product-description{
@@ -739,8 +747,7 @@ aside{
     }
     
     .productDetail article .product-menu img{
-        width: 300px;
-        
+        width: 100%;
     }
     .productDetail article .product-menu div .product-n{
         display: flex;
