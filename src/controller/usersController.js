@@ -10,7 +10,11 @@ const routePath = (route) => {
 const userController = {
 
     getRegister: (req, res) => {
-        res.render(routePath('register'))
+        if(req.session.userLogged){
+            res.redirect('/')
+        } else {
+            res.render(routePath('register'))
+        }    
     },
     //Modulo para mostrar la opcion de perfil solo a los usuarios logeados
     getProfile: (req, res) => {
@@ -24,8 +28,12 @@ const userController = {
         }
     },
 
-    getLogin: (req, res) => {        
-        res.render(routePath('login'));
+    getLogin: (req, res) => {    
+        if(req.session.userLogged){
+            res.redirect('/')
+        } else {
+            res.render(routePath('login'));
+        } 
     },
 
     loginProcess: (req, res) => {
@@ -63,7 +71,7 @@ const userController = {
     },
 
     getUsers: (req, res) => {
-        let users = usersModel.getUsers();        
+        let users = usersModel.getUsers();
         res.render(routePath('users'), { users });
     },
 
