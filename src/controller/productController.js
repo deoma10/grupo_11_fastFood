@@ -1,4 +1,4 @@
-const { productsModel,newID } = require('../model');
+const { productsModel, newID } = require('../model');
 const path = require('path');
 const { validationResult } = require('express-validator');
 
@@ -9,12 +9,16 @@ const routePath = (route) => {
 const productController = {
     getIndex: (req, res) => {
         const products = productsModel.getProducts();
-        res.render(routePath('index'), {products} );
+        res.render(routePath('index'), { products });
     },
 
     getProducts: (req, res) => {
-        const products = productsModel.getProducts();
-        res.render(routePath('products'), { products });
+        if (req.session.userLogged && req.session.userLogged.role == 9) {
+            const products = productsModel.getProducts();
+            res.render(routePath('products'), { products });
+        } else {
+            res.redirect('/');
+        }
     },
 
     getProductCart: (req, res) => {
@@ -40,8 +44,12 @@ const productController = {
         res.render(routePath('productList'), { products: products });
     },
 
-    getProductCreation: (req, res) => {        
-        res.render(routePath('productCreation'));
+    getProductCreation: (req, res) => {
+        if (req.session.userLogged && req.session.userLogged.role == 9) {
+            res.render(routePath('productCreation'));
+        } else {
+            res.redirect('/');
+        }
     },
 
     //Crear productos
@@ -50,7 +58,7 @@ const productController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-            if(file) {
+            if (file) {
                 productsModel.deleteImage(req.file.filename)
             }
             return res.render(routePath('productCreation'), {
@@ -81,16 +89,20 @@ const productController = {
     },
 
     getProductMod: (req, res) => {
-        const products = productsModel.getProducts();
-        let productId = req.params.id;
-        let pId = parseInt(productId)
-        let result = products.filter(function (k) {
-            return k.id == pId;
-        })
-        if (result != []) {            
-            res.render(routePath('productMod'), { product: result[0] });
+        if (req.session.userLogged && req.session.userLogged.role == 9) {
+            const products = productsModel.getProducts();
+            let productId = req.params.id;
+            let pId = parseInt(productId)
+            let result = products.filter(function (k) {
+                return k.id == pId;
+            })
+            if (result != []) {
+                res.render(routePath('productMod'), { product: result[0] });
+            } else {
+                res.render(routePath('error'))
+            }
         } else {
-            res.render(routePath('error'))
+            res.redirect('/');
         }
     },
 
@@ -128,7 +140,11 @@ const productController = {
 
     //Vista de Admin
     getAdmin: (req, res) => {
-        res.render(routePath('admin'));
+        if (req.session.userLogged && req.session.userLogged.role == 9) {
+            res.render(routePath('admin'));
+        } else {
+            res.redirect('/');
+        }
     }
 }
 
