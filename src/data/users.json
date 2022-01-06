@@ -168,5 +168,18 @@
         "politicaPrivacidad": "on",
         "userImage": "userImage-1639505810456.jpg",
         "role": 1
+    },
+    {
+        "id": 16,
+        "typeDocument": "CC",
+        "numDoc": "10206875",
+        "name": "Darth",
+        "lastname": "Vader",
+        "email": "vader@empire.com",
+        "password": "$2a$10$2r0Ldor4uPoLVYyb2n0kb.HZlLPQVMYpmeCIAnWVamQr21e5Zsgzm",
+        "recibeCorreo": "on",
+        "politicaPrivacidad": "on",
+        "userImage": "userImage-1640136155150.jpg",
+        "role": 1
     }
 ]
