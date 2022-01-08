@@ -45,16 +45,12 @@ const productController = {
         res.render(routePath('productList'), { products: products });
     },
 
-    getProductCreation: async (req, res) => {
-        // if (req.session.userLogged && req.session.userLogged.role == 9) {
-        //     res.render(routePath('productCreation'));
-        // } else {
-        //     res.redirect('/');
-        // }
-        let numberId = await imagesModel.getOneImageByName('imagen2').then(exp => {return exp})
-
-        console.log(numberId)
-
+    getProductCreation: (req, res) => {
+        if (req.session.userLogged && req.session.userLogged.role == 9) {
+            res.render(routePath('productCreation'));
+        } else {
+            res.redirect('/');
+        }
     },
 
     //Crear productos

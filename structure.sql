@@ -18,9 +18,9 @@ USE `fastFood_DB` ;
 -- Table `fastFood_DB`.`images`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fastFood_DB`.`images` (
-  `idImages` INT NOT NULL AUTO_INCREMENT,
+  `idImage` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(200) NULL,
-  PRIMARY KEY (`idImages`))
+  PRIMARY KEY (`idImage`))
 ENGINE = InnoDB;
 
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`users` (
   INDEX `fk_users_documentType1_idx` (`fk_idDocumentType` ASC),
   CONSTRAINT `fk_users_images`
     FOREIGN KEY (`fk_idImage`)
-    REFERENCES `fastFood_DB`.`images` (`idImages`)
+    REFERENCES `fastFood_DB`.`images` (`idImage`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_users_documentType1`
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`products` (
   INDEX `fk_products_images1_idx` (`fk_idImage` ASC),
   CONSTRAINT `fk_products_images1`
     FOREIGN KEY (`fk_idImage`)
-    REFERENCES `fastFood_DB`.`images` (`idImages`)
+    REFERENCES `fastFood_DB`.`images` (`idImage`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

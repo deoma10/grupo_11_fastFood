@@ -9,30 +9,18 @@ const imagesModel = {
         })
     },
 
-    getOneImageByName: function(value){
-
-        let experimento;
-        db.Image.findAll({
-            where: {
-                name: value
-            }
-        })
-        .then(image => {
-            experimento = image
-        })
-        .catch(error => {return error})
-
-        return experimento;
+    getOneImageByName: async function(value){
+        let image = await db.Image.findAll(
+            {where: {name: value}}
+            )
+            console.log(image)
+        return image
     },
-    createImage: function(imageName){
-        db.Image.create({
+    createImage: async function(imageName){
+        await db.Image.create({
             name: imageName
         })
-        .then(()=> {
-            return
-        })
-        .catch(error => {return error})
     }
 }
-
 module.exports =imagesModel
+

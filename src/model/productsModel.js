@@ -19,25 +19,19 @@ const productsModel = {
             { encoding: 'utf-8' }
         );
     },
-    createProduct: function (product) {
+    createProduct: async function (product) {
         // const products = this.getProducts();
         //     products.push(product);
         //     this.writeFile(products);
         //     return 'Product created'
-        // imagesModel.createImage(product.productImage);
-        let newImage = imagesModel.getOneImageByName(product.productImage); 
-        console.log(newImage)
-        // db.Product.create({
-        //     name: product.name,
-        //     description: product.description,
-        //     price: product.price,
-        //     fk_idImage: newImage.idImage
-        // })
-        // .then(()=> {
-        //     return
-        // })
-        // .catch(error => {return error})
-
+        await imagesModel.createImage(product.productImage);
+        let newImage = await imagesModel.getOneImageByName(product.productImage); 
+        await db.Product.create({
+            name: product.name,
+            description: product.description,
+            price: product.price,
+            fk_idImage: newImage[0].idImage
+        })
     },
     updateProduct: function (id, product) {
         const indiceBuscado = this.getProducts().findIndex(product => product.id == id);
