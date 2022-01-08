@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="product-n">
                                     <p class="product-price"><%= products.price %> </p>
-                                    <p class="product-add"> <a href="/productCart"><i class="fas fa-shopping-cart"></i>Agregar</a></p>
+                                    <p class="product-add"> <i class="fas fa-shopping-cart"></i><a href="/productCart">Agregar</a></p>
                                     <% if(locals.isLogged==true && locals.userInSession.role==9) {%>
                                     <p class="product-price"> <a href="/productMod/<%= products.id %>" > Modificar </a></p>
                                     <p class="product-price"> <a href="/productDelete/<%= products.id %>"> Eliminar </a></p>
