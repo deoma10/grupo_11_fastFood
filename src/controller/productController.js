@@ -1,6 +1,7 @@
-const { productsModel, newID } = require('../model');
+const { productsModel, newID, imagesModel } = require('../model');
 const path = require('path');
 const { validationResult } = require('express-validator');
+
 
 const routePath = (route) => {
     return path.resolve(__dirname, '..', 'views', 'products', route);
@@ -44,12 +45,16 @@ const productController = {
         res.render(routePath('productList'), { products: products });
     },
 
-    getProductCreation: (req, res) => {
-        if (req.session.userLogged && req.session.userLogged.role == 9) {
-            res.render(routePath('productCreation'));
-        } else {
-            res.redirect('/');
-        }
+    getProductCreation: async (req, res) => {
+        // if (req.session.userLogged && req.session.userLogged.role == 9) {
+        //     res.render(routePath('productCreation'));
+        // } else {
+        //     res.redirect('/');
+        // }
+        let numberId = await imagesModel.getOneImageByName('imagen2').then(exp => {return exp})
+
+        console.log(numberId)
+
     },
 
     //Crear productos

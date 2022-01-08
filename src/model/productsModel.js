@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models')
+const imagesModel = require('./imagesModel')
 
 const productsModel = {
     getProducts: function () {
@@ -18,10 +20,24 @@ const productsModel = {
         );
     },
     createProduct: function (product) {
-        const products = this.getProducts();
-            products.push(product);
-            this.writeFile(products);
-            return 'Product created'
+        // const products = this.getProducts();
+        //     products.push(product);
+        //     this.writeFile(products);
+        //     return 'Product created'
+        // imagesModel.createImage(product.productImage);
+        let newImage = imagesModel.getOneImageByName(product.productImage); 
+        console.log(newImage)
+        // db.Product.create({
+        //     name: product.name,
+        //     description: product.description,
+        //     price: product.price,
+        //     fk_idImage: newImage.idImage
+        // })
+        // .then(()=> {
+        //     return
+        // })
+        // .catch(error => {return error})
+
     },
     updateProduct: function (id, product) {
         const indiceBuscado = this.getProducts().findIndex(product => product.id == id);
@@ -48,7 +64,7 @@ const productsModel = {
         const newProductsFile = this.getProducts().filter(product => product.id != id);
         const oldproduct = this.getProducts().filter(product => product.id == id);
         const fileName = oldproduct[0].productImage;
-        this.deleteImage(fileName);        
+        this.deleteImage(fileName);
         this.writeFile(newProductsFile);
     }
 };

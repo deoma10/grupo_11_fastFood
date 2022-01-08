@@ -9,7 +9,7 @@ const productValidation = [
         .isNumeric().withMessage('Ingresa el valor en números'),
     body('productImage').custom((value, { req }) => {
         let file = req.file;
-        let acceptedExtensions = ['.jpg', '.png', '.jepg', '.gif'];
+        let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif','.PNG'];
 
         if (!file) {
             throw new Error('Tienes que subir una imagen');

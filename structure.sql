@@ -19,7 +19,7 @@ USE `fastFood_DB` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fastFood_DB`.`images` (
   `idImages` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NULL,
+  `name` VARCHAR(200) NULL,
   PRIMARY KEY (`idImages`))
 ENGINE = InnoDB;
 
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`products` (
   `idProducts` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(45) NOT NULL,
-  `price` VARCHAR(45) NOT NULL,
+  `price` INT NOT NULL,
   `fk_idImage` INT NOT NULL,
   PRIMARY KEY (`idProducts`),
   INDEX `fk_products_images1_idx` (`fk_idImage` ASC),
