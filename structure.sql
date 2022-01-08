@@ -18,7 +18,7 @@ USE `fastFood_DB` ;
 -- Table `fastFood_DB`.`images`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fastFood_DB`.`images` (
-  `idImages` INT NOT NULL,
+  `idImages` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   PRIMARY KEY (`idImages`))
 ENGINE = InnoDB;
@@ -28,7 +28,7 @@ ENGINE = InnoDB;
 -- Table `fastFood_DB`.`documentType`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fastFood_DB`.`documentType` (
-  `idDocumentType` INT NOT NULL,
+  `idDocumentType` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `description` VARCHAR(45) NULL,
   PRIMARY KEY (`idDocumentType`))
@@ -90,7 +90,7 @@ ENGINE = InnoDB;
 -- Table `fastFood_DB`.`delivery`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `fastFood_DB`.`delivery` (
-  `idDelivery` INT NOT NULL,
+  `idDelivery` INT NOT NULL AUTO_INCREMENT,
   `fk_idUser` INT NOT NULL,
   `comments` VARCHAR(45) NULL,
   `adress` VARCHAR(45) NOT NULL,
