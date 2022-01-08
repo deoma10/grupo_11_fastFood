@@ -1,4 +1,4 @@
-Retrospectiva Sprint 5:
+Retrospectiva Sprint 6:
 Empezar a hacer:
 - Utilizar metodologías ágiles para ordenar y parametrizar nuesto código, para no confundirnos con el código que escriben los compañeros
 -Comentar el codigo para saber que hace cada porción
