@@ -1,11 +1,10 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "1234",
+    "password": "",
     "database": "fastFood_DB",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port": "3307"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
