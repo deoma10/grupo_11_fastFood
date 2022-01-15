@@ -11,8 +11,9 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema fastFood_DB
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `fastFood_DB` DEFAULT CHARACTER SET utf8 ;
-USE `fastFood_DB` ;
+DROP DATABASE IF EXISTS `fastFood_DB`;
+CREATE SCHEMA IF NOT EXISTS `fastfood_db` DEFAULT CHARACTER SET utf8 ;
+USE `fastfood_db` ;
 
 -- -----------------------------------------------------
 -- Table `fastFood_DB`.`images`
@@ -23,6 +24,13 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`images` (
   PRIMARY KEY (`idImage`))
 ENGINE = InnoDB;
 
+INSERT INTO images (name) values
+('burger-featured-1.png'),
+('burger-featured-2.png'),
+('burger-featured-3.png'),
+('burger-featured-4.png'),
+('burger-featured-5.png'),
+('burger-featured-6.png');
 
 -- -----------------------------------------------------
 -- Table `fastFood_DB`.`documentType`
@@ -73,7 +81,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `fastFood_DB`.`products` (
   `idProducts` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `description` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(400) NOT NULL,
   `price` INT NOT NULL,
   `fk_idImage` INT NOT NULL,
   PRIMARY KEY (`idProducts`),
@@ -84,6 +92,14 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`products` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+INSERT INTO products (name, description, price, fk_idImage) values
+('Crispy Onion', 'Pan artesanal, salsa de la casa y bbq, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano, tocineta y cebolla crispy', 25900, 1),
+('Red Pepper', 'Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano y pimentones rojos caramelizados', 25900, 2),
+('Choriburger', 'Pan artesanal, salsa de la casa y chipotle, lechuga, tomate, 150gr. de carne de hamburguesa seleccionada, queso americano y chorizo argentino, bañado en chimichurri', 25900, 3),
+('DR Pepper Jacks', 'Pan artesanal, lechuga, 150 gramos de certified angus beef, cubiertos de queso pepper jack, cebolla puerro crocante y nuestra salsa exclusiva DR PEPPER, incluye papas fritas', 27500, 4),
+('La Nativa', 'Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso costeño asado y cebolla caramelizada', 24900, 5),
+('Veggie Burger', 'Pan artesanal, aderezo de la casa, lechuga, tomate, cebolla y 150gr. de nuestra deliciosa croqueta de garbanzos', 18900, 6);
 
 
 -- -----------------------------------------------------

@@ -44,7 +44,17 @@ module.exports = (sequelize, dataTypes) =>{
 
     // Asociaciones de los Usuarios
     Delivery.associate = function (models){
-
+        Delivery.belongsTo(models.User, {
+            as: 'user',
+            foreignKey: 'fk_idUser'
+        });
+        Delivery.belongsToMany(models.Product, {
+            as: 'products',
+            through: 'products_has_delivery',
+            foreignKey: 'delivery_id',
+            otherKey: 'products_id',
+            timestamps: false
+        })
     }
 
     return Delivery;

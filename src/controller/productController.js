@@ -8,18 +8,28 @@ const routePath = (route) => {
 };
 
 const productController = {
-    getIndex: (req, res) => {
-        const products = productsModel.getProducts();
-        res.render(routePath('index'), { products });
+    getIndex: async (req, res) => {
+        try {
+            const products = await productsModel.getProducts();
+            res.render(routePath('index'), { products });
+        } catch (err) {
+            console.log(err);
+        }
+
     },
 
-    getProducts: (req, res) => {
-        if (req.session.userLogged && req.session.userLogged.role == 9) {
-            const products = productsModel.getProducts();
-            res.render(routePath('products'), { products });
-        } else {
-            res.redirect('/');
+    getProducts: async (req, res) => {
+        try {
+            if (req.session.userLogged && req.session.userLogged.role == 9) {
+                const products = await productsModel.getProducts();
+                res.render(routePath('products'), { products });
+            } else {
+                res.redirect('/');
+            }
+        } catch (err) {
+            console.log(err);
         }
+
     },
 
     getProductCart: (req, res) => {
@@ -27,22 +37,21 @@ const productController = {
     },
 
     // Visualizacion individual de cada producto del Index
-    getProductDetail: (req, res) => {
-        const products = productsModel.getProducts();
-        let productId = req.params.id;
-        let pId = parseInt(productId);
-        let result = products.filter(function (k) {
-            return k.id == pId;
-        })
-        if (result != []) {
-            res.render(routePath('productDetail'), { products: result[0] });
-        } else {
-            res.render(routePath('error'))
+    getProductDetail: async (req, res) => {
+        try {
+            let product = await productsModel.getOneProduct(req.params.id);
+            res.render(routePath('productDetail'), { product });
+        } catch (err) {
+            console.log(err);
         }
     },
-    getProductList: (req, res) => {
-        const products = productsModel.getProducts();
-        res.render(routePath('productList'), { products: products });
+    getProductList: async (req, res) => {
+        try {
+            const products = await productsModel.getProducts();
+            res.render(routePath('productList'), { products: products });
+        } catch (err) {
+            console.log(err);
+        }
     },
 
     getProductCreation: (req, res) => {
@@ -60,7 +69,7 @@ const productController = {
 
         if (resultValidation.errors.length > 0) {
             if (file) {
-                productsModel.deleteImage(req.file.filename)
+                imagesModel.deleteImageFile(req.file.filename)
             }
             return res.render(routePath('productCreation'), {
                 errors: resultValidation.mapped(),
@@ -89,54 +98,54 @@ const productController = {
         res.redirect('/')
     },
 
-    getProductMod: (req, res) => {
-        if (req.session.userLogged && req.session.userLogged.role == 9) {
-            const products = productsModel.getProducts();
-            let productId = req.params.id;
-            let pId = parseInt(productId)
-            let result = products.filter(function (k) {
-                return k.id == pId;
-            })
-            if (result != []) {
-                res.render(routePath('productMod'), { product: result[0] });
+    getProductMod: async (req, res) => {
+        try {
+            if (req.session.userLogged && req.session.userLogged.role == 9) {
+                const product = await productsModel.getOneProduct(req.params.id)
+                res.render(routePath('productMod'), { product });
             } else {
-                res.render(routePath('error'))
+                res.redirect('/');
             }
-        } else {
-            res.redirect('/');
+        } catch (err) {
+            console.log(err);
         }
     },
 
     // Modificar productos
-    editProduct: (req, res) => {
-        const file = req.file;
-        let asignaId = parseInt(req.params.id);
-        product = {};
-        if (!file) {
-            product = {
-                id: asignaId,
-                ...req.body
-            }
-        } else {
-            product = {
-                id: asignaId,
-                ...req.body,
-                productImage: req.file.filename
-            }
-        };
+    editProduct: async (req, res) => {
+        try {
+            const file = req.file;
+            let asignaId = parseInt(req.params.id);
+            product = {};
+            if (!file) {
+                product = {
+                    id: asignaId,
+                    ...req.body
+                }
+            } else {
+                product = {
+                    id: asignaId,
+                    ...req.body,
+                    productImage: req.file.filename
+                }
+            };
 
-        productsModel.updateProduct(asignaId, product);
+            await productsModel.updateProduct(asignaId, product);
 
-        res.redirect('/')
+            res.redirect('/')
+        } catch (err) {
+            console.log(err);
+        }
     },
 
     //Eliminar productos
-    deleteProducts: (req, res) => {
-        let idProduct = parseInt(req.params.id);
-
-        productsModel.deleteProduct(idProduct);
-
-        res.redirect('/')
+    deleteProducts: async (req, res) => {
+        try {
+            await productsModel.deleteProduct(parseInt(req.params.id));
+            res.redirect('/')
+        } catch (err) {
+            console.log(err);
+        }
     },
 
     //Vista de Admin

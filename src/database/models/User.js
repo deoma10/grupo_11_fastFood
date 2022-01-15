@@ -65,7 +65,18 @@ module.exports = (sequelize, dataTypes) =>{
 
     // Asociaciones de los Usuarios
     User.associate = function (models){
-
+        User.belongsTo(models.Image, {
+            as: 'image',
+            foreignKey: 'fk_idImage'
+        });
+        User.belongsTo(models.Documenttype, {
+            as: 'docType',
+            foreignKey: 'fk_idDocumentType'
+        });
+        User.hasMany(models.Delivery,{
+            as: 'deliveries',
+            foreignKey: 'fk_idUser'
+        })
     }
 
     return User;

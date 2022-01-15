@@ -22,12 +22,12 @@
                     <td><%= product.name %> </td>
                     <td><%= product.description %> </td>
                     <td>$<%= product.price %> </td>
-                    <td><a href="/productMod/<%= product.id%>"><button class="edit--button">Editar</button></a> </td>
+                    <td><a href="/productMod/<%= product.idProducts%>"><button class="edit--button">Editar</button></a> </td>
                     <td>
-                    <form action="/productDelete/<%= product.id %>?_method=DELETE" method="post">
+                    <form action="/productDelete/<%= product.idProducts %>?_method=DELETE" method="post">
                         <input class="delete--button" type="submit" value="Eliminar">
                     </form>
-                    <!-- <td><a href="/deleteUser/<%= product.id %> "><button>Eliminar</button></a> -->
+                    <!-- <td><a href="/deleteUser/<%= product.idProducts %> "><button>Eliminar</button></a> -->
                     </td>
                 </tr>
             <% }) %>

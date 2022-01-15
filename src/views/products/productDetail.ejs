@@ -11,19 +11,21 @@
                 <main class="productDetail">
                     <article class="products">
                         <div class="product-menu">
-                            <img src="../img/Products/<%= products.productImage %>" alt="">
+                            <img src="../img/Products/<%= product.image.name %>" alt="">
                         </div>
                         <div class="product-menu_atributes">
                                 <div class="product-description">
-                                    <h4 class="product-name"><%= products.name %></h4>
-                                    <p class="product-specific"><%= products.description %></p>
+                                    <h4 class="product-name"><%= product.name %></h4>
+                                    <p class="product-specific"><%= product.description %></p>
                                 </div>
                                 <div class="product-n">
-                                    <p class="product-price"><%= products.price %> </p>
+                                    <p class="product-price"><%= product.price %> </p>
                                     <p class="product-add"> <i class="fas fa-shopping-cart"></i><a href="/productCart">Agregar</a></p>
                                     <% if(locals.isLogged==true && locals.userInSession.role==9) {%>
-                                    <p class="product-price"> <a href="/productMod/<%= products.id %>" > Modificar </a></p>
-                                    <p class="product-price"> <a href="/productDelete/<%= products.id %>"> Eliminar </a></p>
+                                    <p class="product-price"> <a href="/productMod/<%= product.idProducts %>" > Modificar </a></p>
+                                    <form action="/productDelete/<%= product.idProducts %>?_method=DELETE" method="post">
+                                        <input class="delete--button" type="submit" value="Eliminar">
+                                    </form>
                                     <%}%>
                                 </div>
                             </div>

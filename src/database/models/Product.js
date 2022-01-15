@@ -39,8 +39,15 @@ module.exports = (sequelize, dataTypes) =>{
     Product.associate = function (models){
             // Asociacion entre productos e imagenes.
         Product.belongsTo(models.Image, {
-            as: 'images',
+            as: 'image',
             foreignKey: 'fk_idImage'
+        });
+        Product.belongsToMany(models.Delivery, {
+            as: 'deliveries',
+            through: 'products_has_delivery',
+            foreignKey: 'products_id',
+            otherKey: 'delivery_id',
+            timestamps: false
         })
     }
 

@@ -1,8 +1,8 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "fastFood_DB",
+    "password": "password",
+    "database": "fastfood_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

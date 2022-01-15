@@ -12,7 +12,7 @@
                         <% for(products of products) {%>
                     <article class="products">
                         <div class="product-menu">
-                            <img src="../img/Products/<%= products.productImage %>" alt="">
+                            <img src="../img/Products/<%= products.image.name %>" alt="">
                         </div>
                         <div class="product-menu_atributes">
                                 <div class="product-description">
@@ -23,8 +23,8 @@
                                     <p class="product-price"><%= products.price %> </p>
                                     <p class="product-add"> <a href="/productCart"><i class="fas fa-shopping-cart"></i>Agregar</a></p>
                                     <% if(locals.isLogged==true && locals.userInSession.role==9) {%>
-                                    <p class="product-price"> <a href="/productMod/<%= products.id %>" > Modificar </a></p>
-                                    <p class="product-price"> <a href="/productDelete/<%= products.id %>"> Eliminar </a></p>
+                                    <p class="product-price"> <a href="/productMod/<%= products.idProducts %>" > Modificar </a></p>
+                                    <p class="product-price"> <a href="/productDelete/<%= products.idProducts %>"> Eliminar </a></p>
                                     <%}%>
                                 </div>
                             </div>

@@ -1,65 +1,91 @@
-const fs = require('fs');
-const path = require('path');
 const db = require('../database/models')
 const imagesModel = require('./imagesModel')
 
 const productsModel = {
-    getProducts: function () {
-        return JSON.parse(
-            fs.readFileSync(
-                path.resolve(__dirname, '../data/products.json'),
-                { encoding: 'utf-8' }
-                )
-                );
+    getProducts: async function () {
+        try {
+            let product = await db.Product.findAll({
+                include: [{ association: 'image' }]
+            });
+            return product;
+        } catch (err) {
+            console.log(err);
+        }
     },
-    writeFile: function (file) {
-        return fs.writeFileSync(
-            path.resolve(__dirname, '../data/products.json'),
-            JSON.stringify(file, null, 4),
-            { encoding: 'utf-8' }
-        );
+    getOneProduct: async function (value) {
+        try {
+            let product = await db.Product.findByPk(value, {
+                include: [{ association: 'image' }]
+            });
+            return product;
+        } catch (err) {
+            console.log(err);
+        }
     },
     createProduct: async function (product) {
-        // const products = this.getProducts();
-        //     products.push(product);
-        //     this.writeFile(products);
-        //     return 'Product created'
-        await imagesModel.createImage(product.productImage);
-        let newImage = await imagesModel.getOneImageByName(product.productImage); 
-        await db.Product.create({
-            name: product.name,
-            description: product.description,
-            price: product.price,
-            fk_idImage: newImage[0].idImage
-        })
-    },
-    updateProduct: function (id, product) {
-        const indiceBuscado = this.getProducts().findIndex(product => product.id == id);
-        if(indiceBuscado < 0) {
-            return 'Product does not exist in database';
+        try {
+            await imagesModel.createImage(product.productImage);
+            let newImage = await imagesModel.getOneImage('name', product.productImage);
+            await db.Product.create({
+                name: product.name,
+                description: product.description,
+                price: product.price,
+                fk_idImage: newImage.idImage
+            })
+        } catch (err) {
+            console.log(err);
+            let newImage = await imagesModel.getOneImage('name', product.productImage);
+            await imagesModel.deleteImage('Products', newImage.idImage);
         }
-        let newProductsFile = this.getProducts()
-        const fileName = newProductsFile[indiceBuscado].productImage;
-        if(!product.productImage){
-            product = {
-                ...product,
-                productImage: fileName
+    },
+    updateProduct: async function (id, product) {
+        try {
+            if (product.productImage) {
+                //consultar el producto antes de editarlo por id
+                let oldProduct = await this.getOneProduct(id);
+                // creamos nueva imagen en BD
+                await imagesModel.createImage(product.productImage);
+                // consultamos el id de la imagen recien creada
+                let newImage = await imagesModel.getOneImage('name', product.productImage);
+                await db.Product.update({
+                    name: product.name,
+                    description: product.description,
+                    price: product.price,
+                    fk_idImage: newImage.idImage
+                }, {
+                    where: {
+                        idProducts: id
+                    }
+                })
+                await imagesModel.deleteImage('Products', oldProduct.fk_idImage);
+            } else {
+                await db.Product.update({
+                    name: product.name,
+                    description: product.description,
+                    price: product.price
+                }, {
+                    where: {
+                        idProducts: id
+                    }
+                })
             }
-        };
-        fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
-        newProductsFile[indiceBuscado] = product
-        this.writeFile(newProductsFile);
-        return 'Product succesfully updated'
+        } catch (err) {
+            console.log(err);
+        }
     },
-    deleteImage: function(fileName) {
-        fs.unlinkSync(path.resolve(__dirname, '../../public/img/Products/' + fileName));
-    },
-    deleteProduct: function (id) {
-        const newProductsFile = this.getProducts().filter(product => product.id != id);
-        const oldproduct = this.getProducts().filter(product => product.id == id);
-        const fileName = oldproduct[0].productImage;
-        this.deleteImage(fileName);
-        this.writeFile(newProductsFile);
+    deleteProduct: async function (id) {
+        try {
+            let oldProduct = await this.getOneProduct(id);
+            console.log(oldProduct);
+            await db.Product.destroy({
+                where: {
+                    idProducts: id
+                }
+            })
+            await imagesModel.deleteImage('Products', oldProduct.fk_idImage);
+        } catch (err) {
+            console.log(err);
+        }
     }
 };
 

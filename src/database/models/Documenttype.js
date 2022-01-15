@@ -28,7 +28,10 @@ module.exports = (sequelize, dataTypes) =>{
 
     // Asociaciones de los Usuarios
     Documenttype.associate = function (models){
-
+        Documenttype.hasMany(models.User,{
+            as: 'users',
+            foreignKey: 'fk_idDocumentType'
+        })
     }
 
     return Documenttype;
