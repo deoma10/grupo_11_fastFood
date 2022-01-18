@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    const alias = 'Documenttype'; //nombre de la tabla
+    const alias = 'DocumentType'; //nombre de la tabla
 
         //Valores de las columnas de la BD
     let cols = {
@@ -24,15 +24,15 @@ module.exports = (sequelize, dataTypes) =>{
     }
 
     // Definicion de la entidad para sequelize y el proyecto
-    const Documenttype = sequelize.define(alias, cols, config)
+    const DocumentType = sequelize.define(alias, cols, config)
 
     // Asociaciones de los Usuarios
-    Documenttype.associate = function (models){
-        Documenttype.hasMany(models.User,{
+    DocumentType.associate = function (models){
+        DocumentType.hasMany(models.User,{
             as: 'users',
             foreignKey: 'fk_idDocumentType'
         })
     }
 
-    return Documenttype;
+    return DocumentType;
 }

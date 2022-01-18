@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) =>{
             type: dataTypes.STRING(45),
             allowNull: false
         },
-        name:{
+        Name:{
             type: dataTypes.STRING(45),
             allowNull: false
         },
@@ -21,11 +21,11 @@ module.exports = (sequelize, dataTypes) =>{
             allowNull: false
         },
         email:{
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(70),
             allowNull: false
         },
         password:{
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         receivesEmail:{
@@ -69,7 +69,7 @@ module.exports = (sequelize, dataTypes) =>{
             as: 'image',
             foreignKey: 'fk_idImage'
         });
-        User.belongsTo(models.Documenttype, {
+        User.belongsTo(models.DocumentType, {
             as: 'docType',
             foreignKey: 'fk_idDocumentType'
         });

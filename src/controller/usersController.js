@@ -1,4 +1,4 @@
-const { usersModel, newID } = require('../model');
+const { usersModel, newID, imagesModel } = require('../model');
 const path = require('path');
 const bcrypt = require('bcryptjs'); // Paquete bcryptjs para almacenar datos encriptados.
 const { validationResult } = require('express-validator');
@@ -9,11 +9,17 @@ const routePath = (route) => {
 
 const userController = {
 
-    getRegister: (req, res) => {
-        if (req.session.userLogged) {
-            res.redirect('/')
-        } else {
-            res.render(routePath('register'))
+    getRegister: async function (req, res) {
+        try{
+            if (req.session.userLogged) {
+                res.redirect('/')
+            } else {
+                let documents = await usersModel.getDocumentsDatabase();
+                res.render(routePath('register'), {documents})
+            }
+        }
+        catch(err){
+            console.log(err);
         }
     },
     //Modulo para mostrar la opcion de perfil solo a los usuarios logeados
@@ -36,56 +42,69 @@ const userController = {
         }
     },
 
-    loginProcess: (req, res) => {
-        const resultValidation = validationResult(req);
+    loginProcess: async function (req, res) {
+        try{
+            const resultValidation = validationResult(req);
 
-        if (resultValidation.errors.length > 0) {
-            return res.render(routePath('login'), {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            })
-        } else {
-            let userToLogin = usersModel.findUserByField('email', req.body.email);
-            if (userToLogin) {
-                let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-                if (correctPassword) {
-                    req.session.userLogged = usersModel.findUserByField('email', req.body.email);
-                    delete req.session.userLogged.password;
-                    if (req.body.remember != undefined) {  //verificar que el checkbox este activado
-                        delete req.body.password //borramos el password de la cookie del usuario localmente para no ser leida en la cookie
-                        res.cookie('remember', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 * 12 }) // creamos la cookie llamada remember y le asignamos el usuario
-                        //por medio del req.body.email maxAge = tiempo de 1 año
-                    }
-                    res.redirect('/profile');
-                } else {
-                    res.render(routePath('login'), {
-                        errors: {
-                            auth: {
-                                msg: 'Error en autenticación'
-                            }
+            if (resultValidation.errors.length > 0) {
+                return res.render(routePath('login'), {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body
+                })
+            } else {
+                let userToLogin = await usersModel.findUserByField('email', req.body.email);
+
+                if (userToLogin) {
+                    let correctPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                    if (correctPassword) {
+                        req.session.userLogged = await usersModel.findUserByField('email', req.body.email);
+                        delete req.session.userLogged.password;
+                        if (req.body.remember != undefined) {  //verificar que el checkbox este activado
+                            delete req.body.password //borramos el password de la cookie del usuario localmente para no ser leida en la cookie
+                            res.cookie('remember', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 * 12 }) // creamos la cookie llamada remember y le asignamos el usuario
+                            //por medio del req.body.email maxAge = tiempo de 1 año
                         }
-                    })
+                        res.redirect('/profile');
+                    } else {
+                        res.render(routePath('login'), {
+                            errors: {
+                                auth: {
+                                    msg: 'Error en autenticación'
+                                }
+                            }
+                        })
+                    }
                 }
             }
         }
-    },
-
-    getUsers: (req, res) => {
-        if (req.session.userLogged && req.session.userLogged.role == 9) {
-            let users = usersModel.getUsers();
-            res.render(routePath('users'), { users });
-        } else {
-            res.redirect('/');
+        catch(err){
+            console.log(err);
         }
     },
 
+    getUsers: async (req, res) => {
+        try{
+            if (req.session.userLogged && req.session.userLogged.role == 9) {
+                let users = await usersModel.getUsers();
+                res.render(routePath('users'), { users });
+            } else {
+                res.redirect('/');
+            }
+        }
+        catch(err){
+            console.log(err);
+        }
+       
+    },
+
     //Crear Usuarios
-    createUser: (req, res) => {
+    createUser: async function (req, res) {
+      try {
         let file = req.file
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             if (file) {
-                usersModel.deleteImage(req.file.filename)
+                imagesModel.deleteImageFile('users', req.file.filename)
             }
             return res.render(routePath('register'), {
                 errors: resultValidation.mapped(),
@@ -95,14 +114,12 @@ const userController = {
         let user = {};
         if (!file) {
             user = {
-                id: newID('user'),
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 10),
                 userImage: 'default-image.png'
             }
         } else {
             user = {
-                id: newID('user'),
                 ...req.body,
                 password: bcrypt.hashSync(req.body.password, 10),
                 userImage: req.file.filename
@@ -112,6 +129,10 @@ const userController = {
         //Guardar usuario en el array de usuarios
         usersModel.createUsers(user)
         res.redirect('login')
+      }
+      catch(err){
+          console.log(err);
+      }
     },
     // Vista para Modificar Usuario
     updateUser: (req, res) => {

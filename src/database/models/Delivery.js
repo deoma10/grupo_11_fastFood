@@ -12,12 +12,16 @@ module.exports = (sequelize, dataTypes) =>{
             type: dataTypes.INTEGER,
             allowNull: false
         },
+        orders:{
+            type: dataTypes.STRING(200),
+            allowNull: false
+        },
         comments:{
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(200),
             allowNull: false
         },
         adress:{
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(200),
             allowNull: false
         },
         phone:{

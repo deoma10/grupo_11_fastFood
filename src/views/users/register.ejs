@@ -16,13 +16,13 @@
                             <div class="register__form">
                                 <select
                                 class="register__form--select <%= locals.errors && errors.typeDocument ? 'is-invalid' : null %>"
-                                name="typeDocument"
+                                name="fk_idDocumentType"
                                 id="typeDocument">
                                     <option value="" selected disabled hidden>Tipo Documento</option>
-                                    <option value="CC" <%= locals.oldData && oldData.typeDocument == "CC" ? 'selected' : null %>>Cédula de Ciudadanía</option>
-                                    <option value="CE" <%= locals.oldData && oldData.typeDocument == "CE" ? 'selected' : null %>>Cédula de Extranjería</option>
-                                    <option value="TI" <%= locals.oldData && oldData.typeDocument == "TI" ? 'selected' : null %>>Tarjeta de Identidad</option>
-                                    <option value="NIT" <%= locals.oldData && oldData.typeDocument == "NIT" ? 'selected' : null %>>Nit</option>
+                                    <% documents.forEach(document => { %>
+                                        <option value="<%= document.idDocumentType %> " <%= locals.oldData && oldData.fk_idDocumentType == document.idDocumentType  ? 'selected' : null %>><%= document.name %></option>
+                                    <% }) %>
+
                                 </select>
                                 <% if (locals.errors && errors.typeDocument) { %>
                                     <p class="danger">
@@ -34,7 +34,7 @@
                                 <input
                                     class="register__form--text <%= locals.errors && errors.numDoc ? 'is-invalid' : null %>"
                                     type="text"
-                                    name="numDoc"
+                                    name="documentNumber"
                                     placeholder="Número Documento"
                                     value="<%= locals.oldData && oldData.numDoc ? oldData.numDoc : null %>">
                                 <% if (locals.errors && errors.numDoc) { %>
@@ -47,7 +47,7 @@
                                 <input
                                     class="register__form--text <%= locals.errors && errors.name ? 'is-invalid' : null %>"
                                     type="text"
-                                    name="name"
+                                    name="Name"
                                     placeholder="Nombre"
                                     value="<%= locals.oldData && oldData.name ? oldData.name : null %>">
                                 <% if (locals.errors && errors.name) { %>
@@ -60,7 +60,7 @@
                                 <input
                                     class="register__form--text <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
                                     type="text"
-                                    name="lastname"
+                                    name="lastName"
                                     placeholder="Apellido"
                                     value="<%= locals.oldData && oldData.lastname ? oldData.lastname : null %>">
                                 <% if (locals.errors && errors.lastname) { %>
@@ -113,18 +113,18 @@
                             </div>
                             <div class="register__form--radio">
                                 <input
-                                class="register--radio" type="checkbox" name="recibeCorreo">
+                                class="register--radio" type="checkbox" name="receivesEmail">
                                 <p>Deseo recibir correos con promociones de la marca</p>
                             </div>
                             <div class="register__form--radio">
                                 <input
                                 class="register--radio"
                                 type="checkbox"
-                                name="politicaPrivacidad"
+                                name="privacyPolicies"
                                 <%= locals.oldData && oldData.politicaPrivacidad ? 'checked' : null %>>
                                 <p>Acepto la política de privacidad y uso de éste sitio web</p>
                                 <% if (locals.errors && errors.politicaPrivacidad) { %>
-                                    <div class="danger">      
+                                    <div class="danger">
                                         <%= errors.politicaPrivacidad.msg %>
                                     </div>
                                     <% } %>

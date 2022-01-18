@@ -1,6 +1,6 @@
 <nav class="nav">
     <ul class="nav__list">
-        <% if(locals.isLogged == false || locals.userInSession.role == 1) {%>
+        <% if(locals.isLogged == false || locals.userInSession.rol == 1) {%>
         <li><a href="#">Promociones</a></li>
         <li><a href="/">Inicio</a></li>
         <li><a href="#">Nosotros</a></li>
@@ -8,7 +8,7 @@
         <li><a href="#">Tiendas</a></li><!--Tiendas-->
          <%}%>
 
-        <% if(locals.isLogged == true && locals.userInSession.role == 9) {%>
+        <% if(locals.isLogged == true && locals.userInSession.rol == 9) {%>
             <li><a href="#">Promociones</a></li>
             <li><a href="/">Inicio</a></li>
             <li><a href="/productList">Productos</a></li>

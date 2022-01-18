@@ -12,7 +12,7 @@
 
                     <section class="profile__image">
                         <figure>
-                            <img src="/img/users/<%= locals.userInSession.userImage%> " alt="Avatar de usuario">
+                            <img src="/img/users/<%= locals.userInSession.image.name%> " alt="Avatar de usuario">
                         </figure>
 
                     </section>
@@ -23,8 +23,8 @@
                             <h2>Perfil</h2>
                             <hr>
                             <br>
-                            <p>Nombre: <%= locals.userInSession.name%> </p>
-                            <p>Apellido: <%= locals.userInSession.lastname%> </p>
+                            <p>Nombre: <%= locals.userInSession.Name%> </p>
+                            <p>Apellido: <%= locals.userInSession.lastName%> </p>
                             <p>email: <%= locals.userInSession.email%> </p>
                         </div>
 

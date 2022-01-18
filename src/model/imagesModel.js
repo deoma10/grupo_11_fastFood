@@ -24,7 +24,6 @@ const imagesModel = {
                     );
                     break;
             }
-            console.log(image)
             return image
         } catch(err) {
             console.log(err);

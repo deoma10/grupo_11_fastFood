@@ -30,17 +30,21 @@ INSERT INTO images (name) values
 ('burger-featured-3.png'),
 ('burger-featured-4.png'),
 ('burger-featured-5.png'),
-('burger-featured-6.png');
-
+('burger-featured-6.png'),
+('prueba.png');
 -- -----------------------------------------------------
--- Table `fastFood_DB`.`documentType`
+-- Table `fastFood_DB`.`documentTypes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `fastFood_DB`.`documentType` (
+CREATE TABLE IF NOT EXISTS `fastFood_DB`.`documentTypes` (
   `idDocumentType` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `description` VARCHAR(45) NULL,
   PRIMARY KEY (`idDocumentType`))
 ENGINE = InnoDB;
+INSERT INTO documenttypes (name, description) values
+('CC', 'Cédula de ciudadania'),
+('CE', 'Cédula de Extranjeria'),
+('NIT', 'Número de identificación tributaria');
 
 
 -- -----------------------------------------------------
@@ -51,8 +55,8 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`users` (
   `documentNumber` VARCHAR(45) NOT NULL,
   `Name` VARCHAR(45) NOT NULL,
   `lastName` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `email` VARCHAR(70) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   `receivesEmail` VARCHAR(45) NOT NULL,
   `privacyPolicies` VARCHAR(45) NOT NULL,
   `rol` VARCHAR(45) NOT NULL,
@@ -69,11 +73,13 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`users` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_users_documentType1`
     FOREIGN KEY (`fk_idDocumentType`)
-    REFERENCES `fastFood_DB`.`documentType` (`idDocumentType`)
+    REFERENCES `fastFood_DB`.`documentTypes` (`idDocumentType`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
+INSERT INTO users (documentNumber, Name, lastName, email, password,receivesEmail,privacyPolicies,rol, activated,fk_idImage,fk_idDocumentType) values
+(123456789,'Seiumour', 'Skinner', 'admin@gmail.com', '12345', 'on', 'on', 9, 1, 7, 1 ),
+(987654321,'Homero','Simpson','homero@gmail.com', '12345', 'on', 'on', 1, 1, 7, 1);
 
 -- -----------------------------------------------------
 -- Table `fastFood_DB`.`products`
@@ -108,8 +114,9 @@ INSERT INTO products (name, description, price, fk_idImage) values
 CREATE TABLE IF NOT EXISTS `fastFood_DB`.`delivery` (
   `idDelivery` INT NOT NULL AUTO_INCREMENT,
   `fk_idUser` INT NOT NULL,
-  `comments` VARCHAR(45) NULL,
-  `adress` VARCHAR(45) NOT NULL,
+  `orders` VARCHAR(200) NULL,
+  `comments` VARCHAR(200) NULL,
+  `adress` VARCHAR(200) NOT NULL,
   `phone` VARCHAR(45) NOT NULL,
   `totalPrice` VARCHAR(45) NOT NULL,
   `release_date` VARCHAR(45) NOT NULL,
