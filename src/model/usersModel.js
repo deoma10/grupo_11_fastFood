@@ -107,87 +107,31 @@ const usersModel = {
        
     },
 
-    updateUsers: function (id, user) {
-        const indiceBuscado = this.getUsers().findIndex(user => user.id == id);
-        if(indiceBuscado < 0) {
-            return 'User does not exist in database';
+    updateUsers: async function (id, user) {
+        try{
+            console.log(user)
+            await db.User.update({
+                documentNumber: user.documentNumber,
+                Name: user.Name,
+                lasName: user.lastName,
+                email: user.email
+            }, {where: {idUser:id}})
+        }catch(err){
+            console.log(err);
         }
-        let newUsersFile = this.getUsers()
-        user = {
-            ...user,
-            role: 1
-        };
-        newUsersFile[indiceBuscado] = user
-        this.writeFile(newUsersFile);
-        return 'Users succesfully updated'
     },
 
     deleteImage: function(fileName) {
         fs.unlinkSync(path.resolve(__dirname, '../../public/img/users/' + fileName));
     },
 
-    deleteUser: function (id) {
-        const newUsersFile = this.getUsers().filter(users => users.id != id);
-        const oldUser = this.getUsers().filter(user => user.id == id);
-        const fileName = oldUser[0].userImage;
-        this.deleteImage(fileName);
-        this.writeFile(newUsersFile);
+    deleteUser: async function (id) {
+        try{
+            await db.User.update({activated: 0}, {where: {idUser:id}})
+        }catch(err){
+            console.log(err);
+        }
     }
 };
 
 module.exports = usersModel;
-
-const productsModel = {
- 
-  
-    
-    updateProduct: async function (id, product) {
-        try {
-            if (product.productImage) {
-                //consultar el producto antes de editarlo por id
-                let oldProduct = await this.getOneProduct(id);
-                // creamos nueva imagen en BD
-                await imagesModel.createImage(product.productImage);
-                // consultamos el id de la imagen recien creada
-                let newImage = await imagesModel.getOneImage('name', product.productImage);
-                await db.Product.update({
-                    name: product.name,
-                    description: product.description,
-                    price: product.price,
-                    fk_idImage: newImage.idImage
-                }, {
-                    where: {
-                        idProducts: id
-                    }
-                })
-                await imagesModel.deleteImage('Products', oldProduct.fk_idImage);
-            } else {
-                await db.Product.update({
-                    name: product.name,
-                    description: product.description,
-                    price: product.price
-                }, {
-                    where: {
-                        idProducts: id
-                    }
-                })
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    },
-    deleteProduct: async function (id) {
-        try {
-            let oldProduct = await this.getOneProduct(id);
-            console.log(oldProduct);
-            await db.Product.destroy({
-                where: {
-                    idProducts: id
-                }
-            })
-            await imagesModel.deleteImage('Products', oldProduct.fk_idImage);
-        } catch (err) {
-            console.log(err);
-        }
-    }
-};

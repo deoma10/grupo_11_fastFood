@@ -1,11 +1,11 @@
 const {usersModel} = require('../model')
 
-function userSession (req, res, next){
+async function userSession (req, res, next){
     let user = undefined;
     res.locals.isLogged = false; // se crea un locals llamado isLogged con parametro falso para la vista EJS
     let userLog = req.cookies.remember; //requerir la coockie creada en userController
     if(userLog!=undefined){
-        user = usersModel.findUserByField('email', userLog) //buscar al usuario por email con la cookie creada
+        user = await usersModel.findUserByField('email', userLog) //buscar al usuario por email con la cookie creada
     }
     if(user!=undefined){
         delete user.password; //borrar la contraseña del usuario localmente

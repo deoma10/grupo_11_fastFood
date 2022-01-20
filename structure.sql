@@ -31,7 +31,9 @@ INSERT INTO images (name) values
 ('burger-featured-4.png'),
 ('burger-featured-5.png'),
 ('burger-featured-6.png'),
-('prueba.png');
+('prueba.png'),
+('default-image.png'),
+('default-image.png');
 -- -----------------------------------------------------
 -- Table `fastFood_DB`.`documentTypes`
 -- -----------------------------------------------------
@@ -78,8 +80,8 @@ CREATE TABLE IF NOT EXISTS `fastFood_DB`.`users` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 INSERT INTO users (documentNumber, Name, lastName, email, password,receivesEmail,privacyPolicies,rol, activated,fk_idImage,fk_idDocumentType) values
-(123456789,'Seiumour', 'Skinner', 'admin@gmail.com', '12345', 'on', 'on', 9, 1, 7, 1 ),
-(987654321,'Homero','Simpson','homero@gmail.com', '12345', 'on', 'on', 1, 1, 7, 1);
+(123456789,'Seiumour', 'Skinner', 'admin@gmail.com', '$2a$10$S.SKV1.ndGx8nKRKHyNX5udcNh9bykZnkPRmfebUL1rQXubqd4a9q', 'on', 'on', 9, 1, 8, 1 ),
+(987654321,'Homero','Simpson','homero@gmail.com', '$2a$10$S.SKV1.ndGx8nKRKHyNX5udcNh9bykZnkPRmfebUL1rQXubqd4a9q', 'on', 'on', 1, 1, 9, 1);
 
 -- -----------------------------------------------------
 -- Table `fastFood_DB`.`products`

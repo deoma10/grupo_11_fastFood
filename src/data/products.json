@@ -50,9 +50,9 @@
     },
     {
         "id": 8,
-        "name": "Bacon Fries",
-        "description": "Papitas ricas con tocineta",
-        "price": "15000",
+        "name": "Bacon Fries ",
+        "description": "Papitas ricas con tocineta y mas",
+        "price": "15000 ",
         "productImage": "productImage-1637205672750.PNG"
     }
 ]

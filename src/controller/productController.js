@@ -20,7 +20,7 @@ const productController = {
 
     getProducts: async (req, res) => {
         try {
-            if (req.session.userLogged && req.session.userLogged.role == 9) {
+            if (req.session.userLogged && req.session.userLogged.rol == 9) {
                 const products = await productsModel.getProducts();
                 res.render(routePath('products'), { products });
             } else {
@@ -55,7 +55,7 @@ const productController = {
     },
 
     getProductCreation: (req, res) => {
-        if (req.session.userLogged && req.session.userLogged.role == 9) {
+        if (req.session.userLogged && req.session.userLogged.rol == 9) {
             res.render(routePath('productCreation'));
         } else {
             res.redirect('/');
@@ -100,7 +100,7 @@ const productController = {
 
     getProductMod: async (req, res) => {
         try {
-            if (req.session.userLogged && req.session.userLogged.role == 9) {
+            if (req.session.userLogged && req.session.userLogged.rol == 9) {
                 const product = await productsModel.getOneProduct(req.params.id)
                 res.render(routePath('productMod'), { product });
             } else {
@@ -150,7 +150,7 @@ const productController = {
 
     //Vista de Admin
     getAdmin: (req, res) => {
-        if (req.session.userLogged && req.session.userLogged.role == 9) {
+        if (req.session.userLogged && req.session.userLogged.rol == 9) {
             res.render(routePath('admin'));
         } else {
             res.redirect('/');

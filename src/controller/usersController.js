@@ -1,7 +1,7 @@
 const { usersModel, newID, imagesModel } = require('../model');
 const path = require('path');
 const bcrypt = require('bcryptjs'); // Paquete bcryptjs para almacenar datos encriptados.
-const { validationResult } = require('express-validator');
+const { validationResult, cookie } = require('express-validator');
 
 const routePath = (route) => {
     return path.resolve(__dirname, '..', 'views', 'users', route);
@@ -65,7 +65,8 @@ const userController = {
                             //por medio del req.body.email maxAge = tiempo de 1 año
                         }
                         res.redirect('/profile');
-                    } else {
+                    }
+                    else {
                         res.render(routePath('login'), {
                             errors: {
                                 auth: {
@@ -84,7 +85,7 @@ const userController = {
 
     getUsers: async (req, res) => {
         try{
-            if (req.session.userLogged && req.session.userLogged.role == 9) {
+            if (req.session.userLogged && req.session.userLogged.rol == 9) {
                 let users = await usersModel.getUsers();
                 res.render(routePath('users'), { users });
             } else {
@@ -135,32 +136,24 @@ const userController = {
       }
     },
     // Vista para Modificar Usuario
-    updateUser: (req, res) => {
-        let id = parseInt(req.params.id);
-        let users = usersModel.getUsers();
-        let user = users.filter(function (k) {
-            return k.id == id;
-        })
-        res.render(routePath('editUser'), { user: user[0] });
+    updateUser: async (req, res) => {
+        try{
+            let user = await usersModel.findUserByField('idUser', parseInt(req.params.id))
+            let documents = await usersModel.getDocumentsDatabase();
+            res.render(routePath('editUser'), { user, documents });
+
+        }catch(err){
+            console.log(err.message);
+        }        
     },
     //Editar Usuario
-    editUser: (req, res) => {
-        let id = parseInt(req.params.id);
-        let userGet = usersModel.getUsers().filter(function (k) { return k.id == id; })
-        user = {
-            id: id,
-            typeDocument: req.body.typeDocument,
-            numDoc: req.body.numDoc,
-            name: req.body.name,
-            lastname: req.body.lastname,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            recibeCorreo: userGet[0].recibeCorreo,
-            politicaPrivacidad: userGet[0].politicaPrivacidad
+    editUser: async (req, res) => {
+        try{
+            await usersModel.updateUsers(parseInt(req.params.id), req.body)
+            res.redirect('/')
+        }catch(err){
+            console.log(err.message);
         }
-        //Guardar usuario en el array de usuarios
-        usersModel.updateUsers(id, user)
-        res.redirect('/')
     },
     deleteUser: (req, res) => {
         let id = parseInt(req.params.id)

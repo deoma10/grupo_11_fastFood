@@ -19,12 +19,12 @@
             </tr>
             <% users.forEach(user => { %>
                 <tr class="users--item">
-                    <td><%= user.name %> </td>
-                    <td><%= user.lastname %> </td>
+                    <td><%= user.Name %> </td>
+                    <td><%= user.lastName %> </td>
                     <td><%= user.email %> </td>
-                    <td><a href="/editUser/<%= user.id%>"><button class="edit--button">Editar</button></a> </td>
+                    <td><a href="/editUser/<%= user.idUser%>"><button class="edit--button">Editar</button></a> </td>
                     <td>
-                    <form action="/deleteUser/<%= user.id %>?_method=DELETE" method="post">
+                    <form action="/deleteUser/<%= user.idUser %>?_method=DELETE" method="post">
                         <input class="delete--button" type="submit" value="Eliminar">                    
                     </form>
                     </td>
