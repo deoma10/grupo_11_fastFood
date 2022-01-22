@@ -26,14 +26,7 @@ CREATE TABLE IF NOT EXISTS `Grupo_11_fastFood_DB`.`documenttypes` (
   `name` VARCHAR(45) NULL DEFAULT NULL,
   `description` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`idDocumentType`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 4
-DEFAULT CHARACTER SET = utf8;
-
-INSERT INTO documenttypes (name, description) values
-('CC', 'Cédula de ciudadania'),
-('CE', 'Cédula de Extranjeria'),
-('NIT', 'Número de identificación tributaria');
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -43,20 +36,7 @@ CREATE TABLE IF NOT EXISTS `Grupo_11_fastFood_DB`.`images` (
   `idImage` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(200) NULL DEFAULT NULL,
   PRIMARY KEY (`idImage`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 10
-DEFAULT CHARACTER SET = utf8;
-
-INSERT INTO images (name) values
-('burger-featured-1.png'),
-('burger-featured-2.png'),
-('burger-featured-3.png'),
-('burger-featured-4.png'),
-('burger-featured-5.png'),
-('burger-featured-6.png'),
-('prueba.png'),
-('default-image.png'),
-('default-image.png');
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `fastfood_db`.`users`
@@ -83,15 +63,7 @@ CREATE TABLE IF NOT EXISTS `Grupo_11_fastFood_DB`.`users` (
   CONSTRAINT `fk_users_images`
     FOREIGN KEY (`fk_idImage`)
     REFERENCES `Grupo_11_fastFood_DB`.`images` (`idImage`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 3
-DEFAULT CHARACTER SET = utf8;
-
-INSERT INTO users (documentNumber, Name, lastName, email, password,receivesEmail,privacyPolicies,rol, activated,fk_idImage,fk_idDocumentType) values
-(123456789,'Seiumour', 'Skinner', 'admin@gmail.com', '$2a$10$S.SKV1.ndGx8nKRKHyNX5udcNh9bykZnkPRmfebUL1rQXubqd4a9q', 'on', 'on', 9, 1, 8, 1 ),
-(987654321,'Homero','Simpson','homero@gmail.com', '$2a$10$S.SKV1.ndGx8nKRKHyNX5udcNh9bykZnkPRmfebUL1rQXubqd4a9q', 'on', 'on', 1, 1, 9, 1);
-
-
+ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `fastfood_db`.`delivery`
 -- -----------------------------------------------------
@@ -109,8 +81,7 @@ CREATE TABLE IF NOT EXISTS `Grupo_11_fastFood_DB`.`delivery` (
   CONSTRAINT `fk_delivery_users1`
     FOREIGN KEY (`fk_idUser`)
     REFERENCES `Grupo_11_fastFood_DB`.`users` (`idUser`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -127,20 +98,7 @@ CREATE TABLE IF NOT EXISTS `Grupo_11_fastFood_DB`.`products` (
   CONSTRAINT `fk_products_images1`
     FOREIGN KEY (`fk_idImage`)
     REFERENCES `Grupo_11_fastFood_DB`.`images` (`idImage`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 7
-DEFAULT CHARACTER SET = utf8;
-
-INSERT INTO products (name, description, price, fk_idImage) values
-('Crispy Onion', 'Pan artesanal, salsa de la casa y bbq, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano, tocineta y cebolla crispy', 25900, 1),
-('Red Pepper', 'Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso americano y pimentones rojos caramelizados', 25900, 2),
-('Choriburger', 'Pan artesanal, salsa de la casa y chipotle, lechuga, tomate, 150gr. de carne de hamburguesa seleccionada, queso americano y chorizo argentino, bañado en chimichurri', 25900, 3),
-('DR Pepper Jacks', 'Pan artesanal, lechuga, 150 gramos de certified angus beef, cubiertos de queso pepper jack, cebolla puerro crocante y nuestra salsa exclusiva DR PEPPER, incluye papas fritas', 27500, 4),
-('La Nativa', 'Pan artesanal, salsa de la casa y sweet mayo, lechuga, tomate, 150gr. de carne de hambuguesa seleccionada, queso costeño asado y cebolla caramelizada', 24900, 5),
-('Veggie Burger', 'Pan artesanal, aderezo de la casa, lechuga, tomate, cebolla y 150gr. de nuestra deliciosa croqueta de garbanzos', 18900, 6);
-
-
-
+ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `fastfood_db`.`products_has_delivery`
 -- -----------------------------------------------------
@@ -156,8 +114,7 @@ CREATE TABLE IF NOT EXISTS `Grupo_11_fastFood_DB`.`products_has_delivery` (
   CONSTRAINT `fk_products_has_delivery_products1`
     FOREIGN KEY (`products_idProducts`)
     REFERENCES `Grupo_11_fastFood_DB`.`products` (`idProducts`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
+ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
