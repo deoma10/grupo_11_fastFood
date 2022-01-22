@@ -9,11 +9,11 @@ module.exports = (sequelize, dataTypes) =>{
             autoIncrement: true
         },
         name:{
-            type: dataTypes.STRING(25),
+            type: dataTypes.STRING(45),
             allowNull: false
         },
         description:{
-            type: dataTypes.STRING(25),
+            type: dataTypes.STRING(400),
             allowNull: false
         },
         price:{

@@ -29,11 +29,11 @@ module.exports = (sequelize, dataTypes) =>{
             allowNull: false
         },
         receivesEmail:{
-            type: dataTypes.STRING(45),
-            allowNull: false
+            type: dataTypes.STRING(10),
+            allowNull: true
         },
         privacyPolicies:{
-            type: dataTypes.STRING(45),
+            type: dataTypes.STRING(10),
             allowNull: false
         },
         rol:{
