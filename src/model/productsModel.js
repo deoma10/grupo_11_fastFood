@@ -4,8 +4,8 @@ const imagesModel = require('./imagesModel')
 const productsModel = {
     getProducts: async function () {
         try {
-            let product = await db.Product.findAll({
-                include: [{ association: 'image' }]
+            let product = await db.products.findAll({
+                include: [{ association: 'fk_idImage_image' }]
             });
             return product;
         } catch (err) {
@@ -14,8 +14,8 @@ const productsModel = {
     },
     getOneProduct: async function (value) {
         try {
-            let product = await db.Product.findByPk(value, {
-                include: [{ association: 'image' }]
+            let product = await db.products.findByPk(value, {
+                include: [{ association: 'fk_idImage_image' }]
             });
             return product;
         } catch (err) {
@@ -26,7 +26,7 @@ const productsModel = {
         try {
             await imagesModel.createImage(product.productImage);
             let newImage = await imagesModel.getOneImage('name', product.productImage);
-            await db.Product.create({
+            await db.products.create({
                 name: product.name,
                 description: product.description,
                 price: product.price,
@@ -47,7 +47,7 @@ const productsModel = {
                 await imagesModel.createImage(product.productImage);
                 // consultamos el id de la imagen recien creada
                 let newImage = await imagesModel.getOneImage('name', product.productImage);
-                await db.Product.update({
+                await db.products.update({
                     name: product.name,
                     description: product.description,
                     price: product.price,
@@ -59,7 +59,7 @@ const productsModel = {
                 })
                 await imagesModel.deleteImage('Products', oldProduct.fk_idImage);
             } else {
-                await db.Product.update({
+                await db.products.update({
                     name: product.name,
                     description: product.description,
                     price: product.price
@@ -77,7 +77,7 @@ const productsModel = {
         try {
             let oldProduct = await this.getOneProduct(id);
             console.log(oldProduct);
-            await db.Product.destroy({
+            await db.products.destroy({
                 where: {
                     idProducts: id
                 }

@@ -4,14 +4,14 @@ const imagesModel = require('./imagesModel')
 const usersModel = {
     getUsers: async function () {
         try {
-            let user = await db.User.findAll(
+            let user = await db.users.findAll(
                 {
                     where: {
                         activated: 1
                     }
                 },
                 {
-                include: [{ association: 'image' },{association: 'docType' }]
+                include: [{ association: 'fk_idImage_image' },{association: 'fk_idDocumentType_documenttype' }]
             });
             return user;
         } catch (err) {
@@ -24,14 +24,14 @@ const usersModel = {
             let user;
             switch (field) {
                 case 'idUser':
-                    user = await db.User.findByPk(value,{
-                        include: [{association: 'image'}]
+                    user = await db.users.findByPk(value,{
+                        include: [{association: 'fk_idImage_image'}]
                     })
                     break;
                 case 'email':
-                    user = await db.User.findOne(
+                    user = await db.users.findOne(
                         { where: { email: value },
-                        include: [{association: 'image'}]}
+                        include: [{association: 'fk_idImage_image'}]}
                     );
                     break;
             }
@@ -41,37 +41,9 @@ const usersModel = {
         }
     },
 
-    getOneImage: async function (field, value) {
-        try {
-            let image;
-            switch (field) {
-                case 'idImage':
-                    image = await db.Image.findByPk(value)
-                    break;
-                case 'name':
-                    image = await db.Image.findOne(
-                        { where: { name: value } }
-                    );
-                    break;
-            }
-            console.log(image)
-            return image
-        } catch(err) {
-            console.log(err);
-        }
-    },
-
-    writeFile: function (file) {
-        return fs.writeFileSync(
-            path.resolve(__dirname, '../data/users.json'),
-            JSON.stringify(file, null, 4),
-            { encoding: 'utf-8' }
-        );
-    },
-
     getDocumentsDatabase: async function() {
         try{
-           let documents = await db.DocumentType.findAll();
+           let documents = await db.documenttypes.findAll();
            return documents;
         }
         catch(err){
@@ -83,7 +55,7 @@ const usersModel = {
             try {
                 await imagesModel.createImage(user.userImage);
                 let newImage = await imagesModel.getOneImage('name', user.userImage);
-                await db.User.create({
+                await db.users.create({
                     documentNumber: user.documentNumber,
                     Name: user.Name,
                     lastName: user.lastName,
@@ -110,7 +82,7 @@ const usersModel = {
     updateUsers: async function (id, user) {
         try{
             console.log(user)
-            await db.User.update({
+            await db.users.update({
                 documentNumber: user.documentNumber,
                 Name: user.Name,
                 lasName: user.lastName,
@@ -127,7 +99,7 @@ const usersModel = {
 
     deleteUser: async function (id) {
         try{
-            await db.User.update({activated: 0}, {where: {idUser:id}})
+            await db.users.update({activated: 0}, {where: {idUser:id}})
         }catch(err){
             console.log(err);
         }

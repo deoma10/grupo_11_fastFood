@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const imagesModel = {
     getAllImages: function () {
-        db.Image.findAll()
+        db.images.findAll()
             .then(images => {
                 return images;
             })
@@ -16,10 +16,10 @@ const imagesModel = {
             let image;
             switch (field) {
                 case 'idImage':
-                    image = await db.Image.findByPk(value)
+                    image = await db.images.findByPk(value)
                     break;
                 case 'name':
-                    image = await db.Image.findOne(
+                    image = await db.images.findOne(
                         { where: { name: value } }
                     );
                     break;
@@ -30,14 +30,14 @@ const imagesModel = {
         }
     },
     createImage: async function (imageName) {
-            await db.Image.create({
+            await db.images.create({
                 name: imageName
             });
     },
     deleteImage: async function (route, id) {
         try {
             let oldImage = await this.getOneImage('idImage', id);
-            await db.Image.destroy({
+            await db.images.destroy({
                 where: {
                     idImage: id
                 }

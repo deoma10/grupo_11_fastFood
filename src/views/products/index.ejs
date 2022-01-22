@@ -25,7 +25,7 @@
                             <h3 class="main__featured-container--tittle">Escoge tu hambuguesa</h3>
                             <% products.forEach(item=> { %>
                                 <article class="main__featured-article">
-                                    <img src="/img/Products/<%= item.image.name %>" alt="Hamburguesa-destacada-1">
+                                    <img src="/img/Products/<%= item.fk_idImage_image.name %>" alt="Hamburguesa-destacada-1">
                                     <form action="/productDetail/<%= item.idProducts %>" method="get"
                                         class="main-login__form--container">
                                         <div class="main-login__form--button">
