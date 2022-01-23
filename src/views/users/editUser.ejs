@@ -11,29 +11,82 @@
                 <!--Main-->
                 <main class="register">
                     <article class="form">
-                        <form action="/editUser/<%= user.idUser %>?_method=PUT" method="POST" >
+                        <form action="/editUser/<%= user.idUser %>?_method=PUT" method="POST" enctype="multipart/form-data">
                             <h2 class="register__title">Formulario Editar Usuario</h2>
                             <div class="register__form">
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="text" name="documentNumber"
-                                    placeholder="Número Documento" required value="<%= user.documentNumber %>"> 
+                                <label for="documentNumber">Numero de Documento</label>
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.documentNumber ? 'is-invalid' : null %>"
+                                    type="text"
+                                    name="documentNumber"
+                                    placeholder="Número Documento"
+                                    value="<%= user.documentNumber %>">
+                                <% if (locals.errors && errors.documentNumber) { %>
+                                    <p class="danger">
+                                        <%= errors.documentNumber.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="text" name="Name" placeholder="Nombre"
-                                    required value="<%= user.Name %>">
+                                <label for="Name">Nombre</label>
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.Name ? 'is-invalid' : null %>"
+                                    type="text"
+                                    name="Name"
+                                    placeholder="Nombre"
+                                    value="<%= user.Name %>">
+                                <% if (locals.errors && errors.Name) { %>
+                                    <p class="danger">
+                                        <%= errors.Name.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="text" name="lastName" placeholder="Apellido"
-                                    required value="<%= user.lastName %>">
+                                <label for="lastName">Apellidos</label>
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.lastName ? 'is-invalid' : null %>"
+                                    type="text"
+                                    name="lastName"
+                                    placeholder="Apellido"
+                                    value="<%= user.lastName %>">
+                                <% if (locals.errors && errors.lastName) { %>
+                                    <p class="danger">
+                                        <%= errors.lastName.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="email" name="email" placeholder="Correo"
-                                    required value="<%= user.email %>">
+                                <label for="email">Email</label>
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                    type="text"
+                                    name="email"
+                                    placeholder="Correo"
+                                    value="<%= user.email %>">
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="danger">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                             <div class="register__form">
-                                <input class="register__form--text" type="email"  placeholder="Confirmar Correo"
-                                    required value="<%= user.email %>">
+                                <label for="email">Confirmar Email</label>
+                                <input
+                                    class="register__form--text <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                                    type="text"
+                                    placeholder="Correo"
+                                    value="<%= user.email %>">
+                                <% if (locals.errors && errors.email) { %>
+                                    <p class="danger">
+                                        <%= errors.email.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+                            <div class="creation__form--img">
+                                <label class="userCreation--title">Foto de Usuario</label>
+                                <input class="userCreation__--img" type="file" name="userImage" accept=".jpg .png .jepg .gif">
                             </div>
                             <div class="register__form">
                                 <input class="register__form--button" type="submit" value="Editar">
