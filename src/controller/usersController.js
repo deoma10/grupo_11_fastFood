@@ -2,6 +2,8 @@ const { usersModel, newID, imagesModel } = require('../model');
 const path = require('path');
 const bcrypt = require('bcryptjs'); // Paquete bcryptjs para almacenar datos encriptados.
 const { validationResult, cookie } = require('express-validator');
+const { Console } = require('console');
+const session = require('express-session');
 
 const routePath = (route) => {
     return path.resolve(__dirname, '..', 'views', 'users', route);
@@ -10,15 +12,15 @@ const routePath = (route) => {
 const userController = {
 
     getRegister: async function (req, res) {
-        try{
+        try {
             if (req.session.userLogged) {
                 res.redirect('/')
             } else {
                 let documents = await usersModel.getDocumentsDatabase();
-                res.render(routePath('register'), {documents})
+                res.render(routePath('register'), { documents })
             }
         }
-        catch(err){
+        catch (err) {
             console.log(err);
         }
     },
@@ -43,7 +45,7 @@ const userController = {
     },
 
     loginProcess: async function (req, res) {
-        try{
+        try {
             const resultValidation = validationResult(req);
 
             if (resultValidation.errors.length > 0) {
@@ -75,16 +77,24 @@ const userController = {
                             }
                         })
                     }
+                } else {
+                    res.render(routePath('login'), {
+                        errors: {
+                            auth: {
+                                msg: 'Usuario no existe'
+                            }
+                        }
+                    })
                 }
             }
         }
-        catch(err){
+        catch (err) {
             console.log(err);
         }
     },
 
     getUsers: async (req, res) => {
-        try{
+        try {
             if (req.session.userLogged && req.session.userLogged.rol == 9) {
                 let users = await usersModel.getUsers();
                 res.render(routePath('users'), { users });
@@ -92,66 +102,100 @@ const userController = {
                 res.redirect('/');
             }
         }
-        catch(err){
+        catch (err) {
             console.log(err);
         }
-       
+
     },
 
     //Crear Usuarios
     createUser: async function (req, res) {
-      try {
-        let file = req.file
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            if (file) {
-                imagesModel.deleteImageFile('users', req.file.filename)
+        try {
+            let file = req.file
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                if (file) {
+                    imagesModel.deleteImageFile('users', req.file.filename)
+                }
+                let documents = await usersModel.getDocumentsDatabase();
+                return res.render(routePath('register'), {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    documents
+                })
             }
-            return res.render(routePath('register'), {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            })
-        }
-        let user = {};
-        if (!file) {
-            user = {
-                ...req.body,
-                password: bcrypt.hashSync(req.body.password, 10),
-                userImage: 'default-image.png'
-            }
-        } else {
-            user = {
-                ...req.body,
-                password: bcrypt.hashSync(req.body.password, 10),
-                userImage: req.file.filename
-            }
-        };
+            let user = {};
+            if (!file) {
+                user = {
+                    ...req.body,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    userImage: 'default-image.png'
+                }
+            } else {
+                user = {
+                    ...req.body,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    userImage: req.file.filename
+                }
+            };
 
-        //Guardar usuario en el array de usuarios
-        usersModel.createUsers(user)
-        res.redirect('login')
-      }
-      catch(err){
-          console.log(err);
-      }
+            //Guardar usuario en el array de usuarios
+            usersModel.createUsers(user)
+            res.redirect('login')
+        }
+        catch (err) {
+            console.log(err);
+        }
     },
     // Vista para Modificar Usuario
     updateUser: async (req, res) => {
-        try{
+        try {
             let user = await usersModel.findUserByField('idUser', parseInt(req.params.id))
-            let documents = await usersModel.getDocumentsDatabase();
-            res.render(routePath('editUser'), { user, documents });
+            res.render(routePath('editUser'), { user });
 
-        }catch(err){
+        } catch (err) {
             console.log(err.message);
-        }        
+        }
     },
     //Editar Usuario
     editUser: async (req, res) => {
-        try{
-            await usersModel.updateUsers(parseInt(req.params.id), req.body)
+        try {
+            let file = req.file
+            const resultValidation = validationResult(req);
+            if (resultValidation.errors.length > 0) {
+                if (file) {
+                    imagesModel.deleteImageFile('users', req.file.filename)
+                }
+                let user = await usersModel.findUserByField('idUser', parseInt(req.params.id))
+                return res.render(routePath('editUser'), {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    user
+                })
+            }
+            let user = {};
+            if (!file) {
+                user = {
+                    ...req.body
+                }
+            } else {
+                user = {
+                    ...req.body,
+                    userImage: req.file.filename
+                }
+            };
+            await usersModel.updateUsers(parseInt(req.params.id), user)
+            let newUser = await usersModel.findUserByField('idUser', req.params.id);
+            if (newUser.email == req.session.userLogged.email) {
+                req.session.userLogged = newUser;
+                delete req.session.userLogged.password;
+                if (res.cookie.remember) {
+                    res.clearCookie('remember');
+                    res.cookie('remember', req.body.email, { maxAge: 1000 * 60 * 60 * 24 * 30 * 12 });
+                }
+            }
             res.redirect('/')
-        }catch(err){
+        } catch (err) {
             console.log(err.message);
         }
     },

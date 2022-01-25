@@ -12,23 +12,30 @@
 
                     <section class="profile__image">
                         <figure>
-                            <img src="/img/users/<%= locals.userInSession.fk_idImage_image.name%> " alt="Avatar de usuario">
+                            <img src="/img/users/<%= locals.userInSession.fk_idImage_image.name%> "
+                                alt="Avatar de usuario">
                         </figure>
 
                     </section>
 
                     <section class="profile__information">
-                       
+
                         <div class="profile__information--content">
                             <h2>Perfil</h2>
                             <hr>
                             <br>
-                            <p>Nombre: <%= locals.userInSession.Name%> </p>
-                            <p>Apellido: <%= locals.userInSession.lastName%> </p>
-                            <p>email: <%= locals.userInSession.email%> </p>
+                            <p>Nombre: <%= locals.userInSession.Name%>
+                            </p>
+                            <p>Apellido: <%= locals.userInSession.lastName%>
+                            </p>
+                            <p>email: <%= locals.userInSession.email%>
+                            </p>
+                            <a href="/editUser/<%= locals.userInSession.idUser%>">
+                                <button class="profile__edit" type="submit">Editar perfil</button>
+                            </a>
                         </div>
 
-                   </section>
+                    </section>
 
                 </main>
 

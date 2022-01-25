@@ -15,7 +15,7 @@
                             <h2 class="register__title">Formulario de registro</h2>
                             <div class="register__form">
                                 <select
-                                class="register__form--select <%= locals.errors && errors.typeDocument ? 'is-invalid' : null %>"
+                                class="register__form--select <%= locals.errors && errors.idDocumentType ? 'is-invalid' : null %>"
                                 name="fk_idDocumentType"
                                 id="typeDocument">
                                     <option value="" selected disabled hidden>Tipo Documento</option>
@@ -24,48 +24,48 @@
                                     <% }) %>
 
                                 </select>
-                                <% if (locals.errors && errors.typeDocument) { %>
+                                <% if (locals.errors && errors.fk_idDocumentType) { %>
                                     <p class="danger">
-                                        <%= errors.typeDocument.msg %>
+                                        <%= errors.fk_idDocumentType.msg %>
                                     </p>
                                     <% } %>
                             </div>
                             <div class="register__form">
                                 <input
-                                    class="register__form--text <%= locals.errors && errors.numDoc ? 'is-invalid' : null %>"
+                                    class="register__form--text <%= locals.errors && errors.documentNumber ? 'is-invalid' : null %>"
                                     type="text"
                                     name="documentNumber"
                                     placeholder="Número Documento"
-                                    value="<%= locals.oldData && oldData.numDoc ? oldData.numDoc : null %>">
-                                <% if (locals.errors && errors.numDoc) { %>
+                                    value="<%= locals.oldData && oldData.documentNumber ? oldData.documentNumber : null %>">
+                                <% if (locals.errors && errors.documentNumber) { %>
                                     <p class="danger">
-                                        <%= errors.numDoc.msg %>
+                                        <%= errors.documentNumber.msg %>
                                     </p>
                                     <% } %>
                             </div>
                             <div class="register__form">
                                 <input
-                                    class="register__form--text <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                                    class="register__form--text <%= locals.errors && errors.Name ? 'is-invalid' : null %>"
                                     type="text"
                                     name="Name"
                                     placeholder="Nombre"
-                                    value="<%= locals.oldData && oldData.name ? oldData.name : null %>">
-                                <% if (locals.errors && errors.name) { %>
+                                    value="<%= locals.oldData && oldData.Name ? oldData.Name : null %>">
+                                <% if (locals.errors && errors.Name) { %>
                                     <p class="danger">
-                                        <%= errors.name.msg %>
+                                        <%= errors.Name.msg %>
                                     </p>
                                     <% } %>
                             </div>
                             <div class="register__form">
                                 <input
-                                    class="register__form--text <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
+                                    class="register__form--text <%= locals.errors && errors.lastName ? 'is-invalid' : null %>"
                                     type="text"
                                     name="lastName"
                                     placeholder="Apellido"
-                                    value="<%= locals.oldData && oldData.lastname ? oldData.lastname : null %>">
-                                <% if (locals.errors && errors.lastname) { %>
+                                    value="<%= locals.oldData && oldData.lastName ? oldData.lastName : null %>">
+                                <% if (locals.errors && errors.lastName) { %>
                                     <p class="danger">
-                                        <%= errors.lastname.msg %>
+                                        <%= errors.lastName.msg %>
                                     </p>
                                     <% } %>
                             </div>
@@ -121,11 +121,11 @@
                                 class="register--radio"
                                 type="checkbox"
                                 name="privacyPolicies"
-                                <%= locals.oldData && oldData.politicaPrivacidad ? 'checked' : null %>>
+                                <%= locals.oldData && oldData.privacyPolicies ? 'checked' : null %>>
                                 <p>Acepto la política de privacidad y uso de éste sitio web</p>
-                                <% if (locals.errors && errors.politicaPrivacidad) { %>
+                                <% if (locals.errors && errors.privacyPolicies) { %>
                                     <div class="danger">
-                                        <%= errors.politicaPrivacidad.msg %>
+                                        <%= errors.privacyPolicies.msg %>
                                     </div>
                                     <% } %>
                             </div>

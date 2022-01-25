@@ -119,20 +119,19 @@ const productController = {
             product = {};
             if (!file) {
                 product = {
-                    id: asignaId,
                     ...req.body
                 }
             } else {
                 product = {
-                    id: asignaId,
                     ...req.body,
                     productImage: req.file.filename
                 }
             };
+            res.json(product);
 
-            await productsModel.updateProduct(asignaId, product);
+            // await productsModel.updateProduct(asignaId, product);
 
-            res.redirect('/')
+            // res.redirect('/')
         } catch (err) {
             console.log(err);
         }

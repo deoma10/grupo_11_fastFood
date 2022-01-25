@@ -75,26 +75,36 @@ const usersModel = {
             }
     },
 
-    createProduct: async function (product) {
-       
-    },
-
     updateUsers: async function (id, user) {
         try{
-            console.log(user)
-            await db.users.update({
-                documentNumber: user.documentNumber,
-                Name: user.Name,
-                lasName: user.lastName,
-                email: user.email
-            }, {where: {idUser:id}})
-        }catch(err){
+            if (user.userImage) {
+                //consultar el user antes de editarlo por id
+                let oldUser = await this.findUserByField('idUser', id);
+                // creamos nueva imagen en BD
+                await imagesModel.createImage(user.userImage);
+                // consultamos el id de la imagen recien creada
+                let newImage = await imagesModel.getOneImage('name', user.userImage);
+                console.log(user);
+                await db.users.update({
+                    documentNumber: user.documentNumber,
+                    Name: user.Name,
+                    lastName: user.lastName,
+                    email: user.email,
+                    fk_idImage: newImage.idImage
+                }, {where: {idUser:id}})
+                await imagesModel.deleteImage('users', oldUser.fk_idImage);
+            } else {
+                console.log(user);
+                await db.users.update({
+                    documentNumber: user.documentNumber,
+                    Name: user.Name,
+                    lastName: user.lastName,
+                    email: user.email
+                }, {where: {idUser:id}})
+            }
+        } catch (err) {
             console.log(err);
         }
-    },
-
-    deleteImage: function(fileName) {
-        fs.unlinkSync(path.resolve(__dirname, '../../public/img/users/' + fileName));
     },
 
     deleteUser: async function (id) {
