@@ -759,11 +759,12 @@ aside{
 
     .productDetail .products_det{
         flex-direction: row;
-        height: 40vh;        
+        height: 40vh;
+        margin: 40px auto;  
     }
 
     .productDetail .products_det .product-menu{
-        width: 39vh;
+        width: 40vh;
     }
 
     .productDetail .products_det .product-menu img{
@@ -794,13 +795,13 @@ aside{
         padding-left: 20%;
         padding-right: 20%;
         justify-content: space-between;
-        padding-bottom: 7px;
+        padding-bottom: 1px;
+        box-sizing: border-box;
     }
     
     .productDetail .products_det .product-menu_atributes .product-n .product-price{
         border: 1px solid #FFCFA5;
         border-right: 1px solid #949973;
-        width: 100%;
         height: 100%;
         padding: 15px;
         text-align: center;    
