@@ -10,7 +10,7 @@
                 <!-- Main Home -->
                 <main class="productDetail">
                         <% for(products of products) {%>
-                    <article class="products">
+                    <article class="products_det">
                         <div class="product-menu">
                             <img src="../img/Products/<%= products.fk_idImage_image.name %>" alt="">
                         </div>
@@ -20,9 +20,9 @@
                                     <p class="product-specific"><%= products.description %></p>
                                 </div>
                                 <div class="product-n">
-                                    <p class="product-price"><%= products.price %> </p>
-                                    <p class="product-add"> <a href="/productCart"><i class="fas fa-shopping-cart"></i>Agregar</a></p>
-                                    <% if(locals.isLogged==true && locals.userInSession.role==9) {%>
+                                    <p class="product-price">$<%= products.price %> </p>
+                                    <p class="product-price"><a href="/productCart">Agregar</a> </p>
+                                    <% if(locals.isLogged == true && locals.userInSession.rol == 9) {%>
                                     <p class="product-price"> <a href="/productMod/<%= products.idProducts %>" > Modificar </a></p>
                                     <p class="product-price"> <a href="/productDelete/<%= products.idProducts %>"> Eliminar </a></p>
                                     <%}%>

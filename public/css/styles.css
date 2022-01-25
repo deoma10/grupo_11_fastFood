@@ -5,6 +5,10 @@
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
 }
+
+:root{
+    --button-color: #E5C605;
+}
 /* INDEX.html//////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* Header*/
@@ -676,56 +680,54 @@ aside{
       background-color: #f5f5f5;
       padding-top: 10px;
   }
-  .productDetail .products{
+  .productDetail .products_det{
       display: flex;
-      width: 80%;
-      height: 100%;
-      margin: auto;
+      flex-direction: column;
+      width: 80vw;
+      margin: 23px auto ;
   }
-  .productDetail .products .product-menu{
-      height: 100%;
+  .productDetail .products_det .product-menu{
+      width: 100%;
   }
+  .productDetail .products_det .product-menu img{
+    background-size: cover;
+}
 
-  .productDetail .products .product-menu_atributes{
-      padding-left: 2%;
+  .productDetail .products_det .product-menu_atributes{
       display: flex;
       flex-direction: column;
   }
 
-  .productDetail .products .product-menu_atributes .product-description{
+  .productDetail .products_det .product-menu_atributes .product-description{
       height: 80%;
       display: flex;
       flex-direction: column;
   }
 
-  .productDetail .products .product-menu_atributes .product-n{
+  .productDetail .products_det .product-menu_atributes .product-n{
       display: flex;
       flex-direction: row;
-      justify-content: center; 
-      height: 20%;
-      padding-top: 15%;
-      padding-bottom: 2%;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 7px;
   }
 
-  .productDetail .products .product-menu_atributes .product-n .product-price{
-        width: 50%;
-        border: 1px solid #FFCFA5;
-        background-color: #FFCFA5;
-        border-right: 1px solid #949973;
-        text-align: center;
-        
+  .productDetail .products_det .product-menu_atributes .product-n .product-price{
+        width: 48%;
+        height: 10vw;
+        font-size: 1.2em;
+        border: 1px solid #c3c0ab;
+        background-color: var(--button-color);
+        box-shadow: 1px 1px 5px 1px #a5a4a4;
+        border-radius: 4%;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        font-weight: 1000;
   }
 
-  .productDetail .products .product-menu_atributes .product-n .product-add{
-        width: 50%;
-        border: 1px solid #FFCFA5;
-        background-color: #FFCFA5;
-        border-right: 1px solid #949973;
-        text-align: center;
-    }
 
-
-   .productDetail .products .product-menu_atributes .product-description .product-specific{
+   .productDetail .products_det .product-menu_atributes .product-description .product-specific{
     text-align: center;
     height: 80%;
     margin: auto;
@@ -733,13 +735,10 @@ aside{
     align-items: center;
    } 
 
-   .productDetail .products .product-menu_atributes .product-description .product-name{
-       text-align: center;
-       height: 20%;
+   .productDetail .products_det .product-menu_atributes .product-description .product-name{
+       height: 10%;
+       font-size: 1.3em;
        margin: auto;
-       display: flex;
-       align-items: center;
-       padding: 5%;
    }
 
   @media screen and (min-width: 630px){
@@ -747,47 +746,47 @@ aside{
         background-color: #f5f5f5;
     }
 
-    .productDetail article {
-        align-items: center;
+    .productDetail .products_det{
         flex-direction: row;
+        height: 40vh;        
     }
 
-    .productDetail article .product-menu{
-        display: flex;
-        flex-direction: row;
-        width: 32%;
+    .productDetail .products_det .product-menu{
+        width: 39vh;
+    }
+
+    .productDetail .products_det .product-menu img{
+        background-size: cover;
     }
     
-    .productDetail article .product-menu_atributes{
-        width: 68%;
+    .productDetail .products_det .product-menu_atributes{
+        width: 50%;
         height: 100%;
     }
 
-    .productDetail article .product-menu_atributes .product-description .product-name{
-        font-size: 1.3em;
+    .productDetail .products_det .product-menu_atributes .product-description .product-name{
+        font-size: 1.6em;
         align-content: center;
+        padding-top: 6px;
     }
     
-    .productDetail article .product-menu_atributes .product-description .product-specific{
-        text-align: center;
+    .productDetail .products_det .product-menu_atributes .product-description .product-specific{
         height: 80%;
         display: flex;
         align-items: center;
         margin: auto;
+        padding-left: 6px;
+        font-size: 1.2em;
     }
-    
-    .productDetail article .product-menu img{
-        width: 100%;
-    }
-    .productDetail article .product-menu_atributes .product-n{
-        height: 30%;
+    .productDetail .products_det .product-menu_atributes .product-n{
+        height: 25%;
         padding-left: 20%;
         padding-right: 20%;
         justify-content: space-between;
-        align-items: flex-end;
+        padding-bottom: 7px;
     }
     
-    .productDetail article .product-menu_atributes .product-n .product-price{
+    .productDetail .products_det .product-menu_atributes .product-n .product-price{
         border: 1px solid #FFCFA5;
         border-right: 1px solid #949973;
         width: 100%;
@@ -796,10 +795,6 @@ aside{
         text-align: center;    
     }
     
-    .productDetail article .product-menu_atributes .product-n .product-add{
-        height: 100%;
-        margin: auto;
-    }
 }
 
 /*Product creation //////////////////////////////////////////////////////////////////////////////////////////////////// */
