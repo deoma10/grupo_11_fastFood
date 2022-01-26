@@ -127,11 +127,10 @@ const productController = {
                     productImage: req.file.filename
                 }
             };
-            res.json(product);
 
-            // await productsModel.updateProduct(asignaId, product);
+            await productsModel.updateProduct(asignaId, product);
 
-            // res.redirect('/')
+            res.redirect('/')
         } catch (err) {
             console.log(err);
         }
