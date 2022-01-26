@@ -16,20 +16,6 @@
                             <div class="register__form">
                             </div>
                             <div class="register__form">
-                                <label for="documentNumber">Numero de Documento</label>
-                                <input
-                                    class="register__form--text <%= locals.errors && errors.documentNumber ? 'is-invalid' : null %>"
-                                    type="text"
-                                    name="documentNumber"
-                                    placeholder="Número Documento"
-                                    value="<%= user.documentNumber %>">
-                                <% if (locals.errors && errors.documentNumber) { %>
-                                    <p class="danger">
-                                        <%= errors.documentNumber.msg %>
-                                    </p>
-                                    <% } %>
-                            </div>
-                            <div class="register__form">
                                 <label for="Name">Nombre</label>
                                 <input
                                     class="register__form--text <%= locals.errors && errors.Name ? 'is-invalid' : null %>"

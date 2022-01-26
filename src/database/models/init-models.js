@@ -1,5 +1,5 @@
 var DataTypes = require("sequelize").DataTypes;
-var _delivery = require("./delivery");
+var _delivery = require("./Delivery");
 var _documenttypes = require("./documenttypes");
 var _images = require("./images");
 var _products = require("./products");
