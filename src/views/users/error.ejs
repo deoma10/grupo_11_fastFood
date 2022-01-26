@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error 404 Page Not Found</title>   
+    <title>Ups parece que  algo salió mal!</title>   
 </head>
 <body>
-    <H2>ERROR 404</H2>
-    <h2>PAGE NOT FOUND</h2>
+    <H2>ERROR</H2>
     <% if (locals.err) { %>
         <h3><%= err.message %> </h3>
     <% } else { %>
+        <h2>PAGE NOT FOUND</h2>
         <h3>La pagina a la que intenta ingresar no existe, compruebe su URL</h3>        
         <% } %>
     <h3><a href="/">Home Page</a></h3>
