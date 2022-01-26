@@ -13,9 +13,8 @@ const productController = {
             const products = await productsModel.getProducts();
             res.render(routePath('index'), { products });
         } catch (err) {
-            console.log(err);
+            res.render(routePath('error'), {err});
         }
-
     },
 
     getProducts: async (req, res) => {
@@ -27,7 +26,7 @@ const productController = {
                 res.redirect('/');
             }
         } catch (err) {
-            console.log(err);
+            res.render(routePath('error'), {err});
         }
 
     },
@@ -42,7 +41,7 @@ const productController = {
             let product = await productsModel.getOneProduct(req.params.id);
             res.render(routePath('productDetail'), { product });
         } catch (err) {
-            console.log(err);
+            res.render(routePath('error'), {err});
         }
     },
     getProductList: async (req, res) => {
@@ -50,7 +49,7 @@ const productController = {
             const products = await productsModel.getProducts();
             res.render(routePath('productList'), { products: products });
         } catch (err) {
-            console.log(err);
+            res.render(routePath('error'), {err});
         }
     },
 
@@ -107,7 +106,7 @@ const productController = {
                 res.redirect('/');
             }
         } catch (err) {
-            console.log(err);
+            res.render(routePath('error'), {err});
         }
     },
 
@@ -132,7 +131,7 @@ const productController = {
 
             res.redirect('/')
         } catch (err) {
-            console.log(err);
+            res.render(routePath('error'), {err});
         }
     },
 
@@ -142,7 +141,7 @@ const productController = {
             await productsModel.deleteProduct(parseInt(req.params.id));
             res.redirect('/')
         } catch (err) {
-            console.log(err);
+            res.render(routePath('error'), {err});
         }
     },
 
@@ -153,6 +152,10 @@ const productController = {
         } else {
             res.redirect('/');
         }
+    },
+
+    getError: (req, res) => {
+        res.render(routePath('error'));
     }
 }
 
