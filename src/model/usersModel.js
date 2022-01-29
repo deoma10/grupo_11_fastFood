@@ -13,9 +13,11 @@ const usersModel = {
                 {
                 include: [{ association: 'fk_idImage_image' },{association: 'fk_idDocumentType_documenttype' }]
             });
+            if(user===undefined){return new error}
             return user;
         } catch (err) {
             console.log(err);
+            return new error
         }
     },
 
@@ -35,19 +37,23 @@ const usersModel = {
                     );
                     break;
             }
+            if(user===undefined){return new error}
             return user
         } catch(err) {
             console.log(err);
+            return new error
         }
     },
 
     getDocumentsDatabase: async function() {
         try{
            let documents = await db.documenttypes.findAll();
+           if(documents===undefined){return new error}
            return documents;
         }
         catch(err){
             console.log(err);
+            return new error
         }
     },
 

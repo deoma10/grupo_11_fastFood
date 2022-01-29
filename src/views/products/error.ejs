@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>   
-</head>
-<body>
-    <H2>Ups parece que  algo salió mal!</H2>
-    <% if (locals.err) { %>
-        <h3><%= err.message %> </h3>
-    <% } else { %>
-        <h2>PAGE NOT FOUND</h2>
-        <h3>La pagina a la que intenta ingresar no existe, compruebe su URL</h3>        
-        <% } %>
-    <h3><a href="/">Home Page</a></h3>
-</body>
+<%- include('../partials/head') %>
+
+    <body>
+
+        <section class="main-error">
+
+            <% if (locals.err) { %>
+                <img src="/img/error-500.png" alt="">
+                <div class="main-error__container">
+                    <h3>Volver a la página de inicio</h3>
+                    <a href="/"><button>Inicio</button></a>
+                </div>
+                <% } else { %>
+                    <img src="/img/error-404.jpg" alt="">
+                <div class="main-error__container">
+                    <h3>La pagina a la que intenta ingresar no existe, compruebe su URL</h3>
+                    <a href="/"><button>Inicio</button></a>
+                </div>
+                <% } %>
+
+        </section>
+
+    </body>
+
 </html>

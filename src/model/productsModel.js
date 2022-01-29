@@ -7,9 +7,11 @@ const productsModel = {
             let product = await db.products.findAll({
                 include: [{ association: 'fk_idImage_image' }]
             });
+            if(product===undefined){return new error}
             return product;
         } catch (err) {
             console.log(err);
+            return new error
         }
     },
     getOneProduct: async function (value) {
@@ -17,9 +19,11 @@ const productsModel = {
             let product = await db.products.findByPk(value, {
                 include: [{ association: 'fk_idImage_image' }]
             });
+            if(product===undefined){return new error}
             return product;
         } catch (err) {
             console.log(err);
+            return new error
         }
     },
     createProduct: async function (product) {

@@ -21,7 +21,7 @@ const userController = {
             }
         }
         catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'), {err});
         }
     },
     //Modulo para mostrar la opcion de perfil solo a los usuarios logeados
@@ -89,7 +89,7 @@ const userController = {
             }
         }
         catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'), {err})
         }
     },
 
@@ -103,7 +103,7 @@ const userController = {
             }
         }
         catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'), {err})
         }
 
     },
@@ -144,7 +144,7 @@ const userController = {
             res.redirect('login')
         }
         catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'), {err})
         }
     },
     // Vista para Modificar Usuario
@@ -154,7 +154,7 @@ const userController = {
             res.render(routePath('editUser'), { user });
 
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'), {err})
         }
     },
     //Editar Usuario
@@ -196,7 +196,7 @@ const userController = {
             }
             res.redirect('/')
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'), {err})
         }
     },
     deleteUser: (req, res) => {

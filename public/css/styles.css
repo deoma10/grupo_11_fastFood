@@ -55,7 +55,7 @@ a:link{
 .header-pc{
     display: none;
 }
-/* Nav */
+/*------------------------------- -----  Nav ------ -------------------------------------*/
 
 .nav{
     padding-left: 15px;
@@ -156,7 +156,7 @@ a:link{
         font-weight: 600;
     }
 }
-/* Main Home */
+/*-------------------  -------------  Main Home -------------- ----------------------- */
 .main{
     /* outline: 1px solid black;  */
     display: flex;
@@ -1010,4 +1010,47 @@ aside{
         margin-left: 15vw;
         padding: 5vh 0 15vh 0;
     }
+}
+
+/* --------------------- ------ --- Error --- --------- ------------------------------- */
+.main-error{
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.main-error img{
+    margin-left: 5%;
+    margin-top: 30%;
+    width: 90%;
+    height: 40%;
+}
+.main-error .main-error__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main-error a button{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    font-size: 1.2em;
+    border: 1px solid #c3c0ab;
+    background-color: var(--button-color);
+    box-shadow: 1px 1px 5px 1px #a5a4a4;
+    border-radius: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 1000;
+}
+@media (min-width: 630px){
+    .main-error img{
+        margin-left: 20%;
+        margin-top: 10%;
+        width: 60%;
+        height: 50%;
+    }
+
 }

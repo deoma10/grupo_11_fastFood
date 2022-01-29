@@ -3,6 +3,34 @@ Empezar a hacer:
 - Utilizar metodologías ágiles para ordenar y parametrizar nuesto código, para no confundirnos con el código que escriben los compañeros
 -Comentar el codigo para saber que hace cada porción
 -Seguir las indicaciones de Fran en cuanto a aspectos visuales
+-Embellecer el CSS
+
+Hacer más:
+- Dedicarle más tiempo a la modificación del proyecto
+- Comunicar siempre que haya dudas para resolverlas en equipo
+- Hacer reuniones para complementar el proyecto entre todos
+- Ordenar el trello por Sprints
+
+Hacer menos:
+- Generar demasiados cambios sin hacer push. Así evitamos que los problemas al unificar el código sean menores y más fáciles de resolver
+- Llegar a la reunión grupal sin propuestas para el trabajo pendiente
+
+Seguir haciendo:
+- Ser más propositivos antes de las reuniones, tener propuestas e ideas ya preparadas antes de llegar a la reunión
+- Hacer push al repo con más frecuencia, para evitar que haya problemas cuando se hace pull
+- Comunicar oportunamente si hay inconvenientes de cualquier tipo
+- Continuar con un espacio permanente de reuniones semanales
+
+Dejar de hacer:
+- Modificar el código de uso Global sin avisar
+- Empezar a trabajar sin revisar los cambios en el repo remoto
+*****************************************************************************************
+
+Retrospectiva Sprint 6:
+Empezar a hacer:
+- Utilizar metodologías ágiles para ordenar y parametrizar nuesto código, para no confundirnos con el código que escriben los compañeros
+-Comentar el codigo para saber que hace cada porción
+-Seguir las indicaciones de Fran en cuanto a aspectos visuales
 
 Hacer más:
 - Dedicarle más tiempo a la modificación del proyecto
