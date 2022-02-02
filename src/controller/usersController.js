@@ -1,9 +1,7 @@
-const { usersModel, newID, imagesModel } = require('../model');
+const { usersModel, imagesModel } = require('../model');
 const path = require('path');
 const bcrypt = require('bcryptjs'); // Paquete bcryptjs para almacenar datos encriptados.
-const { validationResult, cookie } = require('express-validator');
-const { Console } = require('console');
-const session = require('express-session');
+const { validationResult } = require('express-validator');
 
 const routePath = (route) => {
     return path.resolve(__dirname, '..', 'views', 'users', route);
@@ -124,7 +122,20 @@ const userController = {
                     documents
                 })
             }
-            let user = {};
+            let verifyEmail = await usersModel.findUserByField('email', req.body.email)
+            if(verifyEmail) {
+                let documents = await usersModel.getDocumentsDatabase();
+                return res.render(routePath('register'), {
+                    errors: {
+                        email: {
+                            msg: 'Éste email ya está registrado'
+                        }
+                    },
+                    oldData: req.body,
+                    documents
+                })
+            } else {
+                let user = {};
             if (!file) {
                 user = {
                     ...req.body,
@@ -142,8 +153,8 @@ const userController = {
             //Guardar usuario en el array de usuarios
             usersModel.createUsers(user)
             res.redirect('login')
-        }
-        catch (err) {
+            }
+        } catch (err) {
             res.render(path.resolve(__dirname, '..', 'views', 'products', 'error'), {err})
         }
     },

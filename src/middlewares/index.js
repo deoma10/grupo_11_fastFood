@@ -4,7 +4,8 @@ const loginValidation = require('./loginValidation');
 const editUserValidation = require('./editUserValidation');
 const productValidation = require('./productValidation');
 const userMulterUpload = require('./userMulterUpload');
-const userSession = require('./userSession')
+const userSession = require('./userSession');
+const productModValidation = require('./productModValidation');
 
 module.exports = {
     multerUpload,
@@ -13,5 +14,6 @@ module.exports = {
     loginValidation,
     editUserValidation,
     productValidation,
+    productModValidation,
     userSession
 };

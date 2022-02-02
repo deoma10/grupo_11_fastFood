@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 const path = require('path');
 
-const productValidation = [
+const productModValidation = [
     body('name')
         .notEmpty().withMessage('Ingresa el nombre del producto')
         .isLength({ min: 5 }).withMessage('Escribe un nombre de producto Válido'),
@@ -22,11 +22,10 @@ const productValidation = [
             if(!acceptedExtensions.includes(fileExtension)) {
                 throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
             }
-            return true;
         }
 
         return true;
     })
 ];
 
-module.exports = productValidation;
+module.exports = productModValidation;

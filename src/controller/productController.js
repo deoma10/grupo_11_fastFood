@@ -13,7 +13,7 @@ const productController = {
             const products = await productsModel.getProducts();
             res.render(routePath('index'), { products });
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(routePath('error'), { err });
         }
     },
 
@@ -26,7 +26,7 @@ const productController = {
                 res.redirect('/');
             }
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(routePath('error'), { err });
         }
 
     },
@@ -41,7 +41,7 @@ const productController = {
             let product = await productsModel.getOneProduct(req.params.id);
             res.render(routePath('productDetail'), { product });
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(routePath('error'), { err });
         }
     },
     getProductList: async (req, res) => {
@@ -49,7 +49,7 @@ const productController = {
             const products = await productsModel.getProducts();
             res.render(routePath('productList'), { products: products });
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(routePath('error'), { err });
         }
     },
 
@@ -106,7 +106,7 @@ const productController = {
                 res.redirect('/');
             }
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(routePath('error'), { err });
         }
     },
 
@@ -114,6 +114,19 @@ const productController = {
     editProduct: async (req, res) => {
         try {
             const file = req.file;
+            const resultValidation = validationResult(req);
+
+            if (resultValidation.errors.length > 0) {
+                if (file) {
+                    imagesModel.deleteImageFile(req.file.filename)
+                }
+                const product = await productsModel.getOneProduct(req.params.id)
+                return res.render(routePath('productCreation'), {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    product
+                })
+            }
             let asignaId = parseInt(req.params.id);
             product = {};
             if (!file) {
@@ -131,7 +144,7 @@ const productController = {
 
             res.redirect('/')
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(routePath('error'), { err });
         }
     },
 
@@ -141,7 +154,7 @@ const productController = {
             await productsModel.deleteProduct(parseInt(req.params.id));
             res.redirect('/')
         } catch (err) {
-            res.render(routePath('error'), {err});
+            res.render(routePath('error'), { err });
         }
     },
 

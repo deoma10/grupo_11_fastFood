@@ -1,7 +1,7 @@
 const express = require('express');
 const productRouter = express.Router();
 const {productController} = require("../controller");
-const {multerUpload, productValidation} = require('../middlewares');
+const {multerUpload, productValidation, productModValidation} = require('../middlewares');
 
 productRouter.get('/', productController.getIndex);
 
@@ -20,7 +20,8 @@ productRouter.post('/', multerUpload.single('productImage'), productValidation, 
 
 productRouter.get('/productMod/:id', productController.getProductMod);
 
-productRouter.put('/productMod/:id', multerUpload.single('productImage'), productController.editProduct);
+// Editar producto
+productRouter.put('/productMod/:id', multerUpload.single('productImage'), productModValidation, productController.editProduct);
 
 // Eliminar producto
 productRouter.delete('/productDelete/:id', productController.deleteProducts);

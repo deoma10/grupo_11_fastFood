@@ -110,6 +110,11 @@
                             <div class="creation__form--img">
                                 <label class="userCreation--title">Foto de Usuario</label>
                                 <input class="userCreation__--img" type="file" name="userImage" accept=".jpg .png .jepg .gif">
+                                <% if (locals.errors && errors.userImage) { %>
+                                    <p class="danger">
+                                        <%= errors.userImage.msg %>
+                                    </p>
+                                    <% } %>
                             </div>
                             <div class="register__form--radio">
                                 <input

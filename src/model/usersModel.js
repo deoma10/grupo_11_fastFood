@@ -102,7 +102,7 @@ const usersModel = {
             } else {
                 console.log(user);
                 await db.users.update({
-                    documentNumber: user.documentNumber,
+                    documentNumber: oldUser.documentNumber,
                     Name: user.Name,
                     lastName: user.lastName,
                     email: user.email
