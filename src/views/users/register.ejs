@@ -48,6 +48,7 @@
                                     class="register__form--text <%= locals.errors && errors.Name ? 'is-invalid' : null %>"
                                     type="text"
                                     name="Name"
+                                    id="name"
                                     placeholder="Nombre"
                                     value="<%= locals.oldData && oldData.Name ? oldData.Name : null %>">
                                 <% if (locals.errors && errors.Name) { %>
@@ -56,11 +57,13 @@
                                     </p>
                                     <% } %>
                             </div>
+                        
                             <div class="register__form">
                                 <input
                                     class="register__form--text <%= locals.errors && errors.lastName ? 'is-invalid' : null %>"
                                     type="text"
                                     name="lastName"
+                                    id="last-name"
                                     placeholder="Apellido"
                                     value="<%= locals.oldData && oldData.lastName ? oldData.lastName : null %>">
                                 <% if (locals.errors && errors.lastName) { %>
@@ -73,6 +76,7 @@
                                 <input
                                     class="register__form--text <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                                     type="text"
+                                    id="email"
                                     name="email"
                                     placeholder="Correo"
                                     value="<%= locals.oldData && oldData.email ? oldData.email : null %>">
@@ -93,6 +97,7 @@
                                 <input
                                 class="register__form--text <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                                 type="password"
+                                id="password"
                                 name="password"
                                 placeholder="Contraseña">
                                 <% if (locals.errors && errors.password) { %>
@@ -107,9 +112,14 @@
                                 type="password"
                                 placeholder="Repetir contraseña">
                             </div>
+                            <div class="register__form">
+                                <ul class="register__form--errors">
+
+                                </ul>
+                            </div>
                             <div class="creation__form--img">
                                 <label class="userCreation--title">Foto de Usuario</label>
-                                <input class="userCreation__--img" type="file" name="userImage" accept=".jpg .png .jepg .gif">
+                                <input class="userCreation__--img" type="file" id="image" name="userImage" accept=".jpg .png .jepg .gif">
                                 <% if (locals.errors && errors.userImage) { %>
                                     <p class="danger">
                                         <%= errors.userImage.msg %>
@@ -144,6 +154,7 @@
 
                 <!--Footer-->
                 <%- include('../partials/footer') %>
+                <script src="/js/validationsRegister.js"></script>
     </body>
 
 </html>

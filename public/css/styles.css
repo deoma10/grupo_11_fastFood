@@ -544,6 +544,10 @@ aside{
 .register__form--text::placeholder {
     font-size: 0.7em;
 }
+.register__form--errors{
+    color: #ffffff;
+    list-style: none
+}
 @media (min-width: 420px) {
     .register .form{
         max-width: 500px; 
