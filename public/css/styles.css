@@ -459,6 +459,9 @@ aside{
 .is-invalid {
     border: 1px solid red;
 }
+.name-error, .last-name-error, .email-error, .password-error{
+    color: #ffffff
+}
 
 @media (min-width: 346px) {
     .login--recover {

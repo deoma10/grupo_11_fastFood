@@ -57,7 +57,7 @@
                                     </p>
                                     <% } %>
                             </div>
-                        
+                            <p class="name-error"></p>
                             <div class="register__form">
                                 <input
                                     class="register__form--text <%= locals.errors && errors.lastName ? 'is-invalid' : null %>"
@@ -72,6 +72,7 @@
                                     </p>
                                     <% } %>
                             </div>
+                            <p class="last-name-error"></p>
                             <div class="register__form">
                                 <input
                                     class="register__form--text <%= locals.errors && errors.email ? 'is-invalid' : null %>"
@@ -86,6 +87,7 @@
                                     </p>
                                     <% } %>
                             </div>
+                            <p class="email-error"></p>
                             <div class="register__form">
                                 <input
                                 class="register__form--text <%= locals.errors && errors.email ? 'is-invalid' : null %>"
@@ -106,6 +108,9 @@
                                     </p>
                                     <% } %>
                             </div>
+                            <p class="password-error">
+                                    
+                            </p>
                             <div class="register__form">
                                 <input
                                 class="register__form--text <%= locals.errors && errors.password ? 'is-invalid' : null %>"
@@ -154,7 +159,7 @@
 
                 <!--Footer-->
                 <%- include('../partials/footer') %>
-                <script src="/js/validationsRegister.js"></script>
+                <script src="/js/validationRegister.js"></script>
     </body>
 
 </html>
