@@ -17,6 +17,7 @@
                                 class="creation__form--text <%= locals.errors && errors.name ? 'is-invalid' : null %>"
                                 type="text"
                                 name="name"
+                                id="creation_product_name"
                                 placeholder="Nombre producto"
                                 value="<%= locals.oldData && oldData.name ? oldData.name : null %>">
                                     <% if (locals.errors && errors.name) { %>
@@ -24,6 +25,7 @@
                                             <%= errors.name.msg %>
                                         </p>
                                         <% } %>
+                                <p class="productCreationErrorName" >el nombre debe contener al menos 5 caracteres</p>
                             </div>
                             <label class="creation--title">Descripción</label>
                             <div class="creation__form">
@@ -32,12 +34,14 @@
                                 name="description"
                                 cols="30"
                                 rows="10"
-                                minlength="10"><%= locals.oldData && oldData.description ? oldData.description : null %></textarea>
+                                id="creation_product_description"
+                                ><%= locals.oldData && oldData.description ? oldData.description : null %></textarea>
                                 <% if (locals.errors && errors.description) { %>
                                         <p class="danger">
                                             <%= errors.description.msg %>
                                         </p>
                                         <% } %>
+                                <p class="productCreationErrorDescription">la descripcion debe contener al menos 20 caracteres</p>
                             </div>
                             <div class="creation__form">
                                 <input
@@ -58,12 +62,14 @@
                                 class="creation__--img"
                                 type="file"
                                 name="productImage"
+                                id="creation_product_img"
                                 accept=".jpg .png .jepg .gif">
                                 <% if (locals.errors && errors.productImage) { %>
                                     <p class="danger">
                                         <%= errors.productImage.msg %>
                                     </p>
                                     <% } %>
+                                <p class="productCreationErrorImg" >la imagen debe tener una extension valida JPG, JPEG, PNG, GIF</p>
                             </div>
                             <div class="creation__form">
                                 <input class="creation__form--button" type="submit" value="Crear producto">
@@ -73,7 +79,7 @@
                 </main>
                 <!--Footer-->
                 <%- include('../partials/footer') %>
-
+                <script src="js/validationProductCreation.js"></script>
     </body>
 
 </html>

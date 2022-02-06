@@ -861,6 +861,25 @@ aside{
     font-size: 0.6em;
 }
 
+.productCreationErrorDescription, .productCreationErrorImg, .productCreationErrorName{
+    visibility: hidden;
+}
+
+.productCreationErrorDescription.hasError, .productCreationErrorImg.hasError, .productCreationErrorName.hasError{
+   visibility:visible;
+   color: #ffffff;
+}
+
+.productModErrorDescription, .productModErrorImg, .productModErrorName{
+    visibility: hidden;
+}
+
+.productModErrorDescription.hasError, .productModErrorImg.hasError, .productModErrorName.hasError{
+   visibility:visible;
+   color: #ffffff;
+}
+
+
 @media (min-width: 340px) {
     .productCreation .form {
         max-width: 500px;
