@@ -17,11 +17,11 @@ body{
 }
 
 a:link{
-    text-decoration:none; 
+    text-decoration:none;
     outline:none;
     color:#000000;
 } a:visited{
-    text-decoration:none; 
+    text-decoration:none;
     outline:none;
     color:#000000;
 }
@@ -106,7 +106,7 @@ a:link{
         width: 80px;
         height: 80px;
         display: flex;
-        margin: 1.75vh 1vw;
+        margin: 1.75vh 0 1.75vh 1vw;
         border-radius: 6px;
         background-color: #FFE459;
         justify-content: center;
@@ -118,12 +118,12 @@ a:link{
         height: 70px;
     }
     .header-pc__content{
-        width: 94%;
+        width: 95%;
         height: 80px;
         background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
         display: flex;
         justify-content: space-around;
-        margin: 1.75vh 1vw;
+        margin: 1.75vh 1vw 1.75vh 1vw;
         border-radius: 6px;
         align-items: center;
     }
@@ -280,7 +280,7 @@ aside{
 .admin__select a{
     text-decoration: none;
 }
-.admin__select a button{    
+.admin__select a button{
     margin: 1% 0 2% 0;
 }
 
