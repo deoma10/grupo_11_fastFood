@@ -16,6 +16,10 @@ const productsModel = {
     },
     getOneProduct: async function (value) {
         try {
+            let allProducts = await db.products.findAll();
+            if(value <= 0 || value > allProducts.length) {
+                new error
+            }
             let product = await db.products.findByPk(value, {
                 include: [{ association: 'fk_idImage_image' }]
             });

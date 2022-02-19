@@ -7,6 +7,11 @@
 
     ○ https://github.com/deoma10/grupo_11_fastFood.git
 
+★ URL de api.
+
+    ○ http://localhost:4000/api/products
+    ○ http://localhost:4000/api/users
+
 ★ URL del tablero de trabajo en Trello con todos los colaboradores agregados.
 
     ○ https://trello.com/b/vfmhEELd/team-11-digital-house-fast-food-retrospectives-with-post-it%E2%93%A1-trello

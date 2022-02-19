@@ -11,9 +11,22 @@ const usersModel = {
                     }
                 },
                 {
-                include: [{ association: 'fk_idImage_image' },{association: 'fk_idDocumentType_documenttype' }]
-            });
-            if(user===undefined){return new error}
+                    include: [{ association: 'fk_idImage_image' }, { association: 'fk_idDocumentType_documenttype' }]
+                });
+            if (user === undefined) { return new error }
+            return user;
+        } catch (err) {
+            console.log(err);
+            return new error
+        }
+    },
+    getAllUsers: async function () {
+        try {
+            let user = await db.users.findAll(
+                {
+                    include: [{ association: 'fk_idImage_image' }, { association: 'fk_idDocumentType_documenttype' }]
+                });
+            if (user === undefined) { return new error }
             return user;
         } catch (err) {
             console.log(err);
@@ -21,68 +34,74 @@ const usersModel = {
         }
     },
 
-    findUserByField: async function(field, value) {
-         try {
+    findUserByField: async function (field, value) {
+        try {
             let user;
             switch (field) {
                 case 'idUser':
-                    user = await db.users.findByPk(value,{
-                        include: [{association: 'fk_idImage_image'}]
+                    let allUsers = await db.users.findAll();
+                    if (value <= 0 || value > allUsers.length) {
+                        new error
+                    }
+                    user = await db.users.findByPk(value, {
+                        include: [{ association: 'fk_idImage_image' }]
                     })
                     break;
                 case 'email':
                     user = await db.users.findOne(
-                        { where: { email: value },
-                        include: [{association: 'fk_idImage_image'}]}
+                        {
+                            where: { email: value },
+                            include: [{ association: 'fk_idImage_image' }]
+                        }
                     );
                     break;
             }
-            if(user===undefined){return new error}
+            if (user === undefined) { return new error }
             return user
-        } catch(err) {
+        } catch (err) {
             console.log(err);
             return new error
         }
     },
 
-    getDocumentsDatabase: async function() {
-        try{
-           let documents = await db.documenttypes.findAll();
-           if(documents===undefined){return new error}
-           return documents;
+    getDocumentsDatabase: async function () {
+        try {
+            let documents = await db.documenttypes.findAll();
+            if (documents === undefined) { return new error }
+            return documents;
         }
-        catch(err){
+        catch (err) {
             console.log(err);
             return new error
         }
     },
 
     createUsers: async function (user) {
-            try {
-                await imagesModel.createImage(user.userImage);
-                let newImage = await imagesModel.getOneImage('name', user.userImage);
-                await db.users.create({
-                    documentNumber: user.documentNumber,
-                    Name: user.Name,
-                    lastName: user.lastName,
-                    email: user.email,
-                    password: user.password,
-                    receivesEmail: user.receivesEmail,
-                    privacyPolicies: user.privacyPolicies,
-                    rol: 1,
-                    activated: 1,
-                    fk_idImage: newImage.idImage,
-                    fk_idDocumentType: user.fk_idDocumentType
-                })
-            } catch (err) {
-                console.log(err);
-                let newImage = await imagesModel.getOneImage('name', user.userImage);
-                await imagesModel.deleteImage('users', newImage.idImage);
-            }
+        try {
+            await imagesModel.createImage(user.userImage);
+            let newImage = await imagesModel.getOneImage('name', user.userImage);
+            await db.users.create({
+                documentNumber: user.documentNumber,
+                Name: user.Name,
+                lastName: user.lastName,
+                email: user.email,
+                password: user.password,
+                receivesEmail: user.receivesEmail,
+                privacyPolicies: user.privacyPolicies,
+                rol: 1,
+                activated: 1,
+                fk_idImage: newImage.idImage,
+                fk_idDocumentType: user.fk_idDocumentType
+            })
+        } catch (err) {
+            console.log(err);
+            let newImage = await imagesModel.getOneImage('name', user.userImage);
+            await imagesModel.deleteImage('users', newImage.idImage);
+        }
     },
 
     updateUsers: async function (id, user) {
-        try{
+        try {
             if (user.userImage) {
                 //consultar el user antes de editarlo por id
                 let oldUser = await this.findUserByField('idUser', id);
@@ -97,7 +116,7 @@ const usersModel = {
                     lastName: user.lastName,
                     email: user.email,
                     fk_idImage: newImage.idImage
-                }, {where: {idUser:id}})
+                }, { where: { idUser: id } })
                 await imagesModel.deleteImage('users', oldUser.fk_idImage);
             } else {
                 console.log(user);
@@ -106,7 +125,7 @@ const usersModel = {
                     Name: user.Name,
                     lastName: user.lastName,
                     email: user.email
-                }, {where: {idUser:id}})
+                }, { where: { idUser: id } })
             }
         } catch (err) {
             console.log(err);
@@ -114,9 +133,9 @@ const usersModel = {
     },
 
     deleteUser: async function (id) {
-        try{
-            await db.users.update({activated: 0}, {where: {idUser:id}})
-        }catch(err){
+        try {
+            await db.users.update({ activated: 0 }, { where: { idUser: id } })
+        } catch (err) {
             console.log(err);
         }
     }

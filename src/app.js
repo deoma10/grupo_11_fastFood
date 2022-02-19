@@ -13,6 +13,7 @@ app.use(userSession) //llamamos la funcion donde se procesa la cookie y se envia
 
 // Implementación de EJS
 const rutas = require('./router/index.routes')
+const apiRutas = require('./router/apiRouter/api.index.routes')
 app.set('view engine', 'ejs');
 app.use(express.static(path.resolve(__dirname,  '..', 'public')));
 app.use(express.urlencoded({extended: false})); // Middleware que recoge información de los formularios
@@ -24,6 +25,7 @@ app.set('views', path.resolve(__dirname, './views'));
 app.use(methodOverride('_method'));
 
 app.use('/', rutas);
+app.use('/api', apiRutas);
 
 
 app.listen(port, () => {
