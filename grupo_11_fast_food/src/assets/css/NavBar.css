@@ -1,16 +1,6 @@
 header {
     display: flex;
-}
-
-.header-logo {
-    width: 6vw;
-    height: 6vw;
-    padding: 1%;
-}
-
-.logo {
-    width: 100%;
-    border-radius: 10%;
+    height: 7vw;
 }
 
 .navBar {
@@ -21,7 +11,7 @@ header {
     display: flex;
     margin: auto;
     position: relative;
-    left: 6vw;
+    left: 10vw;
 }
 
 .navBar__list {
