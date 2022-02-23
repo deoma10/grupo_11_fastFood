@@ -1,8 +1,10 @@
 .content {
-    width: 85vw;
+    width: 75vw;
     background-color: #ffffff;
     margin: 0 2%;
     border-radius: 10px;
+    position: relative;
+    left: 20vw;
 }
 
 .content__title {
