@@ -1,0 +1,16 @@
+.oneUser {
+    width: 90%;
+    margin: 10%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.oneUser__title {
+    text-align: center;
+}
+
+.oneUser__image img {
+    border-radius: 8px;
+}

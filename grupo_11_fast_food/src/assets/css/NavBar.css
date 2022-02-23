@@ -1,0 +1,42 @@
+header {
+    display: flex;
+}
+
+.header-logo {
+    width: 6vw;
+    height: 6vw;
+    padding: 1%;
+}
+
+.logo {
+    width: 100%;
+    border-radius: 10%;
+}
+
+.navBar {
+    background-color: #FFFFFF;
+    width: 89vw;
+    height: 5vw;
+    border-radius: 10px;
+    display: flex;
+    margin: auto;
+}
+
+.navBar__list {
+    background-color: #FFFFFF;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.navItem {
+    background-color: #FFFFFF;
+    list-style: none;
+    padding: 0 20%;
+}
+
+.navLink {
+    background-color: #FFFFFF;
+    text-decoration: none;
+    color: #050505;
+}
