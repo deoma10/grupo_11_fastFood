@@ -1,3 +1,8 @@
+.main {
+  background-color: #f5f5f5;
+  height: 100vw;
+}
+
 .App {
   text-align: center;
 }

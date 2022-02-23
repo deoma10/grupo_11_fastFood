@@ -1,7 +1,6 @@
 import logo from '../../assets/images/Logo-Fast-Food.png'
-import '../../assets/css/main.css';
-import { Link, Route, Switch } from 'react-router-dom';
-import ProductsList from '../productsList/productsList';
+import '../../assets/css/NavBar.css';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -9,13 +8,13 @@ function NavBar() {
             <header>
                 <div className="header-logo">
                     <Link to="/">
-                        <img className="logo" src={logo} />
+                        <img className="logo" src={logo} alt="Fast Food Logo" />
                     </Link>
                 </div>
                 <div className="navBar">
                     <ul className="navBar__list">
                         <li className='navItem'>
-                            <Link className='navLink' to="/prducts">
+                            <Link className='navLink' to="/products">
                                 Productos
                             </Link>
                         </li>

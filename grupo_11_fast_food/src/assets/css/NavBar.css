@@ -1,7 +1,3 @@
-.principal {
-    background-color: #f5f5f5;
-}
-
 header {
     display: flex;
 }
@@ -18,20 +14,29 @@ header {
 }
 
 .navBar {
+    background-color: #FFFFFF;
+    width: 89vw;
+    height: 5vw;
+    border-radius: 10px;
     display: flex;
     margin: auto;
 }
 
 .navBar__list {
+    background-color: #FFFFFF;
     display: flex;
+    margin: auto;
     justify-content: space-evenly;
 }
 
 .navItem {
+    background-color: #FFFFFF;
     list-style: none;
     padding: 0 20%;
 }
 
 .navLink {
+    background-color: #FFFFFF;
     text-decoration: none;
+    color: #050505;
 }
