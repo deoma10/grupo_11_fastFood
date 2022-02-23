@@ -15,11 +15,13 @@ header {
 
 .navBar {
     background-color: #FFFFFF;
-    width: 89vw;
+    width: 75vw;
     height: 5vw;
     border-radius: 10px;
     display: flex;
     margin: auto;
+    position: relative;
+    left: 6vw;
 }
 
 .navBar__list {
