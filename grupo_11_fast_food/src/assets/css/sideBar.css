@@ -1,0 +1,15 @@
+.side-bar{
+    width: 20vw;
+    background-color: #FFE459;
+    /* position: relative;
+    bottom: 7vw; */
+}
+
+.side-bar__link{
+    width: 20vw;
+    height: 20vw;
+}
+
+.side-bar__logo{
+    width: 20vw;
+}

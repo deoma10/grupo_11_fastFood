@@ -3,12 +3,14 @@ import SideBar from './sideBar/sideBar';
 import NavBar from './navBar/navBar';
 import MainContent from './mainContent/mainContent';
 
+
 function App() {
   return (
     <div className='main'>
-      <SideBar />
-      <NavBar />
-      <MainContent />
+     <div className='contenedor-main'>
+        <SideBar />
+        <MainContent />
+     </div >
     </div>
   );
 }
