@@ -1,15 +1,26 @@
 .side-bar{
     width: 20vw;
     background-color: #FFE459;
-    /* position: relative;
-    bottom: 7vw; */
 }
 
 .side-bar__link{
     width: 20vw;
     height: 20vw;
+    margin-left: 1vw
 }
 
 .side-bar__logo{
-    width: 20vw;
+    margin-top: 10px;
+    width: 17vw;
+}
+.side-bar__list{
+    list-style: none;
+    color: #ffffff;
+}
+.side-bar-item{
+    margin-bottom: 5vh;
+}
+.side-barlink{
+    text-decoration: none;
+    color: #000000;
 }
