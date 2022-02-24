@@ -1,34 +1,31 @@
 header {
     display: flex;
-    height: 7vw;
+    height: 5vw;
 }
 
 .navBar {
-    background-color: #FFFFFF;
-    width: 75vw;
+    background-color: #ffffff;
+    width: 100vw;
     height: 5vw;
-    border-radius: 10px;
     display: flex;
     margin: auto;
-    position: relative;
-    left: 10vw;
 }
 
 .navBar__list {
-    background-color: #FFFFFF;
+    background-color: #FFE459;
     display: flex;
     margin: auto;
     justify-content: space-evenly;
 }
 
 .navItem {
-    background-color: #FFFFFF;
+    background-color: #FFE459;
     list-style: none;
     padding: 0 20%;
 }
 
 .navLink {
-    background-color: #FFFFFF;
+    background-color: #FFE459;
     text-decoration: none;
     color: #050505;
 }
