@@ -2,7 +2,8 @@ import logo from '../../assets/images/Logo-Fast-Food.png'
 import '../../assets/css/sideBar.css';
 import { Link } from 'react-router-dom';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faUsers, faBurger} from '@fortawesome/free-solid-svg-icons'
 
 function SideBar() {
     return (
@@ -13,12 +14,12 @@ function SideBar() {
             <ul className="side-bar__list">
                         <li className='side-bar-item'>
                             <Link className='side-barlink' to="/products">
-                                Productos
+                            <FontAwesomeIcon icon={faBurger} /> Productos
                             </Link>
                         </li>
                         <li className='side-bar-item'>
                             <Link className='side-barlink' to="/users">
-                            <i class="fa-solid fa-users"></i><span>Usuarios</span>
+                            <FontAwesomeIcon icon={faUsers}/> Usuarios
                             </Link>
                         </li>
                     </ul>
