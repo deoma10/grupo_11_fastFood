@@ -10,7 +10,7 @@ function  Product(props)  {
         
         <div className="product">
                 <div className='product__image'>
-                    <img src={image} alt="Product" />
+                    <img src={props.image} alt="Product" />
                 </div>
                 <h4 className="product__title">
                     Producto: {props.name}

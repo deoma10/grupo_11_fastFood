@@ -24,13 +24,15 @@ const apiProductsController = {
     },
     getProductDetail: async (req, res) => {
         try {
+            const hostname = req.hostname;
+            const protocol = req.protocol;
             let product = await productsModel.getOneProduct(req.params.id);
             newProduct = {
                 idProducts: product.idProducts,
                 name: product.name,
                 description: product.description,
                 price: product.price,
-                imageName: product.fk_idImage_image.name
+                imageName: protocol + '://' + hostname + '/img/Products/' + product.fk_idImage_image.name
             }
             res.json(newProduct);
         } catch (err) {
