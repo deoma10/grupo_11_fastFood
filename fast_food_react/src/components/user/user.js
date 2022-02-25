@@ -15,7 +15,10 @@ function User(props) {
             <Link className="user__info" to={id}>
                 <div>
                     <h3 className="user__name">
-                        {props.name} {props.lastName}
+                        {props.name}
+                    </h3>
+                    <h3 className="user__name">
+                        {props.lastName}
                     </h3>
                 </div>
             </Link>

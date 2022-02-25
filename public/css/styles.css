@@ -143,6 +143,7 @@ a:link{
     .user--img {
         width: 17%;
         height: 17%;
+        margin: 1%;
     }
     .user__img {
         width: 100%;

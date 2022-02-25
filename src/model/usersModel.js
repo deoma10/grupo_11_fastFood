@@ -40,13 +40,17 @@ const usersModel = {
             switch (field) {
                 case 'idUser':
                     let allUsers = await db.users.findAll();
-                    if (value <= 0 || value > allUsers.length) {
-                        new error
-                    }
-                    user = await db.users.findByPk(value, {
-                        include: [{ association: 'fk_idImage_image' }]
+                    let exists = await allUsers.filter(user => {
+                        return user.idUser == value
                     })
-                    break;
+                    if (exists[0] == undefined) {
+                        new error
+                    } else {
+                        user = await db.users.findByPk(value, {
+                            include: [{ association: 'fk_idImage_image' }]
+                        })
+                        break;
+                    }
                 case 'email':
                     user = await db.users.findOne(
                         {

@@ -1,9 +1,9 @@
-import image from '../../assets/images/default-product.png'
-import '../../assets/css/ProductDetail.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import Error404 from '../error404/Error404';
+import ProductDeatil from '../productDetail/productDetail';
 
-function ProductDeatil(props) {
+function FindProduct() {
     const [product, setProduct] = useState([]);
     const params = useParams();
 
@@ -30,22 +30,17 @@ function ProductDeatil(props) {
         setProduct(newProduct)
     }, [])
 
+    const result = product == undefined ? (
+        <Error404 />
+    ) : (
+        <ProductDeatil name={product.name} description={product.description} price={product.price} imageName={product.imageName}/>
+    )
+
     return (
-        <div className="oneProduct">
-            <h3 className="oneProduct__title">
-                {product.name}
-            </h3>
-            <div className='oneProduct__image'>
-                <img src={product.imageName} alt="Product" />
-            </div>
-            <p className="oneProduct__desc">
-                {product.description}
-            </p>            
-            <p className='oneProduct__price'>
-                $ {product.price}
-            </p>
+        <div>
+            {result}
         </div>
     )
 }
 
-export default ProductDeatil;
+export default FindProduct;

@@ -1,4 +1,3 @@
-import image from '../../assets/images/default-image.png';
 import '../../assets/css/UserDetail.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';

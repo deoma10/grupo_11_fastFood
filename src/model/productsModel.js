@@ -7,7 +7,7 @@ const productsModel = {
             let product = await db.products.findAll({
                 include: [{ association: 'fk_idImage_image' }]
             });
-            if(product===undefined){return new error}
+            if (product === undefined) { return new error }
             return product;
         } catch (err) {
             console.log(err);
@@ -17,14 +17,18 @@ const productsModel = {
     getOneProduct: async function (value) {
         try {
             let allProducts = await db.products.findAll();
-            // if(value <= 0 || value > allProducts.length) {
-            //     new error
-            // }
-            let product = await db.products.findByPk(value, {
-                include: [{ association: 'fk_idImage_image' }]
-            });
-            if(product===undefined){return new error}
-            return product;
+            let exists = await allProducts.filter(product => {
+                return product.idProducts == value
+            })
+            if (exists[0] == undefined) {
+                new error
+            } else {
+                let product = await db.products.findByPk(value, {
+                    include: [{ association: 'fk_idImage_image' }]
+                });
+                if (product === undefined) { return new error }
+                return product;
+            }
         } catch (err) {
             console.log(err);
             return new error
