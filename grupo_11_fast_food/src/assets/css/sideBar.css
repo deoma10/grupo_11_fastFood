@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=Josefin+Sans&family=Quicksand:wght@300;500;700&display=swap');
+
 .side-bar{
     width: 20vw;
+    height: 100vh;
     background-color: #FFE459;
+    position: fixed;
 }
 
 .side-bar__link{
@@ -14,6 +18,7 @@
     width: 17vw;
 }
 .side-bar__list{
+    margin-top: 5vh;
     list-style: none;
     color: #ffffff;
 }
@@ -21,6 +26,12 @@
     margin-bottom: 5vh;
 }
 .side-barlink{
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.3em;
     text-decoration: none;
-    color: #000000;
+    color: #835d3b;
+}
+.side-barlink:hover{
+    color: #494848;
+    text-decoration:underline 5px #979696;
 }

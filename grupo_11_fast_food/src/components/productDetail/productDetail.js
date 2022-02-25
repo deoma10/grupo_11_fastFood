@@ -9,7 +9,7 @@ function ProductDeatil(props) {
 
     const callProduct = async () => {
         try {
-            const res = await fetch(`http://localhost:4000/api/products`)
+            const res = await fetch(`http://fast-food-dh.herokuapp.com/api/products`)
             const result = await res.json()
             const set = await result[1].filter((k) => {
                 return k.idProducts == params.id

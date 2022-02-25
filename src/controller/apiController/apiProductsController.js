@@ -3,6 +3,8 @@ const { productsModel } = require('../../model')
 const apiProductsController = {
     getProducts: async (req, res) => {
         try {
+            const hostname = req.hostname;
+            const protocol = req.protocol;
             const productsInDB = await productsModel.getProducts();
             let totalProducts = productsInDB.length;
             let products = productsInDB.map((product) => {
@@ -11,7 +13,7 @@ const apiProductsController = {
                     name: product.name,
                     description: product.description,
                     price: product.price,
-                    imageName: product.fk_idImage_image.name
+                    imageName: protocol + '://' + hostname + '/img/Products/' + product.fk_idImage_image.name
                 }
             })
             products = [{count: totalProducts}, [...products]]

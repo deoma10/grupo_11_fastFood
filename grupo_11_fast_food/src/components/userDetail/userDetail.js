@@ -10,7 +10,7 @@ function UserDetail(props) {
 
     const callUser = async () => {
         try {
-            const res = await fetch(`http://localhost:4000/api/users`)
+            const res = await fetch(`http://fast-food-dh.herokuapp.com/api/users`)
             const result = await res.json()
             const set = await result[1].filter((k) => {
                 return k.idUser == params.id
