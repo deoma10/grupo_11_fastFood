@@ -1,5 +1,5 @@
 .product {
-    width: 35%;
+    width: 31%;
     height: 10%;
     margin: 1%;
     border-radius: 8px;
@@ -19,6 +19,7 @@
 }
 
 .product__image img {
+    margin-top: 1em;
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -37,7 +38,8 @@
 }
 
 .product__button {
-    margin: 2%;
+    margin-top: 2%;
+    margin-bottom: 1em;
     padding: 3%;
     text-decoration: none;
     background-color: #50a684;

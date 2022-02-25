@@ -6,6 +6,8 @@
 }
 
 .oneProduct__title {
+    padding-top: 1em;
+    margin-top: 1em;
     text-align: center;
 }
 
