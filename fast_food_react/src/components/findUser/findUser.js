@@ -1,11 +1,10 @@
-import '../../assets/css/UserDetail.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import Error404 from '../error404/Error404';
 import UserDetail from '../userDetail/userDetail';
 
 
-function FindUser(props) {
+function FindUser() {
     const [user, setUser] = useState([]);
     const params = useParams();
 
@@ -35,7 +34,7 @@ function FindUser(props) {
     const result = user == undefined ? (
         <Error404 />
     ) : (
-        <UserDetail name={user.Name} lastName={user.lastName} documentNumber={user.documentNumber} email={user.email} imageName={user.imageName} />
+        <UserDetail Name={user.Name} lastName={user.lastName} documentNumber={user.documentNumber} email={user.email} imageName={user.imageName} />
     )
 
     return (
