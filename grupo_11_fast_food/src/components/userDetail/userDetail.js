@@ -45,7 +45,7 @@ function UserDetail(props) {
                 </p>
             </div>
             <div className="oneUser__image">
-                <img src={image} alt="User" />
+                <img src={user.imageName} alt="User" />
             </div>
         </div>
     )

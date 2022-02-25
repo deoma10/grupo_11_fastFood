@@ -9,7 +9,7 @@ function User(props) {
     return (
         <div className="user">
             <Link className="user__image" to={id}>
-                <img src={image} alt="User" />
+                <img src={props.image} alt="User" />
             </Link>
 
             <Link className="user__info" to={id}>

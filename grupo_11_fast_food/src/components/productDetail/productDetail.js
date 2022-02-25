@@ -36,7 +36,7 @@ function ProductDeatil(props) {
                 {product.name}
             </h3>
             <div className='oneProduct__image'>
-                <img src={image} alt="Product" />
+                <img src={product.imageName} alt="Product" />
             </div>
             <p className="oneProduct__desc">
                 {product.description}
