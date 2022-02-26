@@ -16,10 +16,10 @@ const apiProductsController = {
                     imageName: protocol + '://' + hostname + '/img/Products/' + product.fk_idImage_image.name
                 }
             })
-            products = [{count: totalProducts}, [...products]]
+            products = [{ count: totalProducts }, [...products]]
             res.json(products);
         } catch (err) {
-            res.json({error: 'Error 504'})
+            res.json({ error: 'Error 504' })
         }
     },
     getProductDetail: async (req, res) => {
@@ -35,6 +35,23 @@ const apiProductsController = {
                 imageName: protocol + '://' + hostname + '/img/Products/' + product.fk_idImage_image.name
             }
             res.json(newProduct);
+        } catch (err) {
+            res.json({ error: 'Error 404' })
+        }
+    },
+    getLastInDb: async (req, res) => {
+        try {
+            const hostname = req.hostname;
+            const protocol = req.protocol;
+            let product = await productsModel.lastProductInDb();
+            newProduct = {
+                idProducts: product.idProducts,
+                name: product.name,
+                description: product.description,
+                price: product.price,
+                imageName: protocol + '://' + hostname + '/img/Products/' + product.fk_idImage_image.name
+            }
+            res.json(newProduct)
         } catch (err) {
             res.json({error: 'Error 404'})
         }

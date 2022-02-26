@@ -42,6 +42,24 @@ const apiUsersController = {
         } catch(err) {
             res.json({ error: 'Error 404' });
         }
+    },
+    getLastInDb: async (req, res) => {
+        try {
+            const hostname = req.hostname;
+            const protocol = req.protocol;
+            let user = await usersModel.lastUserInDb();
+            newUser = {
+                idUser: user.idUser,
+                documentNumber: user.documentNumber,
+                Name: user.Name,
+                lastName: user.lastName,
+                email: user.email,
+                imageName: protocol + '://' + hostname + '/img/users/' + user.fk_idImage_image.name
+            }
+            res.json(newUser)
+        } catch (err) {
+            res.json({error: 'Error 404'})
+        }
     }
 };
 
