@@ -1,8 +1,10 @@
 import '../../assets/css/UserDetail.css'
 import { useState, useEffect } from 'react';
+import LoadPage from '../loadPage/loadPage'
 
 function LastUsrInDb() {
     const [lastUser, setLastUser] = useState([]);
+    const [isVisit, setIsVisit] = useState(false);
 
     const callUser = async () => {
         try {
@@ -17,15 +19,18 @@ function LastUsrInDb() {
     useEffect(async() => {
         const newUser = await callUser()
         setLastUser(newUser)
+        setTimeout(() => {
+            setIsVisit(true);
+        }, 4000)
     }, [])
 
-    return (
+    let view = isVisit ? (
         <div className="oneUser">
             <div>
                 <h3 className='oneUser__title'>
                     {lastUser.Name} {lastUser.lastName}
                 </h3>
-                <p>
+                <p className="num_doc">
                     Número de documento: {lastUser.documentNumber}
                 </p>
                 <p>
@@ -35,6 +40,14 @@ function LastUsrInDb() {
             <div className="oneUser__image">
                 <img src={lastUser.imageName} alt="User" />
             </div>
+        </div>
+    ) : (
+        <LoadPage />
+    )
+
+    return (
+        <div>
+            {view}
         </div>
     )
 }
