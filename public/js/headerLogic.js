@@ -1,7 +1,6 @@
 window.addEventListener('load', function () {
     let cintaOpciones = document.querySelector('.header__burgermenu');
     let pBurgerMenu = document.querySelector('.header-mobile-touch__x');
-    console.log('kajkaefjefakefjnkanfaek')
     cintaOpciones.addEventListener('touchend', function(){
         menuLateral.classList.remove('header-mobile-touch-close')
     })
