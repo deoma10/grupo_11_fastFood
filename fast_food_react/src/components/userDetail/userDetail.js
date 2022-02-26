@@ -7,7 +7,7 @@ function UserDetail(props) {
                 <h3 className='oneUser__title'>
                     {props.Name} {props.lastName}
                 </h3>
-                <p>
+                <p className="num_doc">
                     Número de documento: {props.documentNumber}
                 </p>
                 <p>

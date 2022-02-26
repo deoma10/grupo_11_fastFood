@@ -1,8 +1,10 @@
 import '../../assets/css/ProductDetail.css'
 import { useState, useEffect } from 'react';
+import LoadPage from '../loadPage/loadPage';
 
 function LastProdInDb() {
     const [lastProduct, setLastProduct] = useState([]);
+    const [isVisit, setIsVisit] = useState(false);
 
     const callProduct = async () => {
         try {
@@ -17,9 +19,12 @@ function LastProdInDb() {
     useEffect(async() => {
         const newProduct = await callProduct()
         setLastProduct(newProduct)
+        setTimeout(() => {
+            setIsVisit(true);
+        }, 4000)
     }, [])
 
-    return (
+    let view = isVisit ? (
         <div className="oneProduct">
             <h3 className="oneProduct__title">
                 {lastProduct.name}
@@ -33,6 +38,14 @@ function LastProdInDb() {
             <p className='oneProduct__price'>
                 $ {lastProduct.price}
             </p>
+        </div>
+    ) : (
+        <LoadPage />
+    )
+
+    return (
+        <div>
+            {view}
         </div>
     )
 }

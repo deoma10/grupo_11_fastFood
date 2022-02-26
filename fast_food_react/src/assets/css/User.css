@@ -17,11 +17,10 @@
 
 .user__image {
     height: 90%;
-    width: 25%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .user__image img{
@@ -37,8 +36,36 @@
     border-radius: 10px;
     text-decoration: none;
     color: #050505;
-    width: 15%;
-    max-width: 15%;
-    max-height: 100%;
+    width: 40%;
+    height: 80%;
     text-align: center;
+    font-size: 0.4em;
+}
+
+.user__info div {
+    width: 100%;
+}
+
+@media (min-width: 350px) {
+    .user__image {
+        width: 40%;
+    }
+
+    .user__info {
+        width: 40%;
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 650px) {
+    .user__image {
+        width: 30%;
+    }
+
+    .user__info {
+        width: 20%;
+        max-width: 20%;
+        font-size: 1em;
+        height: 70%;
+    }
 }
