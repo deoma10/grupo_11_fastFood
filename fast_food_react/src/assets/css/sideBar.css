@@ -35,3 +35,21 @@
     color: #494848;
     text-decoration:underline 5px #979696;
 }
+
+@media (max-width: 630px) {
+    .side-bar{
+        width: 25vw;
+    }
+    .side-bar__list{
+        font-size: 10px;
+        margin-left: -7vw;
+    }
+    .side-bar__link{
+        margin-left: 3vw
+    }
+    .side-bar__logo{
+        margin-top: 20px;
+        width: 17vw;
+    }
+
+}

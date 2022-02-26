@@ -11,7 +11,15 @@
     flex-wrap: wrap;
     transition: transform .2s;
 }
+@media (max-width: 630px) {
+    .product{
+      width: 48%;
+    }
+    .product__button {
+        font-size: 14px;
+    }
 
+}
 .product:hover{
     transform: scale(1.07);
 }
