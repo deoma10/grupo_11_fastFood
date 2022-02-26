@@ -1,4 +1,16 @@
-.mainIndex-api iframe{
-    width: 75vw;
-    height: 40vw;
+.video {
+    width: 70vw;
+    height: 80vh;
+    margin: auto;
+}
+
+.video iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.infoCards {
+    display: flex;
+    text-align: center;
 }

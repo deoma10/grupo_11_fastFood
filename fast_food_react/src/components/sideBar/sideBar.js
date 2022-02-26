@@ -3,7 +3,7 @@ import '../../assets/css/sideBar.css';
 import { Link } from 'react-router-dom';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUsers, faBurger} from '@fortawesome/free-solid-svg-icons'
+import {faUsers, faBurger, faNewspaper, faUserPen} from '@fortawesome/free-solid-svg-icons'
 
 function SideBar() {
     return (
@@ -18,8 +18,18 @@ function SideBar() {
                             </Link>
                         </li>
                         <li className='side-bar-item'>
+                            <Link className='side-barlink' to="/products/last">
+                            <FontAwesomeIcon icon={faNewspaper}/> Producto Reciente
+                            </Link>
+                        </li>
+                        <li className='side-bar-item'>
                             <Link className='side-barlink' to="/users">
                             <FontAwesomeIcon icon={faUsers}/> Usuarios
+                            </Link>
+                        </li>
+                        <li className='side-bar-item'>
+                            <Link className='side-barlink' to="/users/last">
+                            <FontAwesomeIcon icon={faUserPen}/> Usuario Reciente
                             </Link>
                         </li>
                     </ul>
