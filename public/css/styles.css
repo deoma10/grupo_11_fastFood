@@ -58,13 +58,15 @@ a:link{
 }
 .header-mobile-touch{
     width: 40vw;
-    height: 100vh;
+    height: 40vh;
     background-color: #FFE459;
+    border-radius: 0 0 20px 0;
+    box-shadow: 1px 1px 10px rgb(100, 100, 100);
     position: absolute;
     top: 0px;
 }
+
 .header-mobile-touch-close{
-    
     top: 100px;
     left: -1500px;
 }
@@ -73,6 +75,17 @@ a:link{
     text-align:end;
     margin-top: 3px;
     margin-bottom: 3em;
+}
+#menu-lateral p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.menu-lateral-brands{
+    margin-top: 70%;
+}
+.lateral-user--img{
+    width: 30%;
+    background-color: #FFE459;
 }
 /*------------------------------- -----  Nav ------ -------------------------------------*/
 
@@ -181,6 +194,12 @@ a:link{
         border-radius: 6px;
         font-size: 15px;
         font-weight: 600;
+    }
+    .header-pc__content--socialnetworks{
+        font-size: 25px; 
+    }
+    .header-pc__content--socialnetworks a{
+        margin-right: 25px;
     }
 }
 /*-------------------  -------------  Main Home -------------- ----------------------- */
