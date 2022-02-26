@@ -1,4 +1,4 @@
-Retrospectiva Sprint 6:
+Retrospectiva Sprint 8:
 Empezar a hacer:
 - Utilizar metodologías ágiles para ordenar y parametrizar nuesto código, para no confundirnos con el código que escriben los compañeros
 -Comentar el codigo para saber que hace cada porción
@@ -28,7 +28,7 @@ Dejar de hacer:
 - Ordenar el trello por Sprints
 ******************************************************************************************************************
 
-Retrospectiva Sprint 6:
+Retrospectiva Sprint 7:
 Empezar a hacer:
 - Utilizar metodologías ágiles para ordenar y parametrizar nuesto código, para no confundirnos con el código que escriben los compañeros
 -Comentar el codigo para saber que hace cada porción
