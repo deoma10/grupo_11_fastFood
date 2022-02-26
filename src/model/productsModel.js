@@ -1,4 +1,4 @@
-const db = require('../database/models')
+const db = require('../database/models');
 const imagesModel = require('./imagesModel')
 
 const productsModel = {
@@ -10,7 +10,6 @@ const productsModel = {
             if (product === undefined) { return new error }
             return product;
         } catch (err) {
-            console.log(err);
             return new error
         }
     },
@@ -30,8 +29,25 @@ const productsModel = {
                 return product;
             }
         } catch (err) {
-            console.log(err);
             return new error
+        }
+    },
+    lastProductInDb: async function () {
+        try {
+            let allProducts = await db.products.findAll();
+            let maxId = 0;
+            let lastproduct = allProducts.filter(product => {
+                if (product.idProducts > maxId) {
+                    maxId = product.idProducts;
+                }
+                return
+            });
+            let lastInDb = await db.products.findByPk(maxId, {
+                include: [{ association: 'fk_idImage_image' }]
+            });
+            return lastInDb;
+        } catch (err) {
+            console.log(err);
         }
     },
     createProduct: async function (product) {
@@ -82,7 +98,7 @@ const productsModel = {
                 })
             }
         } catch (err) {
-            console.log(err);
+            return new error
         }
     },
     deleteProduct: async function (id) {
@@ -96,7 +112,7 @@ const productsModel = {
             })
             await imagesModel.deleteImage('Products', oldProduct.fk_idImage);
         } catch (err) {
-            console.log(err);
+            return new error
         }
     }
 };

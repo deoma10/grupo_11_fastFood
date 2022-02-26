@@ -68,6 +68,25 @@ const usersModel = {
         }
     },
 
+    lastUserInDb: async function () {
+        try {
+            let allUsers = await db.users.findAll();
+            let maxId = 0;
+            let lastuser = allUsers.filter(user => {
+                if (user.idUser > maxId) {
+                    maxId = user.idUser;
+                }
+                return
+            });
+            let lastInDb = await db.users.findByPk(maxId, {
+                include: [{ association: 'fk_idImage_image' }]
+            });
+            return lastInDb;
+        } catch (err) {
+            console.log(err);
+        }
+    },
+
     getDocumentsDatabase: async function () {
         try {
             let documents = await db.documenttypes.findAll();
