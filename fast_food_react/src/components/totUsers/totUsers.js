@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import UsersPhoto from '../../assets/images/users.jpg'
+import UserPhoto from '../../assets/images/users.jpg'
 import '../../assets/css/TotProducts.css'
 
 function TotUsers() {
@@ -37,20 +37,28 @@ function TotUsers() {
         <div>
             <div className='product__card'>
                 <div className='product__file'>
-                    <img src={UsersPhoto} alt="Product place"/>
+                    <img src={UserPhoto} alt="Product place" />
                 </div>
                 <div className='product__message'>
-                    <h4>Productos</h4>
-                    <p>Nuestras hamburguesas son hechas con ingredientes frescos, pan artesanal libre de gluten</p>
+                    <h4>Usuarios</h4>
+                    <p>Cada interacción que tenemos con un cliente influye. Buscamos ser grandiosos en cada momento</p>
                 </div>
-                <div className='product__info'>
+                <div className='product__info usr'>
                     <div className='product__info--total'>
-                        <h4>{total.count}</h4>
-                        <p>Total de usuarios</p>
+                        <div className='total-products'>
+                            <h4>{total.count}</h4>
+                        </div>
+                        <div className='total-products_desc'>
+                            <p>Total de usuarios</p>
+                        </div>
                     </div>
                     <div className='product__info--last'>
-                        <h4>{last.Name} {last.lastName}</h4>
-                        <p>Ultimo usuario registrado</p>
+                        <div className='last-product'>
+                            <h4>{last.Name} {last.lastName}</h4>
+                        </div>
+                        <div className='last-product_desc'>
+                            <p>Ultimo usuario registrado</p>
+                        </div>
                     </div>
                 </div>
             </div>

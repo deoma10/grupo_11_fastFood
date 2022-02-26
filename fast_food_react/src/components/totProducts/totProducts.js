@@ -37,7 +37,7 @@ function TotProducts() {
         <div>
             <div className='product__card'>
                 <div className='product__file'>
-                    <img src={ProductPhoto} alt="Product place"/>
+                    <img src={ProductPhoto} alt="Product place" />
                 </div>
                 <div className='product__message'>
                     <h4>Productos</h4>
@@ -45,12 +45,20 @@ function TotProducts() {
                 </div>
                 <div className='product__info'>
                     <div className='product__info--total'>
-                        <h4>{total.count}</h4>
-                        <p>Total de productos</p>
+                        <div className='total-products'>
+                            <h4>{total.count}</h4>
+                        </div>
+                        <div className='total-products_desc'>
+                            <p>Total de productos</p>
+                        </div>
                     </div>
                     <div className='product__info--last'>
-                        <h4>{last.name}</h4>
-                        <p>Ultimo producto creado</p>
+                        <div className='last-product'>
+                            <h4>{last.name}</h4>
+                        </div>
+                        <div className='last-product_desc'>
+                            <p>Ultimo producto creado</p>
+                        </div>
                     </div>
                 </div>
             </div>
