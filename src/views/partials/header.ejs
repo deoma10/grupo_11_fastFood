@@ -1,7 +1,7 @@
 <header class="header">
-    <section class="header-mobile">
-        <article class="header__burgermenu">
-            <i class="fas fa-bars"></i>
+    <section class="header-mobile" id="prueba">
+        <article class="header__burgermenu" >
+            <i class="fas fa-bars header__burgermenu__select" ></i>
         </article>
         <article class="header__logo">
             <a href="/"><img src="../img/Logo-Fast-Food.png" alt=""></a>
@@ -11,7 +11,24 @@
         </article>
 
     </section>
-
+    <section id='menu-lateral' class="header-mobile-touch header-mobile-touch-close">
+        <div class="header-mobile-touch__x"><p >X</p></div>
+        <% if(!locals.isLogged){ %>
+            <p><a href="/login"><i class="fas fa-user"></i> Iniciar Sesión</a></p>
+            <p><a href="/register"><i class="far fa-list-alt"></i> Registrarse</a></p>
+            <%} else{ %>
+                <div class="user__logged">
+                    <p><a class="logout" href="/profile"><i class="fas fa-user"></i>Perfil</a></p>
+                    <div class="user--img">
+                        <a href="/profile">
+                            <img class="user__img"
+                                src="../img/users/<%= locals.userInSession.fk_idImage_image.name %> ">
+                        </a>
+                    </div>
+                    <p><a class="logout" href="/logOut"><i class="fas fa-user"></i> Cerrar Sesión</a></p>
+                </div>
+                <% } %>
+    </section>
     <section class="header-pc">
         <article class="header-pc__logo">
             <a href="/"><img src="../img/Logo-Fast-Food.png" alt=""></a>
@@ -73,6 +90,6 @@
             <a href="#"><i class="far fa-envelope"></i></a>
         </article> -->
 
-
+        <script src="/js/headerLogic.js"></script>
 
 </header>

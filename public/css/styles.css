@@ -37,7 +37,7 @@ a:link{
     align-items: center;
     justify-content: space-between;
     height: 60px;
-    background-color: #DDDDDD;
+    background-color: #FFE459;
     color: #000000;
 }
 .header__burgermenu{
@@ -56,13 +56,31 @@ a:link{
 .header-pc{
     display: none;
 }
+.header-mobile-touch{
+    width: 40vw;
+    height: 100vh;
+    background-color: #FFE459;
+    position: absolute;
+    top: 0px;
+}
+.header-mobile-touch-close{
+    
+    top: 100px;
+    left: -250px;
+}
+.header-mobile-touch__x{
+    font-size: 1.6em;
+    text-align:end;
+    margin-top: 3px;
+    margin-bottom: 3em;
+}
 /*------------------------------- -----  Nav ------ -------------------------------------*/
 
 .nav{
     padding-left: 15px;
     height: 30px;
     font-size: 0.5em;
-    background-color: #FFE459;
+    background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,10 +108,14 @@ a:link{
     .nav{
         font-size: 0.8em;
         font-weight: 600;
+        background-color: #FFE459;
     }
 }
 
 @media (min-width: 630px) {
+    .nav{
+        background-color: #FFE459;
+    }
     .header-mobile{
         display: none;
     }
@@ -123,7 +145,8 @@ a:link{
     .header-pc__content{
         width: 95%;
         height: 80px;
-        background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+        /* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
+        background-color: #FFE459;
         display: flex;
         justify-content: space-around;
         margin: 1.75vh 1vw 1.75vh 1vw;
