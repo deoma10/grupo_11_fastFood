@@ -21,7 +21,7 @@
                                 </div>
                                 <div class="product-n">
                                     <p class="product-price">$<%= products.price %> </p>
-                                    <p class="product-price"><a href="/productCart">Agregar</a> </p>
+                                    <p class="product-price"><a id="<%=products.idProducts%>" href="/productCart" >Agregar</a> </p>
                                     <% if(locals.isLogged == true && locals.userInSession.rol == 9) {%>
                                     <p class="product-price"> <a href="/productMod/<%= products.idProducts %>" > Modificar </a></p>
                                     <p class="product-price"> <a href="/productDelete/<%= products.idProducts %>"> Eliminar </a></p>
@@ -35,6 +35,7 @@
                 </main>
                 <!--Footer-->
                 <%- include('../partials/footer') %>
+                <script src="/js/productList.js"></script>
     </body>
 
 </html>
