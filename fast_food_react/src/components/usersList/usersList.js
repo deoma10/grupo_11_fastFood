@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import '../../assets/css/UserList.css'
 import User from '../user/user';
+import LoadPage from '../loadPage/loadPage';
 
 function UsersList() {
     const [listUsers, setListUsers] = useState([]);
+    const [isVisit, setIsVisit] = useState(false);
 
-    const callApi = async() => {
+    const callApi = async () => {
         try {
             const res = await fetch("http://fast-food-dh.herokuapp.com/api/users")
             const result = await res.json()
@@ -15,21 +17,29 @@ function UsersList() {
         }
     }
 
-    useEffect(async() => {
+    useEffect(async () => {
         const list = await callApi()
         setListUsers([...listUsers, ...list])
+        setTimeout(() => {
+            setIsVisit(true);
+        }, 3000)
     }, [])
 
-    const content = listUsers.length === 0 ? (
-            <p>Cargando usuarios...</p>
+    let view = isVisit ? (
+        listUsers.length === 0 ? (
+            <LoadPage />
         ) : (
-            listUsers.map((user, index) => 
-            <User key={index} name={user.Name} lastName={user.lastName} id={user.idUser} image={user.imageName} />
+            listUsers.map((user, index) =>
+                <User key={index} name={user.Name} lastName={user.lastName} id={user.idUser} image={user.imageName} />
             )
         )
-     return (
+    ) : (
+        <LoadPage />
+    )
+
+    return (
         <div className='user__list'>
-            {content}
+            {view}
         </div>
     )
 }

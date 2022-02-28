@@ -21,7 +21,7 @@ function LastUsrInDb() {
         setLastUser(newUser)
         setTimeout(() => {
             setIsVisit(true);
-        }, 4000)
+        }, 2000)
     }, [])
 
     let view = isVisit ? (

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import Product from '../product/product';
+import LoadPage from '../loadPage/loadPage';
 import '../../assets/css/ProductsList.css'
 
 function ProductsList() {
     const [listProducts, setListProducts] = useState([]);
-    
-    const callApi = async() => {
+    const [isVisit, setIsVisit] = useState(false);
+
+    const callApi = async () => {
         try {
             const res = await fetch("http://fast-food-dh.herokuapp.com/api/products")
             const result = await res.json()
@@ -15,20 +17,27 @@ function ProductsList() {
         }
     }
 
-    useEffect(async() => {
+    useEffect(async () => {
         const list = await callApi()
         setListProducts([...listProducts, ...list])
+        setTimeout(() => {
+            setIsVisit(true);
+        }, 3000)
     }, [])
 
-    const content = listProducts.length === 0 ? (
-        <p>Cargando Productos...</p>
+    let view = isVisit ? (
+        listProducts.length === 0 ? (
+            <LoadPage />
+        ) : (
+            listProducts.map((product, index) => <Product key={index} name={product.name} price={product.price} image={product.imageName} id={product.idProducts} />)
+        )
     ) : (
-        listProducts.map((product, index) => <Product key={index} name={product.name} price={product.price} image={product.imageName} id={product.idProducts} />)
+        <LoadPage />
     )
 
     return (
-        <div className= 'product__list'>
-            {content}
+        <div className='product__list'>
+            {view}
         </div>
     )
 }

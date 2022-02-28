@@ -1,8 +1,5 @@
 window.addEventListener("load", function(){
     let product = document.querySelectorAll(".product-n")
-    let sessionArray = sessionStorage.getItem("Order")
-    let sessionParse = JSON.parse(sessionArray)
-    let array = []
 
     product.forEach(item => {
         item.addEventListener("click", async function(e){
@@ -18,7 +15,6 @@ window.addEventListener("load", function(){
             }
             if(dataSend.id != undefined){
             save(dataSend)
-            
             }
         redirect()
         })
@@ -26,7 +22,7 @@ window.addEventListener("load", function(){
 
     function redirect(){
         let host = window.location.origin
-        window.location.replace(host+"/productCart");
+        window.location.replace(host+"/");
     }
 
     async function searchPorduct(id){
@@ -36,32 +32,6 @@ window.addEventListener("load", function(){
     }
 
     function save (data){
-        let array2 = sessionStorage.getItem("Order")
-        let parseJson = JSON.parse(array2)
-        if(array2){
-            let verify = ifExist(data.name, parseJson)
-            if(verify!=null){
-                parseJson[verify].count = parseJson[verify].count + 1;
-                array = parseJson
-                sessionStorage.setItem("Order", JSON.stringify(array))
-            }else{
-                array.push(data)
-                sessionStorage.setItem("Order", JSON.stringify(array))
-            }
-        }
-        else{
-            array.push(data)
-            sessionStorage.setItem("Order", JSON.stringify(array))
-        }
-    }
-
-    function ifExist(name, array){
-        let exist = null
-        for (let i = 0; i < array.length; i++) {
-            if(array[i].name==name){
-                exist = i
-            }
-        }
-        return exist
+        sessionStorage.setItem("New_Order", JSON.stringify(data))
     }
 })

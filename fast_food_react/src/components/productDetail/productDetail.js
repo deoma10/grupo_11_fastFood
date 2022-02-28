@@ -1,7 +1,17 @@
 import '../../assets/css/ProductDetail.css'
+import { useState, useEffect } from 'react';
+import LoadPage from '../loadPage/loadPage';
 
 function ProductDeatil(props) {
-    return (
+    const [isVisit, setIsVisit] = useState(false);
+
+    useEffect(async() => {
+        setTimeout(() => {
+            setIsVisit(true);
+        }, 2000)
+    }, [])
+
+    let view = isVisit ? (
         <div className="oneProduct">
             <h3 className="oneProduct__title">
                 {props.name}
@@ -15,6 +25,14 @@ function ProductDeatil(props) {
             <p className='oneProduct__price'>
                 $ {props.price}
             </p>
+        </div>        
+    ) : (
+        <LoadPage />
+    )
+
+    return (
+        <div>
+            {view}
         </div>
     )
 }

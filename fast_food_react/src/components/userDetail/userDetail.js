@@ -1,7 +1,17 @@
 import '../../assets/css/UserDetail.css'
+import { useState, useEffect } from 'react';
+import LoadPage from '../loadPage/loadPage';
 
 function UserDetail(props) {
-    return (
+    const [isVisit, setIsVisit] = useState(false);
+
+    useEffect(async() => {
+        setTimeout(() => {
+            setIsVisit(true);
+        }, 2000)
+    }, [])
+
+    let view = isVisit ? (
         <div className="oneUser">
             <div>
                 <h3 className='oneUser__title'>
@@ -17,6 +27,14 @@ function UserDetail(props) {
             <div className="oneUser__image">
                 <img src={props.imageName} alt="User" />
             </div>
+        </div>
+    ) : (
+        <LoadPage />
+    )
+
+    return (
+        <div>
+            {view}
         </div>
     )
 }

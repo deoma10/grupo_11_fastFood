@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="product-n">
                                     <p class="product-price">$ <%= product.price %> </p>
-                                    <p class="product-price"><a href="/productCart">Agregar</a> </p>
+                                    <p class="product-price"><a id="<%=product.idProducts%>" href="/productCart">Agregar</a> </p>
                                     <% if(locals.isLogged==true && locals.userInSession.role==9) {%>
                                     <p class="product-price"> <a href="/productMod/<%= product.idProducts %>" > Modificar </a></p>
                                     <form action="/productDelete/<%= product.idProducts %>?_method=DELETE" method="post">
@@ -37,6 +37,7 @@
 
                 <!--Footer-->
                 <%- include('../partials/footer') %>
+                <script src="/js/productDetailAdd.js"></script>
     </body>
 
 </html>
