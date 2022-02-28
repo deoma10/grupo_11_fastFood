@@ -9,7 +9,7 @@ function UsersList() {
 
     const callApi = async () => {
         try {
-            const res = await fetch("http://fast-food-dh.herokuapp.com/api/users")
+            const res = await fetch("https://fast-food-dh.herokuapp.com/api/users")
             const result = await res.json()
             return result[1]
         } catch (error) {

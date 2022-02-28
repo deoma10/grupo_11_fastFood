@@ -8,7 +8,7 @@ function LastProdInDb() {
 
     const callProduct = async () => {
         try {
-            const res = await fetch(`http://fast-food-dh.herokuapp.com/api/products/last`)
+            const res = await fetch(`https://fast-food-dh.herokuapp.com/api/products/last`)
             const result = await res.json()
             return result
         } catch (error) {

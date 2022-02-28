@@ -9,7 +9,7 @@ function ProductsList() {
 
     const callApi = async () => {
         try {
-            const res = await fetch("http://fast-food-dh.herokuapp.com/api/products")
+            const res = await fetch("https://fast-food-dh.herokuapp.com/api/products")
             const result = await res.json()
             return result[1]
         } catch (error) {

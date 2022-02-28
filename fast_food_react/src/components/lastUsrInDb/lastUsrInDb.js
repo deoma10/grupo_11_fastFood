@@ -8,7 +8,7 @@ function LastUsrInDb() {
 
     const callUser = async () => {
         try {
-            const res = await fetch(`http://fast-food-dh.herokuapp.com/api/users/last`)
+            const res = await fetch(`https://fast-food-dh.herokuapp.com/api/users/last`)
             const result = await res.json()
             return result
         } catch (error) {

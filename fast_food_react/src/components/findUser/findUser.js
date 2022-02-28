@@ -10,7 +10,7 @@ function FindUser() {
 
     const callUser = async () => {
         try {
-            const res = await fetch(`http://fast-food-dh.herokuapp.com/api/users`)
+            const res = await fetch(`https://fast-food-dh.herokuapp.com/api/users`)
             const result = await res.json()
             const set = await result[1].filter((k) => {
                 return k.idUser == params.id
