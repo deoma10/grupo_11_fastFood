@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+    <body>
+        <!-- Header -->
+        <%- include('../partials/header') %>
+            <!-- Barra de navegación -->
+            <%- include('../partials/nav') %>
+
+                <main>
+                    <section class="store">
+                        <div class="store-locations">
+                            <H2 class="store-title">Nuestras Tiendas</H2>
+
+                        </div>
+                        <div class="store-adress">
+                            <iframe class="store-adress-google-maps"
+                                src=""
+                                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </section>
+
+                </main>
+                <!--Footer-->
+                <%- include('../partials/footer') %>
+                    <script src="/js/storeAdress.js"></script>
+    </body>
+
+</html>
