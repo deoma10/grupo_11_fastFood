@@ -10,6 +10,9 @@ userRouter.get('/register', userController.getRegister);
 
 userRouter.get('/profile', userController.getProfile);
 
+userRouter.get('/about', userController.getAbout);
+userRouter.get('/promotions', userController.getPromotions);
+
 //Crear Usuario
 userRouter.post('/register', userMulterUpload.single('userImage'), registerValidation, userController.createUser);
 

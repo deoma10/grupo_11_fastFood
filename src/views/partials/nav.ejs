@@ -1,9 +1,9 @@
 <nav class="nav">
     <ul class="nav__list">
         <% if(locals.isLogged == false || locals.userInSession.rol == 1) {%>
-        <li><a href="#">Promociones</a></li>
+        <li><a href="/promotions">Promociones</a></li>
         <li><a href="/">Inicio</a></li>
-        <li><a href="#">Nosotros</a></li>
+        <li><a href="/about">Nosotros</a></li>
         <li><a href="/productList">Productos</a></li><!--Productos-->
         <li><a href="#">Tiendas</a></li><!--Tiendas-->
          <%}%>

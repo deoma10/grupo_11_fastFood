@@ -33,6 +33,13 @@ const userController = {
             res.redirect('login')
         }
     },
+    getAbout:  (req, res) => {
+        res.render(routePath('aboutUs'))
+    },
+
+    getPromotions: (req, res) => {
+        res.render(routePath('promotions'))
+    },
 
     getLogin: (req, res) => {
         if (req.session.userLogged) {

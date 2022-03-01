@@ -1146,3 +1146,75 @@ aside{
     }
 
 }
+
+ /* ------------------------ ---------- ---- ABOUT ---- ------------ ------------------------- */
+
+.about--img{
+    width: 20%;
+    margin-left: 40%;
+}
+.about h2{
+    text-align: center;
+}
+.about h3{
+    margin-bottom: 3%;
+    margin-left: 10%;
+}
+.about p{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    text-align: justify;
+}
+
+ /* ------------------------ ---------- ---- PROMOTIONS ---- ------------ ------------------------- */
+
+ .promotions h2{
+    margin-top: 30px;
+    margin-left: 10%;
+ }
+ .promotions-container{
+     display: flex;
+     justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+ }
+ .promotions-container figure{
+     margin-left: 0;
+    width: 50%;
+ }
+ .promotions-container p{
+    margin-top: 8%;
+    width: 40%;
+}
+
+@media (min-width: 630px){
+.promotions-container figure{
+    margin-left: 0;
+   width: 30%;
+}
+
+    .promotions-container p{
+        margin-top: 13%;
+        width: 40%;
+    }
+
+}
+
+/* ------------------------ ---------- ---- PROMOTIONS ---- ------------ ------------------------- */
+.order-product-aside{
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-cart-description{
+    margin-left: 10%;
+}
+.order-cart-count{
+    margin-right: 10%;
+    text-align: left;
+    text-decoration: underline;
+}
