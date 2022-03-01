@@ -167,6 +167,10 @@ const productController = {
         }
     },
 
+    getStore: (req, res) => {
+        res.render(routePath('store'))
+    },
+
     getError: (req, res) => {
         res.render(routePath('error'));
     }

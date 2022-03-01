@@ -32,6 +32,9 @@ productRouter.get('/products', productController.getProducts);
 //Administador
 productRouter.get('/admin', productController.getAdmin);
 
+//Tiendas
+productRouter.get('/store', productController.getStore);
+
 productRouter.get('/error', productController.getError);
 
 module.exports = productRouter;
